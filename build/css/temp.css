@@ -1,0 +1,20 @@
+:root {
+    --green: #48A14D;
+}
+
+table, th, td {
+    width: 150vh;
+    text-align: start;
+}
+
+button {
+    padding: .5vh;
+    width: 10vh;
+    border-radius: 1vh;
+    color: #fff;
+    background-color: var(--green);
+}
+
+body {
+    padding: 5vh;
+}
