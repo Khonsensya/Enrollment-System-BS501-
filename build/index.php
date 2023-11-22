@@ -10,28 +10,34 @@
 
 <body>
     <?php
-        #  This PHP code serves as the DATABASE portion of the Finals Project: School Enrollment System.
+        #    This PHP code serves as the DATABASE portion of the Finals Project: School Enrollment System.
         #
-        #  Code Collaborators:
-        #  1. CONGGAS, Emman Isaac D.
-        #  2. GEREÑA, James Bernard O.
+        #    Code Collaborators:
+        #    1. CONGGAS, Emman Isaac D.
+        #    2. GEREÑA, James Bernard O.
 
-        //Setting parameters for MySQL/SSMS connection (Placeholder, may be modified).
-        $server = "localhost";
-        $username = "bs501_enroll";
-        $password = "admin";
-        $database = "enrollmentDB";
+        //Setting parameters for MySQL connection (Placeholder, may be modified).
+        function sqlConnect()
+            {
+                $db_host = "localhost";
+                $db_user = "root";
+                $db_password = "";
+                $db_name = "mydbsample_conggas";
 
-        $connect = mysqli_connect($server, $username, $password);
+                $toConnect = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 
-        //Check connection
-        if(!$connect)
-        {
-          die("Connection interrupted or lost! " . mysqli_connect_error());
-        }
-        
-        echo "Connection successful ! >(^ o ^)>";
-        mysqli_close();
+                if(!$toConnect)
+                {
+                    die("Connection failed. ^(>A<)^". mysqli_connect_error());
+                }
+
+                echo "Connected successfully! >(^o^)>";
+            }
+
+        function sqlClose()
+            {
+                mysqli_close($GLOBALS['toConnect']);
+            }
     ?>
 </body>
 
