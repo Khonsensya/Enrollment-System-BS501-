@@ -4,66 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enrollment System</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/temp.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/vanilla.css">
+    <link rel="stylesheet" href="css/idv_css/layout.css">
 </head>
 <body>
-    <div>
-        <h1>List of Enrolled Students</h1>
-        <br>
-        <button>New</button>
-        <br><br>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Created At</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $database = "enrollment_system";
-
-                    //create connection
-                    $connection = new \mysqli($servername, $username, $password, $database);
-                        //check connection 
-                        if ($connection->connect_error) {
-                            die("Connection failed: ". $connection->connect_error);
-                        }
-                    //read all row from database table
-                    $sql = "SELECT * FROM students";
-                    $result = $connection->query($sql);
-                        if (!$result) {
-                            die("Invalid query: ". $connection->error);
-                        }
-                        
-                    //read data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "
-                            <tr>
-                                <td>$row[id]</td>
-                                <td>$row[name]</td>
-                                <td>$row[email]</td>
-                                <td>$row[created_at]</td>
-                                <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
-                                </td>
-                            </tr>
-                        ";
-                    }
-
-                    //hi
-                ?>
-
-                
-            </tbody>
-        </table>
-    </div>
+    <main class="container">
+        <nav class="top-nav">
+            <section class="logo">logo</section>
+            <ul class="nav-list">
+                <li>Programs</li>
+                <li>Campuses</li>
+                <li>About</li>
+                <li>Admission</li>
+            </ul>
+            <section class="enroll-now">
+                <button class="enroll-btn">Enroll Now!</button>
+            </section>
+        </nav>
+        <main class="content">
+            <section class="banner">
+                <ul class="gallery">
+                    <li class="item">
+                        <img class="banner-image" src="/build/imgs/bannerbg.jpg" alt="item-1">
+                        <div class="banner-details">
+                            <div class="details-content">
+                                <h6 class="tag">Announcement</h6>
+                                <h2 class="banner-title">Enrollment is On-going</h2>
+                                <p class="banner-description">Today until tomorrow, the institution is acceptiong online enrollments for this Academic Year.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="main-content">
+                <section class="enrollment">
+                    <h2>Enrollment</h2>
+                    <h3>for Tertiary and Senior High School</h3>
+                    <h4>2nd Semester | S.Y. 2023-2024</h4>
+                    <h4>New Students and Transferees Accepted</h4>
+                    <ul>
+                        <li>No Tuition Fee Increase</li>
+                        <li>Financial Aid Programs Available</li>
+                        <li>Crediting of Subjects for Transferees</li>
+                    </ul>
+                    <button>Enroll Online</button>
+                </section>
+                <section class="benefits">
+                    <h2>Be Future Ready</h2>
+                </section>
+                <section class="programs">
+                    <h2>Programs</h2>
+                </section>
+                <section class="blogs">
+                    <h2>Latest Blogs</h2>
+                </section>
+            </section>
+        </main>
+        <footer class="footer">
+            <section class="top-footer">footer</section>
+            <section class="copyright">copyright</section>
+        </footer>
+    </main>
 </body>
 </html>
