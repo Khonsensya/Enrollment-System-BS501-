@@ -1,0 +1,33 @@
+:root {
+    --primary: #0071bb;
+    --secondary: #fef200;
+    --tertiary: #d6293e;
+    --neutral: #fafafa;
+    --white: #fff;
+    --black: #000;
+    --text: #595d69;
+    --shadow: #1e1e1e;
+    --black50: #00000075;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style-type: none;
+}
+
+body {
+    color: var(--text);
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+img {
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 36pt;
+}
