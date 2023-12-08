@@ -5,66 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enrollment System</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="css/vanilla.css">
-    <link rel="stylesheet" href="css/idv_css/layout.css">
+    <link rel="stylesheet" href="/build/css/walkman_css/pwd-layout.css">
+    <link rel="stylesheet" href="/build/css/walkman_css/pwd-style.css">
+    <script defer src="/build/js/walkman_js/pwd-banner.js"></script>
 </head>
 <body>
-    <main class="container">
-        <nav class="top-nav">
-            <section class="logo">logo</section>
-            <ul class="nav-list">
-                <li>Programs</li>
-                <li>Campuses</li>
-                <li>About</li>
-                <li>Admission</li>
-            </ul>
-            <section class="enroll-now">
-                <button class="enroll-btn">Enroll Now!</button>
-            </section>
+    <main>
+        <nav class="pwd-navbar">
+            <div class="navbar-1">
+                <h1>Sy<span>Tech</span></h1>
+            </div>
+            <div class="navbar-2">
+                <input type="checkbox" id="menu">
+                <label for="menu" class="menu-btn">
+                    <i>=</i>
+                </label>
+
+                <ul class="navigation">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </div>
+            <div class="navbar-3">
+                <button>Apply Now</button>
+            </div>
         </nav>
-        <main class="content">
-            <section class="banner">
-                <ul class="gallery">
-                    <li class="item">
-                        <img class="banner-image" src="/build/imgs/bannerbg.jpg" alt="item-1">
-                        <div class="banner-details">
-                            <div class="details-content">
-                                <h6 class="tag">Announcement</h6>
-                                <h2 class="banner-title">Enrollment is On-going</h2>
-                                <p class="banner-description">Today until tomorrow, the institution is acceptiong online enrollments for this Academic Year.</p>
+
+        <div class="pwd-banner">
+            <div class="banner-1 fade">
+                <div class="item fade">
+                    <img src="/build/imgs/bannerbg.jpg" class="item-img">
+                        <div class="banner-overlay">
+                            <div class="overlay-description">
+                                <h2><span class="tag">Entry #1</span>Description</h2>
+                                <p>Description</p>
                             </div>
                         </div>
-                    </li>
+                </div>
+                
+                <div class="item fade">
+                    <img src="/build/imgs/bannerbg.jpg" class="item-img">
+                        <div class="banner-overlay">
+                            <div class="overlay-description">
+                                <h2><span class="tag">Entry #2</span>Description</h2>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="item fade">
+                    <img src="/build/imgs/bannerbg.jpg" class="item-img">
+                        <div class="banner-overlay">
+                            <div class="overlay-description">
+                                <h2><span class="tag">Entry #3</span>Description</h2>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="pwd-section-1">
+            <div class="section-1-1">
+                <h2>Enrollment On-going for College <span class="ad-emphasis">2nd Semester | S.Y. 2023-2024</span></h2>
+                <h3>New Students & Transferees Accepted</h3>
+                <ul>
+                    <li><p>No Tuition Fee Increase</p></li>
+                    <li><p>Financial Aid Programs Available</p></li>
+                    <li><p>Crediting of Subjects for Transferees</p></li>
                 </ul>
-            </section>
-            <section class="main-content">
-                <section class="enrollment">
-                    <h2>Enrollment</h2>
-                    <h3>for Tertiary and Senior High School</h3>
-                    <h4>2nd Semester | S.Y. 2023-2024</h4>
-                    <h4>New Students and Transferees Accepted</h4>
-                    <ul>
-                        <li>No Tuition Fee Increase</li>
-                        <li>Financial Aid Programs Available</li>
-                        <li>Crediting of Subjects for Transferees</li>
-                    </ul>
-                    <button>Enroll Online</button>
-                </section>
-                <section class="benefits">
-                    <h2>Be Future Ready</h2>
-                </section>
-                <section class="programs">
-                    <h2>Programs</h2>
-                </section>
-                <section class="blogs">
-                    <h2>Latest Blogs</h2>
-                </section>
-            </section>
-        </main>
-        <footer class="footer">
-            <section class="top-footer">footer</section>
-            <section class="copyright">copyright</section>
-        </footer>
+                <div class="ad-action">
+                    <button>Enroll Now</button>
+                    <p>Requirements</p>
+                </div>
+            </div>
+            <div class="section-1-2">
+                <figure>
+                    <img src="/build/imgs/studentbg.png" alt="student bg">
+                </figure>
+            </div>
+        </section>
+
+        <section class="pwd-section-2">a</section>
     </main>
 </body>
 </html>
