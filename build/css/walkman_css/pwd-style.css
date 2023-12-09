@@ -10,8 +10,8 @@
     --shadow: #1e1e1e50;
 
     --navbar: 8vh;
-    --banner: 60vh;
-    --section1: calc(100vh - (8vh + 60vh));
+    --banner: 57vh;
+    --section1: calc(100vh - (var(--banner) + var(--navbar)));
 }
 
 * {
@@ -33,4 +33,20 @@ body {
 a {
     text-decoration: none;
     color: var(--text);
+}
+
+h1 {
+    font-size: 46pt;
+}
+h2 {
+    font-size: 40pt;
+}
+h3 {
+    font-size: 24pt;
+}
+h4 {}
+h5 {}
+h6 {}
+p {
+    font-size: 14pt;
 }

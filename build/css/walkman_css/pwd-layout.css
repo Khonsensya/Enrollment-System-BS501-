@@ -1,179 +1,93 @@
-/* NAVIGATION BAR */
-
-.pwd-navbar {
-    width: 100vw;
-    height: var(--navbar);
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10vw;
-    background-color: var(--white);
+.main-1 {
+    background-color: aqua;
+    scroll-behavior: smooth;
 }
-
-.navbar-1 h1 {
-    font-size: 28pt;
-    font-weight: 900;
-    color: var(--primary);
-    width: 7rem;
-}
-
-.navigation {
-    display: inline-flex;
-    gap: 1vw;
-    font-weight: 700;
-}
-
-.menu-btn, #menu { display: none; }
-
-/* HOMEPAGE BANNER */
-
-.pwd-banner {
-    background-color: #1e1e1e;
-    width: 100vw;
-    height: var(--banner);
-    overflow: hidden;
-}
-
 .banner-1 {
-    max-width: 100%;
-    height: auto;
-    margin: auto;
+    position: relative;
+    width: 100vw;
+    height: 65vh;
+    background-color: red;
 }
-
-.item { display: none; position: relative;}
-
-.banner-overlay {
+.overlay-1 {
     position: absolute;
+    z-index: 10;
     top: 0;
     width: 100vw;
-    height: var(--banner);
-    padding: 10vh 10vw;
-    display: flex;
-    align-items: end;
-    background-color: #00000095;
+    height: 65vh;
 }
-
-.item-img {
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
-}
-
-.overlay-description {
-    bottom: 10vh;
-}
-
-.overlay-description h2{
-    font-size: 40pt;
-    color: var(--white);
-}
-
-.overlay-description p {
-    font-size: 16pt;
-    font-weight: 100;
-    color: var(--white);
-}
-
-.tag {
-    display: block;
-    width: fit-content;
-    padding: 5px 10px;
-    border-radius: 1vh;
-    font-size: 12pt;
-    background-color: var(--primary);
-    color: var(--white);
-
-}
-
-/* SECTION #1 */
-
-.pwd-section-1 {
-    background-image: linear-gradient(175deg, #337cbe, #337cbe, #fed951);
-    height: var(--section1);
+.navbar-1 {
     width: 100vw;
-    display: flex;
-    color: var(--white);
+    height: 8vh;
+    background-color: green;
 }
-
-.section-1-1 {
-    flex: 50%;
-    padding: 5vh 0 5vh 10vw;
+.banner-1-1 {
+    width: 100vw;
+    height: calc(65vh - (8vh + 15vh));
+    background-color: blue;
 }
-
-.section-1-1 h3 {
-    font-size: 20pt;
-}
-
-.ad-emphasis {
-    display: block;
-    font-size: 36pt;
-    color: var(--text2);
-}
-
-.ad-action {
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.ad-action p {
-    text-decoration: underline;
-    font-weight: 500;
-}
-
-button {
-    margin: 1vh 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--tertiary);
-    color: var(--white);
-    font-weight: 700;
-    width: 7rem;
-}
-
-.section-1-2 {
-    flex: 50%;
-    padding: 0 10vw 0 0;
-}
-
-.section-1-2 figure {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.section-1-2 img {
-    height: 100%;
+.filler-1 {
+    width: 100vw;
+    height: 15vh;
+    background-color: violet;
+} 
+.overlay-2 {
     position: absolute;
-    right: 0;
-    object-fit: cover;
+    z-index: 20;
+    bottom: 7.5vh;
+    left: 25vw;
+    right: 25vw;
+    width: 50vw;
+    height: 15vh;
+    background-color: orange;
 }
-
-/* SECTION #2 */
-
-.pwd-section-2 {
+.section-2 {
+    width: 100vw;
+    height: 35vh;
+    background-color: purple;
+    display: flex;
+}
+.section-2-1 {
+    flex: 60%;
+}
+.section-2-2 {
+    flex: 40%;
+}
+.section-2-1 {
+    background-color: brown;
+}
+.section-2-2 {
+    background-color: tomato;
+}
+.section-3 {
+    width: 100vw;
     height: 100vh;
+    position: sticky;
+    top: 0;
+}
+.section-3-1-1 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
 }
 
-/* ANIMATION */
+.section-3-1-1 > section {
+    scroll-snap-align: center;
+}
+.section-3-1-1 section {
+    height: 100vh;
+    width: 100vw;
+    background-color: blueviolet;
+    position: sticky;
+    top: 0;
+}
+.section-3-1-1 section:nth-child(2) {
+    background-color: darkolivegreen;
+}
 
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.4s;
-    animation-name: fade;
-    animation-duration: 1.4s;
-  }
 
-  @-webkit-keyframes fade {
-    from {opacity: .5}
-    to {opacity: 2}
-  }
-
-  @keyframes fade {
-    from {opacity: .5}
-    to {opacity: 2}
-  }
 
 /* RESPONSIVENESS */
 
@@ -182,36 +96,5 @@ button {
 }
 
 @media (max-width: 760px) {
-    .navbar-3 { display: none; }
-
-    .navigation {
-        display: block;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        top: 8vh;
-        left: -100vw;
-        text-align: center;
-        transition: all .5s;
-        z-index: 999;
-        background-color: var(--neutral);
-    }
-
-    .navigation li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-
-    .menu-btn { display: block; }
-
-    #menu:checked ~ ul { left: 0; }
-
-    /* SECTION #1 */
-
-    .pwd-section-1 {
-        flex-direction: column;
-        height: auto;
-        padding-right: 10vw;
-    }
+    
 }
