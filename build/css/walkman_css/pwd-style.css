@@ -8,45 +8,47 @@
     --text: #595d69;
     --text2: #ffd200;
     --shadow: #1e1e1e50;
-
-    --navbar: 8vh;
-    --banner: 57vh;
-    --section1: calc(100vh - (var(--banner) + var(--navbar)));
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    list-style-type: none;
 }
 
 body {
     color: var(--text);
     background-color: var(--neutral);
     font-size: 12pt;
-    font-weight: 500;
+    font-weight: 100;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
+nav ul{
+    list-style: none;
+}
+
 a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--white);
 }
 
 h1 {
-    font-size: 46pt;
-}
-h2 {
     font-size: 40pt;
 }
-h3 {
-    font-size: 24pt;
+h2 {
+    font-size: 36pt;
 }
-h4 {}
-h5 {}
-h6 {}
+h3 {
+    font-size: 20pt;
+}
 p {
     font-size: 14pt;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

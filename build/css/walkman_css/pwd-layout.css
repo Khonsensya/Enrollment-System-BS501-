@@ -1,12 +1,16 @@
 .main-1 {
-    background-color: aqua;
+    background-color: var(--neutral);
     scroll-behavior: smooth;
 }
 .banner-1 {
     position: relative;
     width: 100vw;
     height: 65vh;
-    background-color: red;
+    color: var(--white);
+}
+.banner-1-1 {
+    height: inherit;
+    display: none;
 }
 .overlay-1 {
     position: absolute;
@@ -18,17 +22,43 @@
 .navbar-1 {
     width: 100vw;
     height: 8vh;
-    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15vw;
+    background-color: #00000075;
 }
-.banner-1-1 {
+.logo {
+    font-size: 28pt;
+}
+.navbar-1-2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+}
+.navbar-1-2 button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--tertiary);
+    border: none;
+    color: var(--white);
+    font-weight: 700;
+}
+.banner-1-1-1 {
     width: 100vw;
     height: calc(65vh - (8vh + 15vh));
-    background-color: blue;
+    padding: 0 15vw;
+    position: relative;
+    background-color: #00000075;
+}
+.banner-1-1-1-1 {
+    position: absolute;
+    top: 15vh;
 }
 .filler-1 {
     width: 100vw;
     height: 15vh;
-    background-color: violet;
+    background-color: var(--neutral);
 } 
 .overlay-2 {
     position: absolute;
@@ -38,25 +68,68 @@
     right: 25vw;
     width: 50vw;
     height: 15vh;
-    background-color: orange;
+    background-color: #0071bb95;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 50px var(--shadow);
+}
+.overlay-2-1 {
+    display: flex;
+    height: 100%;
+    gap: 30px;
+    padding: 2.5vh;
+}
+.overlay-2-1 li {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border: var(--neutral) 1px solid;
+}
+.overlay-2-1 li img {
+    width: 7vh;
+    height: 7vh;
+
 }
 .section-2 {
     width: 100vw;
     height: 35vh;
-    background-color: purple;
     display: flex;
 }
 .section-2-1 {
     flex: 60%;
+    padding: 0 0 0 15vw;
+}
+.section-2-1 ul {
+    list-style: circle;
+    padding-left: 2.5vw;
+}
+.emphasis {
+    display: block;
+    font-size: 36pt;
+    color: var(--primary);
+}
+.section-2-1 button {
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--tertiary);
+    border: none;
+    color: var(--white);
+    font-weight: 700;
 }
 .section-2-2 {
     flex: 40%;
 }
-.section-2-1 {
-    background-color: brown;
+.section-2-2 figure {
+    width: 100%;
+    height: 35vh;
+    z-index: 50;
 }
-.section-2-2 {
-    background-color: tomato;
+.section-2-2 figure img {
+    height: 35vh;
+    object-fit: contain;
+    padding-right: 15vw;
 }
 .section-3 {
     width: 100vw;
@@ -71,8 +144,9 @@
     overflow-y: scroll; 
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-
 .section-3-1-1 > section {
     scroll-snap-align: center;
 }
@@ -83,11 +157,40 @@
     position: sticky;
     top: 0;
 }
+.section-3-1-1::-webkit-scrollbar {
+    display: none;
+}
 .section-3-1-1 section:nth-child(2) {
     background-color: darkolivegreen;
 }
+.section-3-1-1-1, .section-3-1-1-2 {
+    display: grid;
+    place-content: center;
+    color: var(--white);
+}
+.section-3-1-1-1 div, .section-3-1-1-2 div {
+    display: flex;
+    justify-content: center;
+}
 
+/* ANIMATION */
 
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.4s;
+    animation-name: fade;
+    animation-duration: 1.4s;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .5}
+    to {opacity: 2}
+}
+  
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 2}
+}
 
 /* RESPONSIVENESS */
 

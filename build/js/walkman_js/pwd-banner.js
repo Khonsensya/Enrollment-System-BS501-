@@ -3,7 +3,7 @@ SlideShow(slidePosition);
 
 function SlideShow(n) {
     var i;
-    var slides = document.getElementsByClassName("banner-item ");
+    var slides = document.getElementsByClassName("banner-1-1 ");
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
