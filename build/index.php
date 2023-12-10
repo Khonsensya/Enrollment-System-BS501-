@@ -26,6 +26,10 @@
                 <!-- OVERLAY 1 -->
                 <div class="overlay-1">
                     <nav class="navbar-1">
+                        <input type="checkbox" id="nav-check">
+                        <label for="nav-check" class="nav-check-btn">
+                            <i>=</i>
+                        </label>
                         <div class="navbar-1-1">
                             <h4 class="logo">STI</h4>
                         </div>
@@ -36,6 +40,7 @@
                             <li><a href="#">Requirements</a></li>
                             <li><button>Apply Now</button></li>
                         </ul>
+                        
                     </nav>
                     <div class="banner-1-1-1">
                         <div class="banner-1-1-1-1">
