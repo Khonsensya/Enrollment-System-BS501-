@@ -5,66 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enrollment System</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="css/vanilla.css">
-    <link rel="stylesheet" href="css/idv_css/layout.css">
+    <link rel="stylesheet" href="/build/css/walkman_css/pwd-layout.css">
+    <link rel="stylesheet" href="/build/css/walkman_css/pwd-style.css">
+    <script defer src="/build/js/walkman_js/pwd-banner.js"></script>
 </head>
 <body>
-    <main class="container">
-        <nav class="top-nav">
-            <section class="logo">logo</section>
-            <ul class="nav-list">
-                <li>Programs</li>
-                <li>Campuses</li>
-                <li>About</li>
-                <li>Admission</li>
-            </ul>
-            <section class="enroll-now">
-                <button class="enroll-btn">Enroll Now!</button>
-            </section>
-        </nav>
-        <main class="content">
-            <section class="banner">
-                <ul class="gallery">
-                    <li class="item">
-                        <img class="banner-image" src="/build/imgs/bannerbg.jpg" alt="item-1">
-                        <div class="banner-details">
-                            <div class="details-content">
-                                <h6 class="tag">Announcement</h6>
-                                <h2 class="banner-title">Enrollment is On-going</h2>
-                                <p class="banner-description">Today until tomorrow, the institution is acceptiong online enrollments for this Academic Year.</p>
-                            </div>
+    <main class="main-1">
+        <section class="section-1">
+            <div class="banner-1">
+                <!-- SLIDESHOW ITEMS -->
+                <div class="banner-1-1 fade">
+                    <img src="/build/imgs/bannerbg.jpg" alt="">
+                </div>
+                <div class="banner-1-1 fade">
+                    <img src="/build/imgs/bannerbg.jpg" alt="">
+                </div>
+                <div class="banner-1-1 fade">
+                    <img src="/build/imgs/bannerbg.jpg" alt="">
+                </div>
+                <!-- OVERLAY 1 -->
+                <div class="overlay-1">
+                    <nav class="navbar-1">
+                        <div class="navbar-1-1">
+                            <h4 class="logo">STI</h4>
                         </div>
-                    </li>
-                </ul>
-            </section>
-            <section class="main-content">
-                <section class="enrollment">
-                    <h2>Enrollment</h2>
-                    <h3>for Tertiary and Senior High School</h3>
-                    <h4>2nd Semester | S.Y. 2023-2024</h4>
-                    <h4>New Students and Transferees Accepted</h4>
-                    <ul>
-                        <li>No Tuition Fee Increase</li>
-                        <li>Financial Aid Programs Available</li>
-                        <li>Crediting of Subjects for Transferees</li>
+                        <ul class="navbar-1-2">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Courses</a></li>
+                            <li><a href="#">Requirements</a></li>
+                            <li><button>Apply Now</button></li>
+                        </ul>
+                    </nav>
+                    <div class="banner-1-1-1">
+                        <div class="banner-1-1-1-1">
+                            <h2>Be Future Ready,</h2>
+                            <p>Be STI</p>
+                        </div>
+                    </div>
+                    <div class="filler-1"></div>
+                </div>
+                <!-- OVERLAY 2 -->
+                <div class="overlay-2">
+                    <ul class="overlay-2-1">
+                        <li>
+                            <img src="/build/imgs/bannerbg.jpg" alt="">
+                            <p>Senior High</p>
+                        </li>
+                        <li>
+                            <img src="/build/imgs/bannerbg.jpg" alt="">
+                            <p>Tertiary</p>
+                        </li>
                     </ul>
-                    <button>Enroll Online</button>
-                </section>
-                <section class="benefits">
-                    <h2>Be Future Ready</h2>
-                </section>
-                <section class="programs">
-                    <h2>Programs</h2>
-                </section>
-                <section class="blogs">
-                    <h2>Latest Blogs</h2>
-                </section>
-            </section>
-        </main>
-        <footer class="footer">
-            <section class="top-footer">footer</section>
-            <section class="copyright">copyright</section>
-        </footer>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-2">
+            <div class="section-2-1">
+                <h3>Enrollment On-going for College<span class="emphasis">2nd Semester | S.Y. 2023-2024</span></h3>
+                <h3>New Students and Transferees are Accepted</h3>
+                <ul>
+                    <li><p>No Tuition Fee Increased</p></li>
+                    <li><p>Financial Aid Programs Available</p></li>
+                    <li><p>Crediting of Subjects for Transferees</p></li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
+            <div class="section-2-2">
+                <figure>
+                    <img src="/build/imgs/studentbg.png" alt="">
+                </figure>
+            </div>
+        </section>
+
+        <section class="section-3">
+            <div class="section-3-1">
+                <ul class="section-3-1-1">
+                    <section class="section-3-1-1-1">
+                        <h2>Online Admission</h2>
+                        <div>
+                            <button>Apply Now</button>
+                        </div>
+                    </section>
+                    <section class="section-3-1-1-2">
+                        <h2>Online Enrollment</h2>
+                        <div>
+                            <button>New Student</button><button>Old Student</button>
+                        </div>
+                    </section>
+                    <section class="section-3-1-1-3"></section>
+                </ul>
+            </div>
+        </section>
     </main>
 </body>
 </html>
