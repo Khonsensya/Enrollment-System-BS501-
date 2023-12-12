@@ -10,7 +10,7 @@ function SlideShow(n) {
     slidePosition++;
     if (slidePosition > slides.length) {slidePosition = 1}
     slides[slidePosition-1].style.display = "block";
-    setTimeout(SlideShow, 5000);
+    setTimeout(SlideShow, 10000);
   } 
 
 var slidePosition = 0;
