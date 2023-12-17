@@ -1,0 +1,12 @@
+CREATE TABLE students (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR (100) NOT NULL,
+    email VARCHAR (200) NOT NULL UNIQUE,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO students (name, email) VALUES
+('Mark Lape', 'lapemark11@gmail.com'),
+('Kobe Malonzo', 'malonzokobe22@gmail.com'),
+('Yranimez Repil', 'repilyranimez33@gmail.com'),
+('Emman Conggas', 'conggasemman44@gmail.com');
