@@ -14,14 +14,16 @@
     --primary: #f99c0e;
     --secondary: #f8980d;
     --tertiary: #ea1b25;
-    --neutral: #fCfAf6;
-    --shadow: #9c5c49;
+    --white: #fCfAf6;
+    --black: #232023;
+    --shadow: #37373775;
 }
 
 body {
     font-size: min(4vw, 12pt);
     font-family: sans-serif;
-    background-color: var(--neutral);
+    background-color: var(--white);
+    color: var(--black);
     overflow-x: hidden;
 }
 
@@ -52,7 +54,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--neutral);
+    background-color: var(--white);
 }
 .toggler {
     font-size: min(7vw, 32pt);
@@ -133,9 +135,9 @@ p {
     display: block;
 }
 .advert h1 {
-    color: var(--neutral);
+    color: var(--white);
     font-weight: 900;
-    filter: drop-shadow(0 0 0.75rem #1e1e1e85);
+    filter: drop-shadow(0 0 0.75rem #1e1e1e75);
 }
 /* line break */
 .benefits {
@@ -189,5 +191,5 @@ p {
     justify-content: space-between;
     padding: 2.5vh 15vw;
     background-color: #1e1e1e;
-    color: var(--neutral);
+    color: var(--white);
 }

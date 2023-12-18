@@ -7,7 +7,7 @@
         position: fixed;
         width: 100vw;
         height: 100vh;
-        background-color: var(--neutral);
+        background-color: var(--white);
         left: -100vw;
         top: 8vh;
         display: flex;
