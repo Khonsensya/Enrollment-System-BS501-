@@ -1,0 +1,19 @@
+.pwd-button {
+    background-color: var(--tertiary);
+    padding: 1vh 2vw;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--shadow);
+}
+.pwd-snd-button {
+    padding: 1vh 2vw;
+    cursor: pointer;
+}
+
+@media (width < 760px) {
+    .navlist .pwd-button {
+        padding: 1.5vh 10vw;
+    }
+}

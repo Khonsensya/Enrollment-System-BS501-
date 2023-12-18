@@ -1,0 +1,53 @@
+@media (width < 760px) {
+    .navbar {
+        padding: 0 5vw;
+        flex-direction: row-reverse;
+    }
+    .navlist {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--neutral);
+        left: -100vw;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5vw;
+        transition: all .5s;
+        z-index: 999;
+    }
+    .navlist li, .navlist div {
+        margin: 2.5vh 0;
+    }
+    .toggler {
+        display: block;
+    }
+    #toggle:checked ~ ul {
+        left: 0;
+    }
+    .benefit-item, .benefit-item:nth-child(2n) {
+        height: fit-content;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .benefit-item figure {
+        justify-content: center;
+    }
+    .benefit-title,.benefit-item {
+        padding: 5vw;
+    }
+    .benefit-item div {
+        width: 100%;
+    }
+    .advert {
+        flex-direction: column;
+        height: fit-content;
+        align-items: start;
+    }
+    .advert .pwd-button {
+        margin-top: 2.5vh;
+        padding: 1.5vh 10vw;
+    }
+}

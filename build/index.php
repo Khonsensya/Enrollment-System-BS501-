@@ -1,123 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrollment System</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="/build/css/walkman_css/pwd-layout.css">
-    <link rel="stylesheet" href="/build/css/walkman_css/pwd-style.css">
-    <script defer src="/build/js/walkman_js/pwd-banner.js"></script>
+    <title>Luv U University</title>
+    <link rel="stylesheet" href="./pwd-css/style.css">
+    <link rel="stylesheet" href="./pwd-css/components.css">
+    <link rel="stylesheet" href="./pwd-css/responsive.css">
+    <link rel="stylesheet" href="./pwd-css/animation.css">
 </head>
 <body>
-    <section class="container">
-        <div class="background">
-            <nav class="navbar">
-                <input type="checkbox" id="toggler">
-                    <label for="toggler" class="toggle"><h3>=</h3></label>
-                <h3>Logo</h3>
-                <ul class="navlist">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Registration</a></li>
-                    <li><a href="#">Admission</a></li>
-                    <li><a href="#">Enrollment</a></li>
-                </ul>
-            </nav>
-            <section class="banner">
-                <div class="banner-item fade">
-                    <img src="/build/imgs/walkman_background/bannerbg.jpg" alt="">
-                    <div class="overlay">
-                        <div class="textual">
-                            <h3><span class="tag">Announcement</span>Enrollment On-going for College<span class="emphasis">2nd Semester | S.Y. 2023-2024</span></h3>
-                            <h3>New Students and Transferees Accepted</h3>
-                            <ul>
-                                <li><p>No Tuition Fee Increase</p></li>
-                                <li><p>Financial Aid Program Available</p></li>
-                                <li><p>Crediting Subjects for Transferees</p></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="button">Enroll Now</a>
-                    </div>
-                </div>
-                <div class="banner-item fade">
-                    <img src="/build/imgs/walkman_background/bannerbg.jpg" alt="">
-                    <div class="overlay">
-                        <div class="textual">
-                            <h3><span class="tag">Enrollment</span>Enrollment On-going for College<span class="emphasis">2nd Semester | S.Y. 2023-2024</span></h3>
-                            <h3>New Students and Transferees Accepted</h3>
-                            <ul>
-                                <li><p>No Tuition Fee Increase</p></li>
-                                <li><p>Financial Aid Program Available</p></li>
-                                <li><p>Crediting Subjects for Transferees</p></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="button">Enroll Now</a>
-                    </div>
-                </div>
-                <div class="banner-item fade">
-                    <img src="/build/imgs/walkman_background/bannerbg.jpg" alt="">
-                    <div class="overlay">
-                        <div class="textual">
-                            <h3><span class="tag">Admission</span>Enrollment On-going for College<span class="emphasis">2nd Semester | S.Y. 2023-2024</span></h3>
-                            <h3>New Students and Transferees Accepted</h3>
-                            <ul>
-                                <li><p>No Tuition Fee Increase</p></li>
-                                <li><p>Financial Aid Program Available</p></li>
-                                <li><p>Crediting Subjects for Transferees</p></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="button">Enroll Now</a>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
-    <section class="container">
-        <div class="row">
-            <div class="col-1">
-                <figure class="icon-programs">
-                    <img src="/build/imgs/walkman_icon/studentbg.png" alt="">
-                </figure>
-                <div class="description">
-                    <h3>Senior High School</h3>
-                    <p>Description</p>
-                </div>
-                <a href="#" class="button">Explore</a>
+    <section>
+        <nav class="navbar">
+            <input type="checkbox" id="toggle">
+            <label for="toggle" class="toggler">
+                <i class="pwd-snd-button">=</i>
+            </label>
+            <div class="logo">
+                <h1>Luv U</h1>
             </div>
-            <div class="col-2">
-                <figure class="icon-programs">
-                    <img src="/build/imgs/walkman_icon/studentbg.png" alt="">
-                </figure>
-                <div class="description">
-                    <h3>Tertiary / College</h3>
-                    <p>Description</p>
-                </div>
-                <a href="#" class="button">Explore</a>
-            </div>
-        </div>
-    </section>
-    <section class="container">
-        <div class="content">
-            <header><h1>Be Future Ready, Be STI</h1></header>
-            <ul class="benefits">
-                <li class="benefit-item">
-                    <figure class="icon-benefits">icon</figure>
-                    <div class="description">
-                        <h3>Title</h3>
-                        <p>description</p>
-                    </div>
-                </li>
-                <li class="benefit-item">
-                    <figure class="icon-benefits">icon</figure>
-                    <div class="description">
-                        <h3>Title</h3>
-                        <p>description</p>
-                    </div>
-                </li>
+            <ul class="navlist">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">Application</a></li>
+                <div class="pwd-button"><a href="#">Apply</a></div>
             </ul>
+        </nav>
+    </section>
 
+    <section>
+        <header class="banner">
+            <div class="banner-item fade">
+                <img src="./imgs/walkman_background/bg1.jpeg" alt="">
+                <div class="banner-overlay">
+                    <h1><span class="tag">Enrollment</span>On-Going</h1>
+                </div>
+            </div>
+            <div class="banner-item fade">
+                <img src="./imgs/walkman_background/bg2.jpg" alt="">
+                <div class="banner-overlay">
+                    <h1><span class="tag">Luv U</span>University</h1>
+                </div>
+            </div>
+            <div class="banner-item fade">
+                <img src="./imgs/walkman_background/bg3.jpg" alt="">
+                <div class="banner-overlay">
+                    <h1><span class="tag">Luv U</span>University</h1>
+                </div>
+            </div>
+        </header>
+    </section>
+
+    <section>
+        <div class="advert">
+            <h1><span>Enrollment On-going</span>2nd Semester | Academic Year 2023-2024</h1>
+            <div class="pwd-button"><a href="./pwd-php/registration.php">Enroll</a></div>
         </div>
     </section>
+
+    <section>
+        <main>
+            <?php 
+                $_benefits = [
+                    ['icon' => './imgs/walkman_icon/icon2.png', 
+                    'title' => 'Te amo', 
+                    'description' => 'The words “te amo” perfectly encapsulate the spirit of lovers lost in each other’s arms. It’s an informal pronoun that expresses real intimacy. Spanish speakers don’t toss “amo” around lightly—it’s reserved for the real deal.', ],
+                    
+                    ['icon' => './imgs/walkman_icon/icon2.png', 
+                    'title' => ' 愛してる (aishi teru)', 
+                    'description' => '“Love” is a very strong word in Japanese culture and expressions of love are not very common—apart from in television dramas.', ],
+                    
+                    ['icon' => './imgs/walkman_icon/icon2.png',  
+                    'title' => '사랑해 (saranghae)', 
+                    'description' => 'When you say, “Saranghae,” the answer you would be looking for would probably be “Judo sarang haeyo!” (I love you, too!)', ],
+                    
+                    ['icon' => './imgs/walkman_icon/icon2.png',  
+                    'title' => 'Tagalog: Mahal kita', 
+                    'description' => '“Mahal kita” is used no matter your gender or the gender of your significant other. Although it’s mostly spoken in a romantic context, the phrase is sometimes used to express love to family members.', ],
+                    
+                    ['icon' => './imgs/walkman_icon/icon2.png', 
+                    'title' => 'Chinese: 我爱你 (wǒ ài nǐ)', 
+                    'description' => 'The Chinese have a saying: Lovers’ hearts are linked together and always beat as one.', ],
+                ];
+            ?>
+            <section class="benefits">
+                <div class="benefit-title">
+                    <h1>Luv U ( lit. 'Love You')</h1>
+                    <hr>
+                </div>
+                <ul class="benefits-list">
+                    <?php foreach ($_benefits as $item) : ?>
+                        <li class="benefit-item">
+                            <figure>
+                                <img src="<?php echo $item['icon']; ?>" alt="">
+                            </figure>
+                            <div>
+                                <h2><?php echo $item['title']; ?></h2>
+                                <p><?php echo $item['description']; ?></p>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </section>
+        </main>
+    </section>
+
+    <section>
+        <footer class="footer">
+            <p>© copyright. BS501. 2023</p>
+            <p>Hotdog.</p>
+        </footer>
+    </section>
+
+    <script defer src="./pwd-js/pwd-banner.js"></script>
 </body>
 </html>
