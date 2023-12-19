@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    Hello world
+    dashboard
 </body>
 </html>

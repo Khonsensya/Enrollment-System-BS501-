@@ -14,15 +14,16 @@
     --primary: #f99c0e;
     --secondary: #f8980d;
     --tertiary: #ea1b25;
-    --neutral: #fCfAf6;
-    --shadow: #9c5c49;
+    --white: #fCfAf6;
+    --black: #232023;
+    --shadow: #37373775;
 }
 
 body {
     font-size: min(4vw, 12pt);
     font-family: sans-serif;
-    background-color: var(--neutral);
-    overflow-x: hidden;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 a {
@@ -44,150 +45,58 @@ h3 {
 p {
     font-size: min(4vw, 12pt);
 }
-/* line break */
-.navbar {
-    width: 100vw;
-    height: 8vh;
-    padding: 0 15vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--neutral);
-}
-.toggler {
-    font-size: min(7vw, 32pt);
-    font-weight: 700;
-}
-#toggle, .toggler {
-    display: none;
-}
-.logo h1 {
-    font-weight: 900;
-    font-size: min(5vw, 24pt);
-    color: var(--primary);
-    cursor: pointer;
-}
-.navlist {
-    display: inline-flex;
-    gap: 25px;
-    list-style: none;
-    align-items: center;
-    font-weight: 700;
-}
-.navlist li a:hover {
-    color: var(--tertiary);
-    text-decoration: underline;
-}
-/* line break */
-.banner {
-    height: calc(100vh - (8vh + 20vh));
-    width: 100vw;
-    position: relative;
-}
-.banner img {
-    height: calc(100vh - (8vh + 20vh));
-    width: 100vw;
-    object-fit: cover;
-}
-.banner-item {
-    width: 100vw;
-    display: none;
-    position: absolute;
-}
-.banner-overlay {
-    height: calc(100vh - (8vh + 20vh));
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    display: grid;
-    place-content: center;
-    background-color: #00000085;
-    color: white;
+
+img {
+    height: 7rem;
+    width: 7rem;
 }
 
-.tag {
-    display: block;
-    font-size: min(5vw, 24pt);
-    font-weight: 700;
-    text-align: center;
-    width: 90vw;
-}
-.banner-overlay h1 {
-    font-size: min(10vw, 64pt);
-    font-weight: 900;
-    position: relative;
-    text-align: center;
-    width: 90vw;
-}
-/* line break */
-.advert {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5vh 15vw;
-    height: 20vh;
-    background-image: linear-gradient(45deg,#f8980d, #f99c0e, #f8980d );
-}
-.advert h1 span {
-    font-size: min(4vw, 16pt);
-    display: block;
-}
-.advert h1 {
-    color: var(--neutral);
-    font-weight: 900;
-    filter: drop-shadow(0 0 0.75rem #1e1e1e85);
-}
-/* line break */
-.benefits {
-    height: auto;
-    width: 100vw;
-}
-.benefit-title {
-    width: 100vw;
-    display: grid;
-    place-content: center;
+.space {
     padding: 0 15vw;
+}
+
+.title, .margin-bottom {
+    margin-bottom: 2.5rem;
+}
+
+/* line break */
+.btn-1 {
+    background-color: var(--tertiary);
+    width: fit-content;
+    padding: 0 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
     text-align: center;
-    margin-top: 10vh;
+    border-radius: .25rem;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 .25rem var(--shadow);
 }
-.benefits-list {
-    height: auto;
-    width: 100vw;
+
+.btn-2 {
+    background-color: none;
+    border: var(--tertiary) .10rem solid;
+    width: fit-content;
+    padding: 0 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: .25rem;
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 0 .25rem var(--shadow);
 }
-.benefit-item {
-    height: 30vh;
-    width: 100vw;
-    display: flex;
-    padding: 0 15vw;
-    gap: 50px;
-    margin: 10vh 0;
+
+.btn-1:hover, .btn-2:hover {
+    scale: 1.10;
+    opacity: .75;
+    transition: all .5s;
 }
-.benefit-item figure {
-    height: inherit;
-    display: flex;
-    align-items: center;
-}
-.benefit-item figure img {
-    height: 30vh;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-}
-.benefit-item div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5vh;
-    gap: 25px;
-    width: 35vw;
-}
-.benefit-item:nth-child(2n) {
-    flex-direction: row-reverse;
-    text-align: right;
-}
-.footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 2.5vh 15vw;
-    background-color: #1e1e1e;
-    color: var(--neutral);
+
+@media (width < 760px) {
+    .navlist .pwd-button {
+        padding: 1.5vh 10vw;
+    }
 }

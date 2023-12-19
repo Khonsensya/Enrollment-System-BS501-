@@ -10,109 +10,30 @@
     <link rel="stylesheet" href="./pwd-css/animation.css">
 </head>
 <body>
-    <section>
-        <nav class="navbar">
-            <input type="checkbox" id="toggle">
-            <label for="toggle" class="toggler">
-                <i class="pwd-snd-button">=</i>
-            </label>
-            <div class="logo">
-                <h1>Luv U</h1>
-            </div>
-            <ul class="navlist">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Location</a></li>
-                <li><a href="#">Application</a></li>
-                <div class="pwd-button"><a href="#">Apply</a></div>
-            </ul>
-        </nav>
+    <!-- DATA from PHP FILE -->
+    <?php include './pwd-php/data.php'; ?>
+
+    <!-- COMPONENTS from PHP FILE -->
+    <section class="space">
+        <?php include './pwd-php/components/navbar.php'; ?>
+    </section>
+
+    <section class="margin-bottom">
+        <?php include './pwd-php/components/banner.php'; ?>
+    </section>
+
+    <section class="space margin-bottom">
+        <?php include './pwd-php/components/benefits.php'; ?>
+    </section>
+
+    <section class="space margin-bottom">
+        <?php include './pwd-php/components/contribution.php'; ?>
     </section>
 
     <section>
-        <header class="banner">
-            <div class="banner-item fade">
-                <img src="./imgs/walkman_background/bg1.jpeg" alt="">
-                <div class="banner-overlay">
-                    <h1><span class="tag">Enrollment</span>On-Going</h1>
-                </div>
-            </div>
-            <div class="banner-item fade">
-                <img src="./imgs/walkman_background/bg2.jpg" alt="">
-                <div class="banner-overlay">
-                    <h1><span class="tag">Luv U</span>University</h1>
-                </div>
-            </div>
-            <div class="banner-item fade">
-                <img src="./imgs/walkman_background/bg3.jpg" alt="">
-                <div class="banner-overlay">
-                    <h1><span class="tag">Luv U</span>University</h1>
-                </div>
-            </div>
-        </header>
+        <?php include './pwd-php/components/footer.php'; ?>
     </section>
 
-    <section>
-        <div class="advert">
-            <h1><span>Enrollment On-going</span>2nd Semester | Academic Year 2023-2024</h1>
-            <div class="pwd-button"><a href="./pwd-php/registration.php">Enroll</a></div>
-        </div>
-    </section>
-
-    <section>
-        <main>
-            <?php 
-                $_benefits = [
-                    ['icon' => './imgs/walkman_icon/icon2.png', 
-                    'title' => 'Te amo', 
-                    'description' => 'The words “te amo” perfectly encapsulate the spirit of lovers lost in each other’s arms. It’s an informal pronoun that expresses real intimacy. Spanish speakers don’t toss “amo” around lightly—it’s reserved for the real deal.', ],
-                    
-                    ['icon' => './imgs/walkman_icon/icon2.png', 
-                    'title' => ' 愛してる (aishi teru)', 
-                    'description' => '“Love” is a very strong word in Japanese culture and expressions of love are not very common—apart from in television dramas.', ],
-                    
-                    ['icon' => './imgs/walkman_icon/icon2.png',  
-                    'title' => '사랑해 (saranghae)', 
-                    'description' => 'When you say, “Saranghae,” the answer you would be looking for would probably be “Judo sarang haeyo!” (I love you, too!)', ],
-                    
-                    ['icon' => './imgs/walkman_icon/icon2.png',  
-                    'title' => 'Tagalog: Mahal kita', 
-                    'description' => '“Mahal kita” is used no matter your gender or the gender of your significant other. Although it’s mostly spoken in a romantic context, the phrase is sometimes used to express love to family members.', ],
-                    
-                    ['icon' => './imgs/walkman_icon/icon2.png', 
-                    'title' => 'Chinese: 我爱你 (wǒ ài nǐ)', 
-                    'description' => 'The Chinese have a saying: Lovers’ hearts are linked together and always beat as one.', ],
-                ];
-            ?>
-            <section class="benefits">
-                <div class="benefit-title">
-                    <h1>Luv U ( lit. 'Love You')</h1>
-                    <hr>
-                </div>
-                <ul class="benefits-list">
-                    <?php foreach ($_benefits as $item) : ?>
-                        <li class="benefit-item">
-                            <figure>
-                                <img src="<?php echo $item['icon']; ?>" alt="">
-                            </figure>
-                            <div>
-                                <h2><?php echo $item['title']; ?></h2>
-                                <p><?php echo $item['description']; ?></p>
-                            </div>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </section>
-        </main>
-    </section>
-
-    <section>
-        <footer class="footer">
-            <p>© copyright. BS501. 2023</p>
-            <p>Hotdog.</p>
-        </footer>
-    </section>
-
-    <script defer src="./pwd-js/pwd-banner.js"></script>
+    <script defer src="./pwd-js/banner.js"></script>
 </body>
 </html>
