@@ -26,28 +26,9 @@
     #toggle:checked ~ ul {
         left: 0;
     }
-    .benefit-item, .benefit-item:nth-child(2n) {
-        height: fit-content;
+    .benefits-item {
+        display: flex;
         flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    .benefit-item figure {
-        justify-content: center;
-    }
-    .benefit-title,.benefit-item {
-        padding: 5vw;
-    }
-    .benefit-item div {
-        width: 100%;
-    }
-    .advert {
-        flex-direction: column;
-        height: fit-content;
-        align-items: start;
-    }
-    .advert .pwd-button {
-        margin-top: 2.5vh;
-        padding: 1.5vh 10vw;
+        align-items: center;
     }
 }
