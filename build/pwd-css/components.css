@@ -1,11 +1,13 @@
 /* NAVIGATION BAR */
 .navbar {
     width: 100%;
-    height: 8vh;
+    height: fit-content;
+    padding: 1vh 15vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--white);
+    background-color: var(--primary);
+    color: var(--white);
 }
 .toggler {
     font-size: min(7vw, 32pt);
@@ -17,7 +19,6 @@
 .logo h1 {
     font-weight: 900;
     font-size: min(5vw, 24pt);
-    color: var(--primary);
     cursor: pointer;
     filter: drop-shadow(0 0 .15rem var(--shadow));
 }
@@ -31,6 +32,12 @@
 .navlist li a:hover {
     color: var(--tertiary);
     text-decoration: underline;
+}
+.navbar .btn-1 {
+    width: 8rem;
+}
+.navbar .btn-1 a {
+    padding: .75rem 2.5rem;
 }
 
 
@@ -95,7 +102,7 @@
         grid-template-columns:
         repeat(auto-fit, 
         minmax(
-            min(100%, 25rem),
+            min(100%, 15rem),
             1fr
         ));
         grid-gap: 2.5rem;
@@ -103,14 +110,13 @@
     .contributions img {
         width: 5rem;
         height: 5rem;
+        border-radius: 100%;
     }
     .contributions-item {
         display: flex;
         align-items: center;
         gap: 1.5rem;
         padding: 1rem;
-        background-color: #f99c0e;
-        box-shadow: 0 0 .25rem var(--shadow);
     }
     
 
