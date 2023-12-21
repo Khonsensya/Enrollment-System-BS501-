@@ -22,7 +22,7 @@ body {
     font-size: min(4vw, 12pt);
     font-family: sans-serif;
     background-color: var(--white);
-    color: var(--black);
+    color: var(--gray);
 }
 a {
     color: inherit;
@@ -64,6 +64,7 @@ section:nth-child(2n) {
     line-height: 2.5rem;
     text-align: center;
     border-radius: .25rem;
+    border: none;
     color: white;
     font-weight: 600;
     cursor: pointer;
