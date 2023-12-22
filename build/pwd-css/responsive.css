@@ -39,8 +39,16 @@
         align-items: center;
     }
     .main_login {
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
+        display: block;
+        overflow: none;
+    }
+    .main_login .left {
+        height: 25vh;
+        width: 100%;
+    }
+    .main_login .right {
+        margin-top: 2.5rem;
+        height: fit-content;
+        overflow: hidden;
     }
 }
