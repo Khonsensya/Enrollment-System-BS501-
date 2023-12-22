@@ -11,6 +11,38 @@
     <link rel="stylesheet" href="/build/pwd-css/animation.css">
 </head>
 <body>
-    dashboard
+    <header>
+        <h1>Luv U University</h1>
+        <ul>
+            <li><a href="#">Policy</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <nav class="side-navigation">
+                <ul class="sidenav-list">
+                    <li class="sidenav-list-item">
+                        <img src="#" alt="" class="sidebar-icons">
+                        <button>Dashboard</button>
+                    </li>
+                    <li class="sidenav-list-item">
+                        <img src="#" alt="" class="sidebar-icons">
+                        <button>Application</button>
+                    </li>
+                    <li class="sidenav-list-item">
+                        <img src="#" alt="" class="sidebar-icons">
+                        <button>Profiles</button>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section>
+            <header>
+                <h2>Welcome User,</h2>
+                <input type="text">
+            </header>
+        </section>
+    </main>
 </body>
 </html>

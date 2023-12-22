@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./pwd-css/components.css">
     <link rel="stylesheet" href="./pwd-css/responsive.css">
     <link rel="stylesheet" href="./pwd-css/animation.css">
+    <!-- sarap sana ng buhay kung naka react no? -->
 </head>
 <body>
     <!-- DATA from PHP FILE -->
