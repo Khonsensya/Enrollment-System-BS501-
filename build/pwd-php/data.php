@@ -1,4 +1,42 @@
 <?php 
+    $_banner = [
+        ['title' => 'Be my Future 1', 
+         'descline1' => 'Luv U University', 
+         'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
+         'descline3' => 'Now recruiting Frats Members', 
+         'btn1' => 'New Students', 
+         'btn2' => 'Enroll Now!',],
+
+         ['title' => 'Be my Future 3', 
+         'descline1' => 'Luv U University', 
+         'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
+         'descline3' => 'Now recruiting Frats Members', 
+         'btn1' => 'New Students', 
+         'btn2' => 'Enroll Now!',],
+
+         ['title' => 'Be my Future 2', 
+         'descline1' => 'Luv U University', 
+         'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
+         'descline3' => 'Now recruiting Frats Members', 
+         'btn1' => 'New Students', 
+         'btn2' => 'Enroll Now!',],
+        ];
+?>
+
+<?php 
+    $_navbar = [
+        ['title' => 'About', 
+         'link' => './pwd-php/modules/about.php',],
+        ['title' => 'Programs', 
+         'link' => './pwd-php/modules/programs.php',],
+        ['title' => 'Admission', 
+         'link' => './pwd-php/modules/admission.php',],
+        ['title' => 'Contact Us', 
+         'link' => './pwd-php/modules/contactus.php',],
+        ];
+?>
+
+<?php 
     $_benefits = [
         ['icon' => './walkman-imgs/icon/icon2.png', 
          'title' => 'Te amo', 
@@ -26,26 +64,22 @@
     $_contributors = [
         ['icon' => './walkman-imgs/contributors/lape.jpg', 
          'name' => 'Lape', 
-         'contribution' => 'FrontEnd', ],
+         'contribution' => 'General', ],
                     
         ['icon' => './walkman-imgs/icon/icon1.jpg', 
          'name' => 'Malonzo', 
-         'contribution' => 'FrontEnd', ],
+         'contribution' => 'General', ],
                     
         ['icon' => './walkman-imgs/icon/icon1.jpg',  
          'name' => 'Repil', 
          'contribution' => 'Database', ],
-                    
-        ['icon' => './walkman-imgs/icon/icon1.jpg',  
-         'name' => 'Gerena', 
-         'contribution' => 'Data Gathering', ],
+
+         ['icon' => './walkman-imgs/icon/icon1.jpg', 
+          'name' => 'Dela Cruz', 
+          'contribution' => 'Requirements 50%', ],
                      
-        ['icon' => './walkman-imgs/icon/icon1.jpg',  
-        'name' => 'Austria', 
-        'contribution' => 'Data Gathering', ],
-                     
-        ['icon' => './walkman-imgs/icon/icon1.jpg',  
-        'name' => 'Conggas', 
-        'contribution' => 'Data Gathering', ],
+         ['icon' => './walkman-imgs/icon/icon1.jpg', 
+          'name' => 'Cortez', 
+          'contribution' => 'Requirements 5%', ],
         ];
 ?>

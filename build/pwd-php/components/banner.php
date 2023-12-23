@@ -1,36 +1,16 @@
 
 <header class="banner">
-    <div class="banner-item fade">
-        <img src="./walkman-imgs/background/bg1.jpeg" alt="">
-        <div class="banner-overlay">
-            <h1>Connect to the Future</h1>
-            <p>Luv U University<br>INNOVATIVE UNDERGRADUATE PROGRAM<br>Now recruiting Frats Members</p>
-            <div class="banner-btn">
-                <div class="btn-1"><a href="./pwd-php/modules/dashboard.php">New Students</a></div>
-                <div class="btn-2"><a href="./pwd-php/modules/enroll.php">Enroll Now!</a></div>
+    <?php foreach ($_banner as $banner_item) : ?>
+        <div class="banner-item fade">
+            <img src="./walkman-imgs/background/bg1.jpeg" alt="">
+            <div class="banner-overlay">
+                <h1><?php echo $banner_item['title']; ?></h1>
+                <p><?php echo $banner_item['descline1']; ?><br><?php echo $banner_item['descline2']; ?><br><?php echo $banner_item['descline3']; ?></p>
+                <div class="banner-btn">
+                    <div class="btn-1"><a href="./pwd-php/modules/dashboard.php"><?php echo $banner_item['btn1']; ?></a></div>
+                    <div class="btn-2"><a href="./pwd-php/modules/enroll.php"><?php echo $banner_item['btn2']; ?></a></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="banner-item fade">
-        <img src="./walkman-imgs/background/bg1.jpeg" alt="">
-        <div class="banner-overlay">
-            <h1>Be my Future</h1>
-            <p>Luv U University<br>INNOVATIVE UNDERGRADUATE PROGRAM<br>Now recruiting Frats Members</p>
-            <div class="banner-btn">
-                <div class="btn-1"><a href="./pwd-php/modules/dashboard.php">New Students</a></div>
-                <div class="btn-2"><a href="./pwd-php/modules/enroll.php">Enroll Now!</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="banner-item fade">
-        <img src="./walkman-imgs/background/bg1.jpeg" alt="">
-        <div class="banner-overlay">
-            <h1>This is not your Future</h1>
-            <p>Luv U University<br>INNOVATIVE UNDERGRADUATE PROGRAM<br>Now recruiting Frats Members</p>
-            <div class="banner-btn">
-                <div class="btn-1"><a href="./pwd-php/modules/dashboard.php">New Students</a></div>
-                <div class="btn-2"><a href="./pwd-php/modules/enroll.php">Enroll Now!</a></div>
-            </div>
-        </div>
-    </div>
+    <?php endforeach; ?>
 </header>

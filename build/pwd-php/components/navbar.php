@@ -1,17 +1,18 @@
+<nav class="navbar">
+    <input type="checkbox" id="toggle">
+    <label for="toggle" class="toggler">
+        <i class="pwd-snd-button">=</i>
+    </label>
+    <div class="logo">
+        <h1>Luv U</h1>
+    </div>
+    <ul class="navlist">
+        <?php foreach ($_navbar as $navbar_item) : ?>
+            <li><a href="<?php echo $navbar_item['link']; ?>">
+            <?php echo $navbar_item['title']; ?></a></li>
+        <?php endforeach; ?>
+        <div class="btn-1"><a href="./pwd-php/modules/login.php">Login</a></div>
 
-        <nav class="navbar">
-            <input type="checkbox" id="toggle">
-            <label for="toggle" class="toggler">
-                <i class="pwd-snd-button">=</i>
-            </label>
-            <div class="logo">
-                <h1>Luv U</h1>
-            </div>
-            <ul class="navlist">
-                <li><a href="./pwd-php/modules/about.php">About</a></li>
-                <li><a href="./pwd-php/modules/programs.php">Programs</a></li>
-                <li><a href="./pwd-php/modules/admission.php">Admission</a></li>
-                <li><a href="./pwd-php/modules/contactus.php">Contact Us</a></li>
-                <div class="btn-1"><a href="./pwd-php/modules/Login.php">Login</a></div>
-            </ul>
-        </nav>
+        
+    </ul>
+</nav>

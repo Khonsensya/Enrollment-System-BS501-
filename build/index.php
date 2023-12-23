@@ -8,25 +8,26 @@
     <link rel="stylesheet" href="./pwd-css/components.css">
     <link rel="stylesheet" href="./pwd-css/responsive.css">
     <link rel="stylesheet" href="./pwd-css/animation.css">
+    <!-- sarap sana ng buhay kung naka react no? -->
 </head>
 <body>
     <!-- DATA from PHP FILE -->
     <?php include './pwd-php/data.php'; ?>
 
     <!-- COMPONENTS from PHP FILE -->
-    <section class="space">
+    <section class="">
         <?php include './pwd-php/components/navbar.php'; ?>
     </section>
 
-    <section class="margin-bottom">
+    <section class="">
         <?php include './pwd-php/components/banner.php'; ?>
     </section>
 
-    <section class="space margin-bottom">
+    <section class="space">
         <?php include './pwd-php/components/benefits.php'; ?>
     </section>
 
-    <section class="space margin-bottom">
+    <section class="space">
         <?php include './pwd-php/components/contribution.php'; ?>
     </section>
 

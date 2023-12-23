@@ -1,0 +1,74 @@
+/* login */
+.main_login {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.main_login .left {
+    flex: 60%;
+    background-image: url(/build/walkman-imgs/background/bg1.jpeg);
+    background-size: cover;
+}
+.main_login .right {
+    flex: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 1rem 2rem;
+    overflow-y: scroll;
+}
+.main_login form {
+    padding: 1rem;
+}
+.main_login .action-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: .75rem;
+}
+.main_login input[type="text"],
+.main_login #password {
+    padding: .5rem;
+    margin: .5rem;
+    width: 20rem;
+    border-radius: .25rem;
+    border: var(--shadow) 1px solid;
+}
+.main_login label {
+    display: block;
+    font-weight: 700;
+}
+.main_login .password-container {
+    position: relative;
+}
+.main_login .password-container input[type=checkbox] {
+    position: absolute;
+    right: 1rem;
+    top: 38%;
+    width: 1rem;
+    height: 1rem;
+}
+.main_login a {
+    text-decoration: underline;
+    padding: .5rem;
+    color: var(--tertiary);
+}
+.main_login .forgot {
+    display: block;
+    margin-top: -.5rem;
+}
+.main_login .title {
+    width: 35rem;
+    text-align: center;
+}
+.main_login span {
+    font-size: min(7vw, 32pt);
+    font-weight: 700;
+    display: block;
+}
+.main_login img {
+    margin-bottom: 1rem;
+}
