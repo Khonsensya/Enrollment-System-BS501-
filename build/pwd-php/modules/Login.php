@@ -1,20 +1,24 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/Enrollment-System-BS501-/build/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luv U University</title>
-    <link rel="stylesheet" href="/build/pwd-css/style.css">
-    <link rel="stylesheet" href="/build/pwd-css/modules.css">
-    <link rel="stylesheet" href="/build/pwd-css/components.css">
-    <link rel="stylesheet" href="/build/pwd-css/responsive.css">
-    <link rel="stylesheet" href="/build/pwd-css/animation.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>pwd-css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>pwd-css/modules.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>pwd-css/components.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>pwd-css/responsive.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>pwd-css/animation.css">
 </head>
 <body>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . BASE_URL . 'pwd-php/data.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . BASE_URL . 'pwd-php/components/navbar.php'; ?>
+	
     <main class="main_login">
         <aside class="left"></aside>
         <aside class="right">
-            <img src="/build/walkman-imgs/icon/icon2.png" alt="">
+            <img src="<?php echo BASE_URL; ?>walkman-imgs/icon/icon2.png" alt="">
             <h3 class="title">Welcome to <span>Luv U University</span> Portal</h3>
             <form action="./dashboard.php">
                 <label for="email">Email Address:</label>

@@ -20,20 +20,20 @@
          'descline3' => 'Now recruiting Frats Members', 
          'btn1' => 'New Students', 
          'btn2' => 'Enroll Now!',],
-        ];
+    ];
 ?>
 
 <?php 
     $_navbar = [
         ['title' => 'About', 
-         'link' => './pwd-php/modules/about.php',],
+         'link' => BASE_URL . 'pwd-php/modules/about.php',],
         ['title' => 'Programs', 
-         'link' => './pwd-php/modules/programs.php',],
+         'link' => BASE_URL . 'pwd-php/modules/programs.php',],
         ['title' => 'Admission', 
-         'link' => './pwd-php/modules/admission.php',],
+         'link' => BASE_URL . 'pwd-php/modules/admission.php',],
         ['title' => 'Contact Us', 
-         'link' => './pwd-php/modules/contactus.php',],
-        ];
+         'link' => BASE_URL . 'pwd-php/modules/contactus.php',],
+    ];
 ?>
 
 <?php 

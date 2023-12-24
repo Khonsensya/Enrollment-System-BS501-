@@ -1,3 +1,4 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/Enrollment-System-BS501-/build/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
