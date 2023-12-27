@@ -80,7 +80,7 @@
                                 <td><?php echo $row['myaddress'] ?></td>
                                 <td class="list-actions">
                                     <div>
-                                        <a href="?delete=<?php echo $row['id']; ?>" class="btn1">Edit</a>
+                                        <a href="dashboard.php?edit=<?php echo $row['id']; ?>" class="btn1">Edit</a>
                                         <a href="?delete=<?php echo $row['id']; ?>" class="btn1">Delete</a>
                                     </div>
                                 </td>

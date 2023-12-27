@@ -5,4 +5,4 @@
     $database = "enrollment_system";
         
         //create connection
-        $mysqli = new mysqli($servername, $username, $password, $database) or die("Connection failed: ". $connection->connect_error);
+        $mysqli = new mysqli($servername, $username, $password, $database) or die("Connection failed: ". $mysqli->connect_error);
