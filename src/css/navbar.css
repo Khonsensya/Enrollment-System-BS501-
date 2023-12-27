@@ -1,0 +1,176 @@
+.navbar1 {
+    width: 100%;
+    height: var(--fit);
+    padding: 1vh 15vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--neutral1);
+    color: var(--black);
+}
+.navbar1 .toggler {
+    font-size: min(7vw, 32pt);
+    font-weight: 700;
+}
+.navbar1 #toggle, .toggler {
+    display: none;
+}
+.navbar1 .logo h1 {
+    font-weight: 900;
+    font-size: min(5vw, 24pt);
+    cursor: pointer;
+}
+.navbar1 .navlist {
+    display: inline-flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    font-weight: 700;
+}
+.navbar1 .navlist li a:hover {
+    text-decoration: underline;
+}
+.navbar1 .btn-1 {
+    width: 8rem;
+}
+.navbar1 .btn-1 a {
+    padding: .75rem 2.5rem;
+}
+
+@media (width < 760px) {
+    .navbar1 {
+        padding: 1vh 5vw;
+        flex-direction: row-reverse;
+    }
+    .navbar1 .navlist {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary);
+        top: -100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5vw;
+        transition: all .1s;
+        z-index: 999;
+        opacity: 0;
+    }
+    .navbar1 .navlist li, .navlist div {
+        margin: 2.5vh 0;
+    }
+    .navbar1 .toggler {
+        display: block;
+        padding: .25rem;
+        cursor: pointer;
+    }
+    .navbar1 #toggle:checked ~ ul {
+        top: 10vh;
+        opacity: 1;
+    }
+    .navbar1 #toggle:checked ~ ul li a {
+        color: var(--white);
+    }
+    .navbar1:has(#toggle:checked ~ ul) {
+       height: 10vh;
+       background-color: var(--primary);
+       color: var(--white);
+    }
+    .navbar1 .toggler:has(#toggle:checked ~ ul) {
+        padding: 0;
+        line-height: 10vh;
+    }
+    body:has(#toggle:checked ~ ul) {
+        overflow: hidden;
+    }
+}
+
+.navbar2 {
+    width: 100%;
+    height: var(--fit);
+    padding: 1vh 15vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--white);
+}
+.navbar2 .toggler {
+    font-size: min(7vw, 32pt);
+    font-weight: 700;
+}
+.navbar2 #toggle, .toggler {
+    display: none;
+}
+.navbar2 .logo h1 {
+    font-weight: 900;
+    font-size: min(5vw, 24pt);
+    cursor: pointer;
+}
+.navbar2 .navlist {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-weight: 700;
+    gap: 1rem;
+}
+.navbar2 .navlist li a:hover {
+    text-decoration: underline;
+    color: var(--white);
+}
+.navbar2 .btn-1 {
+    width: 8rem;
+}
+.navbar2 .btn-1 a {
+    padding: .75rem 2.5rem;
+}
+
+@media (width < 760px) {
+    .navbar2 {
+        padding: 1vh 5vw;
+        flex-direction: row-reverse;
+    }
+    .navbar2 .navlist {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary);
+        top: -100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5vw;
+        transition: all .1s;
+        z-index: 999;
+        opacity: 0;
+    }
+    .navbar2 .navlist li, .navlist div {
+        margin: 2.5vh 0;
+    }
+    .navbar2 .toggler {
+        display: block;
+        padding: .25rem;
+        cursor: pointer;
+    }
+    .navbar2 #toggle:checked ~ ul {
+        top: 10vh;
+        opacity: 1;
+    }
+    .navbar2 #toggle:checked ~ ul li a {
+        color: var(--white);
+    }
+    .navbar2:has(#toggle:checked ~ ul) {
+       height: 10vh;
+       background-color: var(--primary);
+       color: var(--white);
+    }
+    .navbar2 .toggler:has(#toggle:checked ~ ul) {
+        padding: 0;
+        line-height: 10vh;
+    }
+    body:has(#toggle:checked ~ ul) {
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,14 @@
+.copyright1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5vh 15vw;
+    background-color: #1e1e1e;
+    color: var(--white);
+}
+
+@media (width < 760px) {
+    .copyright1 {
+        flex-direction: column;
+        text-align: center;
+    }
+}

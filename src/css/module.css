@@ -1,0 +1,159 @@
+.login1 {
+    height: 100vh;
+    width: 100%;
+    background-image:
+    linear-gradient(to bottom, #29adeb45, #32466c95),
+    url(../assets/imgs/background/bg1.jpeg);
+    background-size: cover;
+    background-position: center;
+    color: var(--textinverted);
+    
+}
+.login1 .center {
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+.login1 .login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--neutral1);
+    max-width: fit-content;
+    height: fit-content;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 20rem var(--gray);
+}
+.login1 form {
+    padding: 1rem;
+}
+.login1 .action-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: .75rem;
+}
+.login1 input[type="text"],
+.login1 #password {
+    padding: .5rem;
+    margin: .5rem;
+    width: 20rem;
+    border-radius: .25rem;
+    border: var(--gray) 1px solid;
+    background-color: var(--neutral2);
+    color: var(--text);
+}
+.login1 label {
+    display: block;
+    font-weight: 700;
+}
+.login1 .password-container {
+    position: relative;
+}
+.login1 .password-container input[type=checkbox] {
+    position: absolute;
+    right: 1rem;
+    top: 39%;
+    width: 1rem;
+    height: 1rem;
+}
+.login1 a {
+    text-decoration: underline;
+    padding: .5rem;
+    color: var(--textinverted);
+}
+.login1 .forgot {
+    display: block;
+    margin-top: -.5rem;
+}
+
+.login1 .forgot:hover {
+    color: var(--secondary);
+}
+.login1 .title {
+    width: 30rem;
+    text-align: center;
+}
+.login1 span {
+    font-size: min(7vw, 36pt);
+    font-weight: 700;
+    display: block;
+}
+.login1 img {
+    margin-bottom: 1rem;
+}
+
+@media (width < 760px) {
+    .login1 .center {
+        overflow-x: hidden;
+        padding: 1rem;
+    }
+    .login1 .login {
+        max-width: 100%;
+        padding: 2rem;
+    }
+    .login1 input[type="text"],
+    .login1 #password {
+    padding: .5rem;
+    margin: .5rem;
+    width: 75vw;
+    border-radius: .25rem;
+    border: var(--gray) 1px solid;
+    background-color: var(--neutral2);
+    }
+}
+
+.dashboard1 {
+    display: flex;
+    padding: 1rem 15vw;
+}
+.dashboard1 .sidebar-list {
+    list-style: none;
+}
+.dashboard1 .sidebar-item {
+    display: block;
+    line-height: 4rem;
+    padding: 0 1rem;
+}
+.dashboard1 .content1 {
+    height: fit-content;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+@media (width < 760px) {
+    .dashboard1 {
+        padding: 1rem 5vw;
+    }
+    .dashboard1 .sidebar1 {
+        display: none;
+    }
+}
+
+.studentlist1 {
+    padding: 0 15vw;
+}
+.studentlist1 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.studentlist1 td,
+.studentlist1 th {
+    padding: .5rem .25rem;
+    border: black 1px solid;
+    text-align: center;
+}
+.studentlist1 .list-actions div {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
