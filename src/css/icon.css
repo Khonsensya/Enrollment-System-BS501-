@@ -1,0 +1,21 @@
+.icon-xs {
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
+}
+
+.icon-s {
+    height: 5rem;
+    width: 5rem;
+    object-fit: contain;
+}
+
+.icon-m {
+    height: 10rem;
+    width: 10rem;
+    object-fit: contain;
+}
+
+.icon-circle {
+    border-radius: 100%;
+}

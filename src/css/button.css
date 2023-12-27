@@ -1,0 +1,132 @@
+.btn1 {
+    display: block;
+    width: fit-content;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--btn1);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: var(--white);
+}
+.btn1:hover {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn2 {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: var(--btn2);
+    border-color: var(--btn2);
+    text-decoration: underline;
+}
+.btn2:hover {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn3 {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: var(--white);
+    text-decoration: underline;
+}
+.btn3:hover {
+    color: var(--secondary);
+}
+
+.btn4 {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: var(--white);
+    border-color: var(--white);
+    text-decoration: underline;
+}
+.btn4:hover {
+    border-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn5 {
+    display: block;
+    background-color: var(--neutral1);
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-weight: 700;
+    color: var(--black);
+    border: #1e1e1e25 1px solid;
+    margin-bottom: .25rem;
+}
+.btn5:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.btn6 {
+    display: block;
+    width: fit-content;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--btn1);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: var(--white);
+}
+.btn6:hover {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn7 {
+    display: block;
+    width: fit-content;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--btn2);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: var(--white);
+}
+.btn7:hover {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+button:focus,
+button:focus-visible {
+    background-color: var(--secondary);
+}

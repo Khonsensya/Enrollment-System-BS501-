@@ -1,0 +1,35 @@
+.banner1 {
+    height: 85.3vh;
+    width: 100%;
+    position: relative;
+}
+.banner1 img {
+    height: 85.3vh;
+    width: 100%;
+    object-fit: cover;
+}
+.banner1 .banner-item {
+    background-color: var(--secondary);
+    width: 100%;
+    display: none;
+    position: absolute;
+}
+.banner1 .banner-overlay {
+    height: 85.3vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-image: linear-gradient(-95deg, #29adeb95, #32466c95);
+    color: white;
+    padding: 10vh 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.banner1 .banner-btn {
+    display: flex;
+    gap: 1.5rem;
+}
+.banner1 .banner-overlay p {
+    margin: 1rem 0 3rem 0;
+}

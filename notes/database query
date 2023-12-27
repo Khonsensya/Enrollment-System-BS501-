@@ -10,3 +10,9 @@ INSERT INTO students (name, email) VALUES
 ('Kobe Malonzo', 'malonzokobe22@gmail.com'),
 ('Yranimez Repil', 'repilyranimez33@gmail.com'),
 ('Emman Conggas', 'conggasemman44@gmail.com');
+
+INSERT INTO session (schoolyear, semester) VALUES
+('2020-2021', '1'),
+('2020-2021', '2'),
+('2021-2022', '1'),
+('2021-2022', '2');
