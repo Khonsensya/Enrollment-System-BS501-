@@ -39,8 +39,8 @@
                     <h1><?php echo $banner1_item['title']; ?></h1>
                     <p><?php echo $banner1_item['descline1']; ?><br><?php echo $banner1_item['descline2']; ?><br><?php echo $banner1_item['descline3']; ?></p>
                     <div class="banner-btn">
-                        <a href="#" class="btn1"><?php echo $banner1_item['btn1']; ?></a>
-                        <a href="#" class="btn4"><?php echo $banner1_item['btn2']; ?></a>
+                        <a href="./src/modules/registration.php" class="btn1"><?php echo $banner1_item['btn1']; ?></a>
+                        <a href="./src/modules/login.php" class="btn4"><?php echo $banner1_item['btn2']; ?></a>
                     </div>
                 </div>
             </div>
