@@ -1,3 +1,4 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/Enrollment-System-BS501-/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
 <body>
     <?php require_once '../process/action.php' ?>
     <nav class="navbar2">
-        <?php include '../data/navbar-data.php';?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/Enrollment-System-BS501-/src/data/navbar-data.php';?>
         <input type="checkbox" id="toggle">
         <label for="toggle" class="toggler">
             <i class="pwd-snd-button">=</i>
@@ -33,6 +34,7 @@
     <br>
     <section class="application">
         <?php include '../data/dashboard-data.php'?>
+		
         <h1>Application</h1>
         <form action="" method="POST">
             <table>
@@ -110,7 +112,7 @@
                 <tr>
                     <td>
                         <label for="mobileNumber">Mobile Number:</label>
-                        <input type="text" id="mobileNumber" name="mobileNumber">
+                        <input type="number" id="mobileNumber" name="mobileNumber">
                     </td>
                     <td  colspan="2">
                         <label for="eMail">Email:</label>

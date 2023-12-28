@@ -73,8 +73,6 @@ select, input {
     }
 }
 
-
-
 .viewlist, .viewsession {
     width: 100%;
     border-collapse: collapse;
@@ -92,4 +90,17 @@ select, input {
     display: flex;
     justify-content: center;
     gap: .5rem;
+}
+
+
+
+.dashboard-info {
+	width: 100%;
+	border-collapse: collapse;
+}
+.dashboard-info td {
+	border: 3px solid #ddd;
+	padding: 50px;
+	text-align: left;
+	margin-right: 15px; 
 }

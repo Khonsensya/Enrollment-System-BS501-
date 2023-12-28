@@ -1,3 +1,4 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/Enrollment-System-BS501-/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
 </head>
 <body>
     <nav class="navbar1">
-        <?php include './src/data/navbar-data.php';?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . BASE_URL . '/src/data/navbar-data.php';?>
         <input type="checkbox" id="toggle">
         <label for="toggle" class="toggler">
             <i class="pwd-snd-button">=</i>
