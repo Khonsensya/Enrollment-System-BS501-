@@ -20,8 +20,10 @@
             <i class="pwd-snd-button">=</i>
         </label>
         <div class="logo">
-            <h1>DCERU</h1>
-        </div>
+			<a href="/Enrollment-System-BS501-/">
+				<h1>DCERU</h1>
+			</a>
+		</div>
         <ul class="navlist">
             <?php foreach ($_navbar1 as $navbar1_item) : ?>
                 <li><a href="<?php echo $navbar1_item['link']; ?>">

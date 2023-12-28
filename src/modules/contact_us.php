@@ -34,19 +34,18 @@
         </ul>
     </nav>
 	<?php
-		$about = [
-			'title' => 'About Us',
+		$contact_us = [
+			'title' => 'DCERU',
 			'paragraphs' => [
-				'first par',
-				'second par',
-				'third par'
+				'Location: ',
+				'Phone: ',
 			]
 		];
 	?> 
-	<section class="about-section">
+	<section class="contact-section">
 		<br>
-        <h2><?php echo $about['title']; ?></h2>
-        <?php foreach ($about['paragraphs'] as $paragraph) : ?>
+        <h2><?php echo $contact_us['title']; ?></h2>
+        <?php foreach ($contact_us['paragraphs'] as $paragraph) : ?>
             <p><?php echo $paragraph; ?></p>
         <?php endforeach; ?>
     </section>

@@ -33,22 +33,8 @@
             <a href="login.php" class="btn1">Login</a>
         </ul>
     </nav>
-	<?php
-		$about = [
-			'title' => 'About Us',
-			'paragraphs' => [
-				'first par',
-				'second par',
-				'third par'
-			]
-		];
-	?> 
-	<section class="about-section">
-		<br>
-        <h2><?php echo $about['title']; ?></h2>
-        <?php foreach ($about['paragraphs'] as $paragraph) : ?>
-            <p><?php echo $paragraph; ?></p>
-        <?php endforeach; ?>
-    </section>
+	<div>
+        Admission
+    </div>
 </body>
 </html>

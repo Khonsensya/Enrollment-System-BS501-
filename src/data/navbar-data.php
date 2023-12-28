@@ -4,11 +4,11 @@
         ['title' => 'About', 
          'link' => BASE_URL . 'src/modules/about.php',],
         ['title' => 'Programs', 
-         'link' => '#',],
+         'link' => BASE_URL . 'src/modules/programs.php',],
         ['title' => 'Admission', 
-         'link' => '#',],
+         'link' => BASE_URL . 'src/modules/admission.php'],
         ['title' => 'Contact Us', 
-         'link' => '#',],
+         'link' => BASE_URL . 'src/modules/contact_us.php',],
         ];
 		
     $_navbar2 = [
