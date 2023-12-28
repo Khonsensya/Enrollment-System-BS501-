@@ -39,8 +39,8 @@
                     </script>
                         
                     <div class="action-container">
-                        <input type= "submit" value="login" class="btn1">
-                            <p>Not yet registered? <a href="#" class="btn3">Register Here</a></p>
+                        <input type= "submit" value="Login" class="btn1">
+                            <p>Not yet registered? <a href="./signup.php" class="btn3">Register Here</a></p>
                     </div>
                 </form>
             </section>
