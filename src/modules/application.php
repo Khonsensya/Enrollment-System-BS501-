@@ -108,10 +108,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <label for="mobileNumber">Mobile Number:</label>
-                        <input type="text" id="mobileNumber" name="mobileNumber">
-                    </td>
+					<td>
+						<label for="mobileNumber">Mobile Number:</label>
+						<input type="number" id="mobileNumber" name="mobileNumber">
+					</td>
+
                     <td  colspan="2">
                         <label for="eMail">Email:</label>
                         <input type="email" id="eMail" name="eMail">
