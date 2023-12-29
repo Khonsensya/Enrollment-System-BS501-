@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/alert.css">
 </head>
 <body>
-    <?php require_once '../process/action.php' ?>
+    <?php include '../process/action.php' ?>
     <nav class="navbar2">
         <?php include '../data/navbar-data.php';?>
         <input type="checkbox" id="toggle">

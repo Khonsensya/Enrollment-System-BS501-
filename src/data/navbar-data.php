@@ -19,6 +19,8 @@
          'link' => './application.php',],
         ['title' => 'Student List', 
          'link' => './studentlist.php',],
+        ['title' => 'Viewlist', 
+         'link' => './viewlist.php',],
         ['title' => 'Policy', 
          'link' => '#',],
          ['title' => 'Help', 
