@@ -35,22 +35,19 @@
             <a href="login.php" class="btn1">Login</a>
         </ul>
     </nav>
-    <?php
-    $contact_us = [
-        'title' => 'DCERU',
-        'paragraphs' => [
-            'Location: ',
-            'Phone: ',
-        ]
-    ];
-    ?>
-    <section class="contact-section">
-        <br>
-        <h2><?php echo $contact_us['title']; ?></h2>
-        <?php foreach ($contact_us['paragraphs'] as $paragraph) : ?>
+    <main class="contact1 container">
+        <?php include '../data/data.php' ?>
+        <h2><?php echo $contact1['title']; ?></h2>
+        <?php foreach ($contact1['paragraphs'] as $paragraph) : ?>
             <p><?php echo $paragraph; ?></p>
         <?php endforeach; ?>
-    </section>
+    </main>
+    <footer class="copyright1">
+        <?php include '../data/data.php';?>
+        <?php foreach ($_copyright1 as $copyright1_item) : ?>
+            <p><?php echo $copyright1_item['copyright']; ?></p>
+            <p><?php echo $copyright1_item['signature']; ?></p>
+        <?php endforeach; ?>
+    </footer>
 </body>
-
 </html>
