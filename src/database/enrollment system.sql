@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:4306
--- Generation Time: Dec 28, 2023 at 09:07 AM
+-- Generation Time: Dec 29, 2023 at 06:29 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -54,7 +54,22 @@ CREATE TABLE `school_courses` (
 --
 
 INSERT INTO `school_courses` (`Course_ID`, `Course_Name`, `Course_Category`) VALUES
-('INF-IT-001', 'Bachelor of Science in Information Technology', 'Information & Communications Technology');
+('ART-CC-002', 'Bachelor of Arts in Communication', 'Arts & Sciences'),
+('ART-MA-001', 'Bachelor of Arts in Multimedia Arts', 'Arts & Sciences'),
+('BUS-AA-002', 'Bachelor of Science in Accountancy', 'Business & Management'),
+('BUS-AS-003', 'Bachelor of Science in Accounting Information System', 'Business & Management'),
+('BUS-BA-001', 'Bachelor of Science in Business Administration', 'Business & Management'),
+('BUS-MA-004', 'Bachelor of Science in Management Accounting', 'Business & Management'),
+('BUS-RS-005', 'Bachelor of Science in Retail Technology and Consumer Science', 'Business & Management'),
+('HOS-CM-002', 'Bachelor of Science in Culinary Management', 'Hospitality Management'),
+('HOS-HM-001', 'Bachelor of Science in Hospitality Management', 'Hospitality Management'),
+('INF-CS-002', 'Bachelor of Science in Computer Science', 'Information & Communications Technology'),
+('INF-IS-003', 'Bachelor of Science in Information Systems', 'Information & Communications Technology'),
+('INF-IT-001', 'Bachelor of Science in Information Technology', 'Information & Communications Technology'),
+('MAR-ME-002', 'Bachelor of Science in Marine Engineering', 'Maritime'),
+('MAR-MT-001', 'Bachelor of Science in Marine Transportation', 'Maritime'),
+('MAR-NE-003', 'Bachelor of Science in Naval Architecture and Marine Engineering\r\n', 'Maritime'),
+('TOU-TM-001', 'Bachelor of Science in Tourism Management\r\n', 'Tourism Management');
 
 --
 -- Triggers `school_courses`
@@ -76,13 +91,12 @@ CREATE TRIGGER `before_insert_courses_guid` BEFORE INSERT ON `school_courses` FO
     SET last_word_first_letter = SUBSTRING_INDEX(NEW.Course_Name, ' ', -1);  -- Gets last word in Course_Name
     SET last_word_first_letter = LEFT(last_word_first_letter, 1);  -- Gets first letter of last word
 
-    SET NEW.Course_ID = CONCAT(
+     SET NEW.Course_ID = CONCAT(
         UPPER(LEFT(NEW.Course_Category, 3)), '-',
         first_word_letter, last_word_first_letter, '-',
-        LPAD(COALESCE((SELECT MAX(RIGHT(Course_ID, 3)) + 1
+        LPAD(COALESCE((SELECT COUNT(*) + 1
                        FROM school_courses
-                       WHERE Course_Category = NEW.Course_Category
-                         AND LEFT(Course_ID, 7) = CONCAT(LEFT(NEW.Course_Category, 3), '-', first_word_letter, last_word_first_letter)), 1), 3, '0')
+                       WHERE Course_Category = NEW.Course_Category), 1), 3, '0')  -- Increment based on total courses in category
     );
 END
 $$
@@ -95,19 +109,136 @@ DELIMITER ;
 --
 
 CREATE TABLE `school_sections` (
-  `Section_ID` int(20) NOT NULL,
+  `Section_ID` varchar(20) NOT NULL,
   `Course_ID` varchar(12) NOT NULL,
-  `Semester_ID` int(20) NOT NULL,
-  `Section_Name` varchar(50) NOT NULL
+  `Term` enum('1st Term','2nd Term','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `school_sections`
+--
+
+INSERT INTO `school_sections` (`Section_ID`, `Course_ID`, `Term`) VALUES
+('AA101', 'BUS-AA-002', '1st Term'),
+('AA201', 'BUS-AA-002', '2nd Term'),
+('AA301', 'BUS-AA-002', '1st Term'),
+('AA401', 'BUS-AA-002', '2nd Term'),
+('AA501', 'BUS-AA-002', '1st Term'),
+('AA601', 'BUS-AA-002', '2nd Term'),
+('AA701', 'BUS-AA-002', '1st Term'),
+('AA801', 'BUS-AA-002', '2nd Term'),
+('AS101', 'BUS-AS-003', '1st Term'),
+('AS201', 'BUS-AS-003', '2nd Term'),
+('AS301', 'BUS-AS-003', '1st Term'),
+('AS401', 'BUS-AS-003', '2nd Term'),
+('AS501', 'BUS-AS-003', '1st Term'),
+('AS601', 'BUS-AS-003', '2nd Term'),
+('AS701', 'BUS-AS-003', '1st Term'),
+('AS801', 'BUS-AS-003', '2nd Term'),
+('BA101', 'BUS-BA-001', '1st Term'),
+('BA201', 'BUS-BA-001', '2nd Term'),
+('BA301', 'BUS-BA-001', '1st Term'),
+('BA401', 'BUS-BA-001', '2nd Term'),
+('BA501', 'BUS-BA-001', '1st Term'),
+('BA601', 'BUS-BA-001', '2nd Term'),
+('BA701', 'BUS-BA-001', '1st Term'),
+('BA801', 'BUS-BA-001', '2nd Term'),
+('CC101', 'ART-CC-002', '1st Term'),
+('CC201', 'ART-CC-002', '2nd Term'),
+('CC301', 'ART-CC-002', '1st Term'),
+('CC401', 'ART-CC-002', '2nd Term'),
+('CC501', 'ART-CC-002', '1st Term'),
+('CC601', 'ART-CC-002', '2nd Term'),
+('CC701', 'ART-CC-002', '1st Term'),
+('CC801', 'ART-CC-002', '2nd Term'),
+('CS101', 'INF-CS-002', '1st Term'),
+('CS201', 'INF-CS-002', '2nd Term'),
+('CS301', 'INF-CS-002', '1st Term'),
+('CS401', 'INF-CS-002', '2nd Term'),
+('CS501', 'INF-CS-002', '1st Term'),
+('CS601', 'INF-CS-002', '2nd Term'),
+('CS701', 'INF-CS-002', '1st Term'),
+('CS801', 'INF-CS-002', '2nd Term'),
+('HM101', 'HOS-HM-001', '1st Term'),
+('HM201', 'HOS-HM-001', '2nd Term'),
+('HM301', 'HOS-HM-001', '1st Term'),
+('HM401', 'HOS-HM-001', '2nd Term'),
+('HM501', 'HOS-HM-001', '1st Term'),
+('HM601', 'HOS-HM-001', '2nd Term'),
+('HM701', 'HOS-HM-001', '1st Term'),
+('HM801', 'HOS-HM-001', '2nd Term'),
+('IS101', 'INF-IS-003', '1st Term'),
+('IS201', 'INF-IS-003', '2nd Term'),
+('IS301', 'INF-IS-003', '1st Term'),
+('IS401', 'INF-IS-003', '2nd Term'),
+('IS501', 'INF-IS-003', '1st Term'),
+('IS601', 'INF-IS-003', '2nd Term'),
+('IS701', 'INF-IS-003', '1st Term'),
+('IS801', 'INF-IS-003', '2nd Term'),
+('IT101', 'INF-IT-001', '1st Term'),
+('IT201', 'INF-IT-001', '2nd Term'),
+('IT301', 'INF-IT-001', '1st Term'),
+('IT401', 'INF-IT-001', '2nd Term'),
+('IT501', 'INF-IT-001', '1st Term'),
+('IT601', 'INF-IT-001', '2nd Term'),
+('IT701', 'INF-IT-001', '1st Term'),
+('IT801', 'INF-IT-001', '2nd Term'),
+('MA101', 'ART-MA-001', '1st Term'),
+('MA201', 'ART-MA-001', '2nd Term'),
+('MA301', 'ART-MA-001', '1st Term'),
+('MA401', 'ART-MA-001', '2nd Term'),
+('MA501', 'ART-MA-001', '1st Term'),
+('MA601', 'ART-MA-001', '2nd Term'),
+('MA701', 'ART-MA-001', '1st Term'),
+('MA801', 'ART-MA-001', '2nd Term'),
+('ME101', 'MAR-ME-002', '1st Term'),
+('ME201', 'MAR-ME-002', '2nd Term'),
+('ME301', 'MAR-ME-002', '1st Term'),
+('ME401', 'MAR-ME-002', '2nd Term'),
+('ME501', 'MAR-ME-002', '1st Term'),
+('ME601', 'MAR-ME-002', '2nd Term'),
+('ME701', 'MAR-ME-002', '1st Term'),
+('ME801', 'MAR-ME-002', '2nd Term'),
+('MT101', 'MAR-MT-001', '1st Term'),
+('MT201', 'MAR-MT-001', '2nd Term'),
+('MT301', 'MAR-MT-001', '1st Term'),
+('MT401', 'MAR-MT-001', '2nd Term'),
+('MT501', 'MAR-MT-001', '1st Term'),
+('MT601', 'MAR-MT-001', '2nd Term'),
+('MT701', 'MAR-MT-001', '1st Term'),
+('MT801', 'MAR-MT-001', '2nd Term'),
+('NE101', 'MAR-NE-003', '1st Term'),
+('NE201', 'MAR-NE-003', '2nd Term'),
+('NE301', 'MAR-NE-003', '1st Term'),
+('NE401', 'MAR-NE-003', '2nd Term'),
+('NE501', 'MAR-NE-003', '1st Term'),
+('NE601', 'MAR-NE-003', '2nd Term'),
+('NE701', 'MAR-NE-003', '1st Term'),
+('NE801', 'MAR-NE-003', '2nd Term'),
+('RS101', 'BUS-RS-005', '1st Term'),
+('RS201', 'BUS-RS-005', '2nd Term'),
+('RS301', 'BUS-RS-005', '1st Term'),
+('RS401', 'BUS-RS-005', '2nd Term'),
+('RS501', 'BUS-RS-005', '1st Term'),
+('RS601', 'BUS-RS-005', '2nd Term'),
+('RS701', 'BUS-RS-005', '1st Term'),
+('RS801', 'BUS-RS-005', '2nd Term'),
+('TM101', 'TOU-TM-001', '1st Term'),
+('TM201', 'TOU-TM-001', '2nd Term'),
+('TM301', 'TOU-TM-001', '1st Term'),
+('TM401', 'TOU-TM-001', '2nd Term'),
+('TM501', 'TOU-TM-001', '1st Term'),
+('TM601', 'TOU-TM-001', '2nd Term'),
+('TM701', 'TOU-TM-001', '1st Term'),
+('TM801', 'TOU-TM-001', '2nd Term');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `school_semesters`
+-- Table structure for table `student_batches`
 --
 
-CREATE TABLE `school_semesters` (
+CREATE TABLE `student_batches` (
   `Semester_ID` int(20) NOT NULL,
   `School_Year` varchar(50) NOT NULL,
   `Start_Date` date NOT NULL,
@@ -237,13 +368,12 @@ ALTER TABLE `school_courses`
 --
 ALTER TABLE `school_sections`
   ADD PRIMARY KEY (`Section_ID`),
-  ADD KEY `Foreign_Section_2_Semester` (`Semester_ID`),
   ADD KEY `Foreign_Section_2_Courses` (`Course_ID`);
 
 --
--- Indexes for table `school_semesters`
+-- Indexes for table `student_batches`
 --
-ALTER TABLE `school_semesters`
+ALTER TABLE `student_batches`
   ADD PRIMARY KEY (`Semester_ID`);
 
 --
@@ -290,8 +420,7 @@ ALTER TABLE `users`
 -- Constraints for table `school_sections`
 --
 ALTER TABLE `school_sections`
-  ADD CONSTRAINT `Foreign_Section_2_Courses` FOREIGN KEY (`Course_ID`) REFERENCES `school_courses` (`Course_ID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `Foreign_Section_2_Semester` FOREIGN KEY (`Semester_ID`) REFERENCES `school_semesters` (`Semester_ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `Foreign_Section_2_Courses` FOREIGN KEY (`Course_ID`) REFERENCES `school_courses` (`Course_ID`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `student_info`
@@ -303,7 +432,6 @@ ALTER TABLE `student_info`
 -- Constraints for table `student_profile`
 --
 ALTER TABLE `student_profile`
-  ADD CONSTRAINT `Foreign_Profile_2_Section` FOREIGN KEY (`Section_ID`) REFERENCES `school_sections` (`Section_ID`),
   ADD CONSTRAINT `Foreign_Profile_2_Student` FOREIGN KEY (`Student_ID`) REFERENCES `student_info` (`Student_ID`) ON UPDATE CASCADE;
 COMMIT;
 
