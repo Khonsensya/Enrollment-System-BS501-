@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="../css/button.css">
     <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../css/navbar.css">
+
     <link rel="stylesheet" href="../css/dashboard.css">
+
 </head>
 
 <body>
@@ -50,3 +52,4 @@
 </body>
 
 </html>
+
