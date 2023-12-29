@@ -24,4 +24,3 @@
          ['title' => 'Logout', 
           'value' => 'logout',],
         ];
-?>

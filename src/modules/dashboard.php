@@ -33,23 +33,39 @@
             <?php endforeach; ?>
         </ul>
     </nav>
-    <?php include '../data/dashboard-data.php';
-    include '../data/dashboard-info-data.php';
-    ?>
-    <div class="dashboard1">
-        <main class="content1">
-            <table class="dashboard-info">
-                <tr>
-                    <?php foreach ($dashboard_info as $info) : ?>
-                        <td>
-                            <?php echo $info['info_heading']; ?>
-                        </td>
-                    <?php endforeach; ?>
-                </tr>
-            </table>
-        </main>
-    </div>
+  
+	<?php include '../process/get_date.php';?>
+	<div class="dashboard1">
+		<main class="content1">
+			<h3>Hello User,</h3>
+            <ul class="datetime">
+                <li><?php echo $currentDateTime; ?></li>
+                <li><p> : </p></li>
+                <li><p id="clock"></p></li>
+            </ul>
+            <hr>
+            <section class="summary">
+                <section class="summary-item">
+                    <h4>Academic Year</h4>
+                    <h2>2023-2024</h2>
+                </section>
+                <section class="summary-item">
+                    <h4>Semester</h4>
+                    <h2>1st Semester</h2>
+                </section>
+                <section class="summary-item">
+                    <h4>Number of Students</h4>
+                    <h2>0</h2>
+                </section>
+                <section class="summary-item">
+                    <h4>Students Enrolled</h4>
+                    <h2>0</h2>
+                </section>
+            </section>
+		</main>
+	</div>
+	
+    <script defer src="../js/clock.js"></script>
 </body>
-
 </html>
 

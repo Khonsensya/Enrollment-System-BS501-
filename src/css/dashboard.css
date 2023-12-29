@@ -1,76 +1,41 @@
-.application {
-    padding: 0 15vw;
+.dashboard-info {
+	width: 100%;
+	border-collapse: collapse;
 }
-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-td {
-    padding: 1rem 2rem;
-}
-label {
-    display: block;
-    margin-bottom: .25rem;
-    font-size: min(4vw, 8pt);
-}
-select, input {
-    width: 100%;
-    padding: .5rem;
-    border-radius: .5rem;
-    border: var(--gray) 1px solid;
+.dashboard-info td {
+	border: 3px solid #ddd;
+	padding: 50px;
+	text-align: left;
+	margin-right: 15px; 
 }
 
-@media (width < 760px) {
-    tr {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.session {
+.dashboard1 .datetime {
     display: inline-flex;
-    margin-bottom: 1rem;
+    list-style: none;
+    gap: 1rem;
 }
-.session .button {
-    display: block;
-    margin: .5rem 1rem;
+
+.dashboard1 .datetime {
+    display: inline-flex;
+    list-style: none;
 }
-.session input[type='checkbox'],
-.createsession {
-    display: none;
-}
-.session:has(#session-create:checked) + .viewsession {
-    display: none;
-}
-.session:has(#session-create:checked) + .viewsession + .createsession {
-    display: block;
-}
-.createsession form {
+
+.dashboard1 .summary {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
-.createsession td {
-    padding: 1rem 2rem;
+.summary-item {
+    flex: 25%;
+    padding: 1.5rem;
+    color: var(--white);
+    background-color: var(--secondary);
 }
-.createsession label {
-    display: block;
-    margin-bottom: .25rem;
-    font-size: min(4vw, 8pt);
-}
-.createsession input, .createsession select {
-    width: 100%;
-    padding: .5rem;
-    border-radius: .5rem;
-    border: var(--gray) 1px solid;
-}
+
 @media (width < 760px) {
-    .createsession tr {
-        display: flex;
+    .dashboard1 .summary {
         flex-direction: column;
     }
+    
 }
 
 .viewlist, .viewsession {

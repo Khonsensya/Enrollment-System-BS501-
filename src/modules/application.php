@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/forms.css">
     <link rel="stylesheet" href="../css/alert.css">
 </head>
 
