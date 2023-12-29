@@ -24,4 +24,3 @@
           'btn1' => 'Sign Up', 
           'btn2' => 'Enroll Now!',],    
         ];
-?>

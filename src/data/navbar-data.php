@@ -9,9 +9,7 @@
         ['title' => 'Contact Us', 
          'link' => '#',],
         ];
-?>
 
-<?php 
     $_navbar2 = [
         ['title' => 'Dashboard', 
          'link' => './dashboard.php',],
@@ -20,8 +18,7 @@
         ['title' => 'Student List', 
          'link' => './studentlist.php',],
         ['title' => 'Policy', 
-         'link' => '#',],
+         'link' => './policy.php',],
          ['title' => 'Help', 
-          'link' => '#',],
+          'link' => './help.php',],
         ];
-?>

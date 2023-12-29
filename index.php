@@ -46,7 +46,6 @@
             </div>
         <?php endforeach; ?>
     </header>
-
     <footer class="copyright1">
         <?php include './src/data/footer-data.php';?>
         <?php foreach ($_copyright1 as $copyright1_item) : ?>
@@ -54,7 +53,7 @@
             <p><?php echo $copyright1_item['signature']; ?></p>
         <?php endforeach; ?>
     </footer>
-
+    
     <script defer src="./src/js/banner.js"></script>
 </body>
 </html>
