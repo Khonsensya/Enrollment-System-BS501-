@@ -1,0 +1,30 @@
+.application {
+    padding: 0 15vw;
+}
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+td {
+    padding: 1rem 2rem;
+}
+label {
+    display: block;
+    margin-bottom: .25rem;
+    font-size: min(4vw, 8pt);
+}
+select, input {
+    width: 100%;
+    padding: .5rem;
+    border-radius: .5rem;
+    border: var(--gray) 1px solid;
+}
+
+@media (width < 760px) {
+    tr {
+        display: flex;
+        flex-direction: column;
+    }
+}
