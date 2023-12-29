@@ -1,5 +1,7 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . '\config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +11,14 @@
     <link rel="stylesheet" href="../css/button.css">
     <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../css/navbar.css">
-	<link rel="stylesheet" href="../css/dashboard.css">
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
 </head>
+
 <body>
     <nav class="navbar2">
-        <?php include '../data/navbar-data.php';?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/data/navbar-data.php'; ?>
         <input type="checkbox" id="toggle">
         <label for="toggle" class="toggler">
             <i class="pwd-snd-button">=</i>
@@ -24,11 +29,11 @@
         <ul class="navlist">
             <?php foreach ($_navbar2 as $navbar2_item) : ?>
                 <li><a href="<?php echo $navbar2_item['link']; ?>">
-                <?php echo $navbar2_item['title']; ?></a></li>
+                        <?php echo $navbar2_item['title']; ?></a></li>
             <?php endforeach; ?>
         </ul>
     </nav>
-	
+  
 	<?php include '../process/get_date.php';?>
 	<div class="dashboard1">
 		<main class="content1">
@@ -63,3 +68,4 @@
     <script defer src="../js/clock.js"></script>
 </body>
 </html>
+

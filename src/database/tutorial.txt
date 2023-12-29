@@ -1,0 +1,9 @@
+TUTORIAL ON HOW TO IMPORT DATABASE SCHEMA:
+
+1. Open XAMPP
+2. Start Apache and MySQL
+3. Using a web browser, type "http://localhost:8080/phpmyadmin"
+4. Create a database named "enrollment_system"
+5. Import the file enrollment system.sql from this folder
+
+If any issues are encountered, please message the groupchat
