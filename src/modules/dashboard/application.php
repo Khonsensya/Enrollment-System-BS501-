@@ -1,5 +1,4 @@
 <?php include '../../process/session.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '\config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +20,7 @@
     <?php include '../../data/data.php'; ?>
     <?php require_once '../../process/action.php' ?>
     <?php include '../../data/dashboard-data.php' ?>
+    <?php require '../../data/mysql-connection.php';?>
 
     <nav class="navbar2">
         <input type="checkbox" id="toggle">
@@ -62,10 +62,13 @@
                         </select>
                     </td>
                 </tr>
+                        <?php
+                            if($user['First_Name'])
+                        ?>
                 <tr>
                     <td colspan="2">
                         <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName">
+                        <input type="text" id="firstName" name="firstName" value="<?= ($user['First_Name'])?>">
                     </td>
                     <td>
                         <label for="dateOfBirth">Date of Birth</label>
@@ -95,7 +98,7 @@
                 <tr>
                     <td td>
                         <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName">
+                        <input type="text" id="lastName" name="lastName" value="<?= ($user['Last_Name'])?>">
                     </td>
                     <td>
                         <label for="civilStatus">Civil Status</label>
@@ -129,7 +132,7 @@
                     <td colspan="2">
 
                         <label for="eMail">Email:</label>
-                        <input type="email" id="eMail" name="eMail">
+                        <input type="email" id="eMail" name="eMail" value="<?= ($user['Email'])?>">
                     </td>
                 </tr>
                 <tr>

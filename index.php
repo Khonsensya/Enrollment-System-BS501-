@@ -1,4 +1,3 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '\config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +18,7 @@
 
 <body>
     <nav class="navbar1">
-        <?php include './src/data/navbar-data.php'; ?>
+        <?php include './src/data/data.php'; ?>
         <!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
         <?php include './src/data/data.php'; ?>
 
