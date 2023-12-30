@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php 
     $_navbar1 = [
         ['title' => 'About', 
@@ -10,6 +11,28 @@
          'link' => '#',],
         ];
 ?>
+=======
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '\Files\Enrollment-System-BS501-\config.php';
+$_navbar1 = [
+    [
+        'title' => 'About',
+        'link' => '/src/modules/about.php',
+    ],
+    [
+        'title' => 'Programs',
+        'link' =>  '/src/modules/programs.php',
+    ],
+    [
+        'title' => 'Admission',
+        'link' =>  '/src/modules/admission.php'
+    ],
+    [
+        'title' => 'Contact Us',
+        'link' =>  '/src/modules/contact_us.php',
+    ],
+];
+>>>>>>> Stashed changes
 
 <?php 
     $_navbar2 = [

@@ -1,3 +1,15 @@
+<<<<<<< Updated upstream
+=======
+<?php
+    // session_start();
+    // include '../data/mysql-connection.php';
+    // include '../process/function.php';
+
+    // $user_data = check_login($mysqli);
+?>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '\Files\Enrollment-System-BS501-\config.php'; ?>
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 <head>

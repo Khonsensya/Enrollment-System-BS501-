@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+<?php include $_SERVER['DOCUMENT_ROOT'] . '\Files\Enrollment-System-BS501-\config.php'; ?>
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,11 @@
 </head>
 <body>
     <nav class="navbar1">
+<<<<<<< Updated upstream
         <?php include './src/data/navbar-data.php';?>
+=======
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '\Files\Enrollment-System-BS501-/src/data/navbar-data.php'; ?>
+>>>>>>> Stashed changes
         <input type="checkbox" id="toggle">
         <label for="toggle" class="toggler">
             <i class="pwd-snd-button">=</i>
