@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:4306
--- Generation Time: Dec 29, 2023 at 06:29 PM
+-- Generation Time: Dec 30, 2023 at 01:23 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -75,7 +75,7 @@ INSERT INTO `school_courses` (`Course_ID`, `Course_Name`, `Course_Category`) VAL
 -- Triggers `school_courses`
 --
 DELIMITER $$
-CREATE TRIGGER `before_insert_courses_guid` BEFORE INSERT ON `school_courses` FOR EACH ROW BEGIN
+CREATE TRIGGER `Before_Insert_Courses_GUID` BEFORE INSERT ON `school_courses` FOR EACH ROW BEGIN
     DECLARE in_position INT;
     DECLARE first_word_letter VARCHAR(1);
     DECLARE last_word_first_letter VARCHAR(1);
@@ -298,6 +298,19 @@ CREATE TRIGGER `Before_Update_Student_Info` BEFORE UPDATE ON `student_info` FOR 
 END
 $$
 DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `Enrolled_to_Student_Profile` AFTER UPDATE ON `student_info` FOR EACH ROW BEGIN
+    -- Check if the Enrolled column is updated to true
+    IF NEW.Enrolled = 1 THEN
+        -- Insert the Student_ID into the student_profile table
+        INSERT INTO student_profile (Student_ID) VALUES (NEW.Student_ID);
+	ELSE
+        -- Delete the corresponding row from the student_profile table
+        DELETE FROM student_profile WHERE Student_ID = NEW.Student_ID;
+    END IF;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -306,10 +319,20 @@ DELIMITER ;
 --
 
 CREATE TABLE `student_profile` (
-  `Student_Number` bigint(10) NOT NULL,
+  `Student_Number` varchar(8) NOT NULL,
   `Student_ID` int(20) NOT NULL,
-  `Section_ID` int(20) NOT NULL
+  `Section_ID` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Triggers `student_profile`
+--
+DELIMITER $$
+CREATE TRIGGER `Generate_Student_Number` BEFORE INSERT ON `student_profile` FOR EACH ROW BEGIN
+    SET NEW.Student_Number = CONCAT('STDNT', LPAD(NEW.Student_ID, 3, '0'));
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -340,7 +363,7 @@ INSERT INTO `users` (`User_ID`, `First_Name`, `Last_Name`, `Email`, `Password`, 
 -- Triggers `users`
 --
 DELIMITER $$
-CREATE TRIGGER `AfterInsertUser` AFTER INSERT ON `users` FOR EACH ROW BEGIN
+CREATE TRIGGER `After_Insert_User` AFTER INSERT ON `users` FOR EACH ROW BEGIN
     DECLARE v_UserID INT;
 
     -- Insert into Students table if UserType is 'Student'
@@ -387,14 +410,17 @@ ALTER TABLE `student_info`
 -- Indexes for table `student_profile`
 --
 ALTER TABLE `student_profile`
-  ADD KEY `Foreign_Profile_2_Section` (`Section_ID`),
-  ADD KEY `Foreign_Profile_2_Student` (`Student_ID`);
+  ADD PRIMARY KEY (`Student_Number`),
+  ADD UNIQUE KEY `Student_Number` (`Student_Number`),
+  ADD KEY `Foreign_Profile_2_Student` (`Student_ID`),
+  ADD KEY `Foreign_Profile_2_Section` (`Section_ID`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`User_ID`);
+  ADD PRIMARY KEY (`User_ID`),
+  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -404,13 +430,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `student_info`
 --
 ALTER TABLE `student_info`
-  MODIFY `Student_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Student_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10004;
+  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10005;
 
 --
 -- Constraints for dumped tables
@@ -426,13 +452,14 @@ ALTER TABLE `school_sections`
 -- Constraints for table `student_info`
 --
 ALTER TABLE `student_info`
-  ADD CONSTRAINT `Foreign_Student_2_User` FOREIGN KEY (`User_ID`) REFERENCES `users` (`User_ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `Foreign_Student_2_User` FOREIGN KEY (`User_ID`) REFERENCES `users` (`User_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `student_profile`
 --
 ALTER TABLE `student_profile`
-  ADD CONSTRAINT `Foreign_Profile_2_Student` FOREIGN KEY (`Student_ID`) REFERENCES `student_info` (`Student_ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `Foreign_Profile_2_Section` FOREIGN KEY (`Section_ID`) REFERENCES `school_sections` (`Section_ID`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `Foreign_Profile_2_Student` FOREIGN KEY (`Student_ID`) REFERENCES `student_info` (`Student_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
