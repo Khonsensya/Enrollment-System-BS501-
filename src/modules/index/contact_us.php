@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="../../css/navbar.css">
 
 </head>
+
 <body>
     <?php include '../../data/data.php'; ?>
 
@@ -30,7 +32,7 @@
                 <li><a href="<?php echo $navbar1_item['link']; ?>">
                         <?php echo $navbar1_item['title']; ?></a></li>
             <?php endforeach; ?>
-            <a href="login.php" class="btn1">Login</a>
+            <a href="../login.php" class="btn1">Login</a>
         </ul>
     </nav>
     <main class="contact1 container">
@@ -46,4 +48,5 @@
         <?php endforeach; ?>
     </footer>
 </body>
+
 </html>
