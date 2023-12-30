@@ -36,6 +36,46 @@
 .navbar1 .btn-1 a {
     padding: .75rem 2.5rem;
 }
+/*  */
+.navbar2 {
+    width: 100%;
+    height: var(--fit);
+    padding: 1vh 15vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--white);
+}
+.navbar2 .toggler {
+    font-size: min(7vw, 32pt);
+    font-weight: 700;
+}
+.navbar2 #toggle, .toggler {
+    display: none;
+}
+.navbar2 .logo h1 {
+    font-weight: 900;
+    font-size: min(5vw, 24pt);
+    cursor: pointer;
+}
+.navbar2 .navlist {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-weight: 700;
+    gap: 1rem;
+}
+.navbar2 .navlist li a:hover {
+    text-decoration: underline;
+    color: var(--white);
+}
+.navbar2 .btn-1 {
+    width: 8rem;
+}
+.navbar2 .btn-1 a {
+    padding: .75rem 2.5rem;
+}
 
 @media (width < 760px) {
     .navbar1 {
@@ -84,49 +124,7 @@
     body:has(#toggle:checked ~ ul) {
         overflow: hidden;
     }
-}
-
-.navbar2 {
-    width: 100%;
-    height: var(--fit);
-    padding: 1vh 15vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary);
-    color: var(--white);
-}
-.navbar2 .toggler {
-    font-size: min(7vw, 32pt);
-    font-weight: 700;
-}
-.navbar2 #toggle, .toggler {
-    display: none;
-}
-.navbar2 .logo h1 {
-    font-weight: 900;
-    font-size: min(5vw, 24pt);
-    cursor: pointer;
-}
-.navbar2 .navlist {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    font-weight: 700;
-    gap: 1rem;
-}
-.navbar2 .navlist li a:hover {
-    text-decoration: underline;
-    color: var(--white);
-}
-.navbar2 .btn-1 {
-    width: 8rem;
-}
-.navbar2 .btn-1 a {
-    padding: .75rem 2.5rem;
-}
-
-@media (width < 760px) {
+    /*  */
     .navbar2 {
         padding: 1vh 5vw;
         flex-direction: row-reverse;
