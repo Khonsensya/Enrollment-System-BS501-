@@ -69,3 +69,9 @@ p {
 .container {
     padding: 2.5rem 15vw;
 }
+
+@media (width < 760px) {
+    .container {
+        padding: 1.5rem 5vw;
+    }
+}

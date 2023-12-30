@@ -1,25 +1,3 @@
-<?php
-    session_start();
-        include '../data/mysql-connection.php';
-        include '../process/function.php';
-
-        if($_SERVER['REQUEST_METHOD'] == "POST") {
-            $fname = $_POST['fname'];
-            $lname = $_POST['lname'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-
-            if(!empty($username) && !empty($password)) {
-                $query = "INSERT INTO users (First_Name, Last_Name, Email, Password) VALUES ('$fname', '$lname', '$email', '$password')";
-
-                mysqli_query($mysqli, $query);
-                header("Location: ./login.php");
-                die;
-            } else {
-                echo 'enter valid information';
-            }
-        }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,15 +8,18 @@
     <link rel="stylesheet" href="../css/module.css">
     <link rel="stylesheet" href="../css/button.css">
     <link rel="stylesheet" href="../css/icon.css">
+    
+    <link rel="stylesheet" href="../css/forms.css">
 </head>
 <body>
-    <main class="login1">
+    <main class="forms1">
         <section class="center">
             <section class="login">
+                <a href="../../index.php" class="btn3 back">X</a>
                 <img src="../assets/imgs/background/bg1.jpeg" alt="" class="icon-s">
-                <h3 class="title">Duck Cover <span>En Roll University</span> Portal</h3>
+                <h4 class="title"><span>DCER University</span> Portal</h4>
 
-                <form action="" method="post">
+                <form action="../process/signup-process.php" method="post">
                     <label for="fname">First Name:</label>
                         <input type="text" id="fname" name="fname" required><br>
 
@@ -48,14 +29,18 @@
                     <label for="email">Email:</label>
                         <input type="text" id="email" name="email" required><br>
 
+                    <label for="password">Password:</label>
                     <div class="password-container">
-                        <label for= "password">Password:</label>
-                            <input type="password" name="password" id="password" #passwordrequired><br>
-
-                        <!-- <label for="confirmpassword">Confirm Password:</label>
-                            <input type="password" name="password" id="password" #passwordrequired> -->
-
+                            <input type="password" name="password" id="password" class="password" required>
+                            <input type="checkbox" id="toggle-password">
                     </div><br>
+
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <div class="password-container">
+                            <input type="password" name="confirmpassword" id="password1" class="password" required>
+                            <input type="checkbox" id="toggle-password1">
+                    </div><br>
+                    
                     <div class="action-container">
                         <input type= "submit" value="Sign up" class="btn1">
                             <a href="./login.php" class="btn3">Already have an account?</a>
@@ -64,5 +49,7 @@
             </section>
         </section>
     </main>
+
+    <script defer src="../js/check-pass.js"></script>
 </body>
 </html>
