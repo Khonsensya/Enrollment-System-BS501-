@@ -1,3 +1,25 @@
+<?php
+    session_start();
+        include '../data/mysql-connection.php';
+        include '../process/function.php';
+
+        if($_SERVER['REQUEST_METHOD'] == "POST") {
+            $fname = $_POST['fname'];
+            $lname = $_POST['lname'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            if(!empty($username) && !empty($password)) {
+                $query = "INSERT INTO users (First_Name, Last_Name, Email, Password) VALUES ('$fname', '$lname', '$email', '$password')";
+
+                mysqli_query($mysqli, $query);
+                header("Location: ./login.php");
+                die;
+            } else {
+                echo 'enter valid information';
+            }
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +38,7 @@
                 <img src="../assets/imgs/background/bg1.jpeg" alt="" class="icon-s">
                 <h3 class="title">Duck Cover <span>En Roll University</span> Portal</h3>
 
-                <form action="./dashboard.php" method="post">
+                <form action="" method="post">
                     <label for="fname">First Name:</label>
                         <input type="text" id="fname" name="fname" required><br>
 
@@ -30,8 +52,8 @@
                         <label for= "password">Password:</label>
                             <input type="password" name="password" id="password" #passwordrequired><br>
 
-                        <label for="confirmpassword">Confirm Password:</label>
-                            <input type="password" name="password" id="password" #passwordrequired>
+                        <!-- <label for="confirmpassword">Confirm Password:</label>
+                            <input type="password" name="password" id="password" #passwordrequired> -->
 
                     </div><br>
                     <div class="action-container">

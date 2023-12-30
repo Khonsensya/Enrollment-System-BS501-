@@ -110,9 +110,6 @@
     padding: 0 1.5rem;
 }
 /*  */
-.studentlist1 {
-    padding: 0 15vw;
-}
 .studentlist1 table {
     width: 100%;
     border-collapse: collapse;
@@ -129,16 +126,27 @@
     gap: .5rem;
 }
 /*  */
-.help1 div {
+.help1 div,
+.policy1 div,
+.program1 div {
     padding: 2.5rem 10rem;
 }
-.help1 p {
+.help1 p,
+.policy1 p,
+.program1 p {
     padding: 0 2.5rem;
     margin-bottom: 2rem;
 }
-.help1 ul {
+.help1 ul,
+.policy1 ul,
+.program1 ul {
     padding: 0 5rem;
 }
+.help1 h1,
+.policy1 h1 {
+    text-align: center;
+}
+
 
 @media (width < 760px) {
     .login1 .center {

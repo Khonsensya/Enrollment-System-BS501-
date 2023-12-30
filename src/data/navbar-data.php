@@ -34,10 +34,10 @@ $_navbar2 = [
     ],
     [
         'title' => 'Policy',
-        'link' => '#',
+        'link' => './policy.php',
     ],
     [
         'title' => 'Help',
-        'link' => '#',
+        'link' => './help.php',
     ],
 ];

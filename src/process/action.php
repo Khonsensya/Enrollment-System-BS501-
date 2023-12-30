@@ -29,7 +29,7 @@
     if(isset($_GET['delete'])) {
         $id = $_GET['delete'];
 
-            $mysqli->query("DELETE FROM student_profile WHERE id='$id'") or die("Connection failed:");
+            $mysqli->query("DELETE FROM student_info WHERE Student_ID='$id'") or die("Connection failed:");
                 $mysqli -> close();
             
         header("Refresh:0; url=../modules/studentlist.php");

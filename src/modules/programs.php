@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/button.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/module.css">
 
 </head>
 
@@ -35,49 +36,28 @@
             <a href="login.php" class="btn1">Login</a>
         </ul>
     </nav>
-    <div>
+    <main class="program1 container">
+        <?php include '../data/program-data.php' ?>
         <h1>Academic Programs</h1>
-        <br>
-
-        <?php
-        // Placeholders
-        $program_categories = [
-            'Computer Studies' => [
-                ['course_name' => 'Computer Science', 'course_description' => 'Explore the world of programming and algorithms.'],
-                ['course_name' => 'Information Technology (IT)', 'course_description' => 'Focus on the application of technology to solve business problems.'],
-            ],
-            'Business & Administration' => [
-                ['course_name' => 'Business Administration', 'course_description' => 'Learn about business strategies and management.'],
-                ['course_name' => 'Economics', 'course_description' => 'Understand economic systems and principles.'],
-            ],
-            'Engineering' => [
-                ['course_name' => 'Computer Engineering', 'course_description' => 'Design and develop computer systems and networks.'],
-                ['course_name' => 'Civil Engineering', 'course_description' => 'Plan, design, and oversee construction projects.'],
-                ['course_name' => 'Mechanical Engineering', 'course_description' => 'Explore the design and manufacturing of mechanical systems.'],
-            ],
-        ];
-
-        foreach ($program_categories as $category => $categoryPrograms) {
-            echo "
-                    <div class='category'>
-                        <h2>$category</h2>
-						<br>
-                        <ul>";
-            foreach ($categoryPrograms as $program) {
-                $course_name = $program['course_name'];
-                echo "
-                            <li>
-                                <h3>$course_name</h3>
-                                <p>{$program['course_description']}</p>
-								<br>
-                            </li>";
-            }
-            echo "
-                        </ul>
-                    </div>";
-        }
-        ?>
-    </div>
+            <div>
+                <?php foreach ($program1 as $category => $categoryPrograms) : ?>        
+                    <h2><?php echo $category; ?></h2>
+                    <ul>
+                        <?php foreach ($categoryPrograms as $program) : ?>        
+                            <h3><?php echo $program['course_name']; ?></h3>
+                            <p><?php echo $program['course_description']; ?></p>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endforeach; ?>
+            </div>
+    </main>
+    <footer class="copyright1">
+        <?php include '../data/data.php';?>
+        <?php foreach ($_copyright1 as $copyright1_item) : ?>
+            <p><?php echo $copyright1_item['copyright']; ?></p>
+            <p><?php echo $copyright1_item['signature']; ?></p>
+        <?php endforeach; ?>
+    </footer>
 </body>
 
 </html>
