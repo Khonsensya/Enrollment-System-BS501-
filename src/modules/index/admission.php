@@ -33,7 +33,7 @@
                 <li><a href="<?php echo $navbar1_item['link']; ?>">
                         <?php echo $navbar1_item['title']; ?></a></li>
             <?php endforeach; ?>
-            <a href="login.php" class="btn1">Login</a>
+            <a href="../login.php" class="btn1">Login</a>
         </ul>
     </nav>
     <div class="container">
@@ -46,4 +46,5 @@
         <?php endforeach; ?>
     </footer>
 </body>
+
 </html>

@@ -34,22 +34,22 @@
                 <li><a href="<?php echo $navbar1_item['link']; ?>">
                         <?php echo $navbar1_item['title']; ?></a></li>
             <?php endforeach; ?>
-            <a href="login.php" class="btn1">Login</a>
+            <a href="../login.php" class="btn1">Login</a>
         </ul>
     </nav>
     <main class="program1 container">
         <h1>Academic Programs</h1>
-            <div>
-                <?php foreach ($_program_1 as $category => $categoryPrograms) : ?>        
-                    <h2><?php echo $category; ?></h2>
-                    <ul>
-                        <?php foreach ($categoryPrograms as $program) : ?>        
-                            <h3><?php echo $program['course_name']; ?></h3>
-                            <p><?php echo $program['course_description']; ?></p>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endforeach; ?>
-            </div>
+        <div>
+            <?php foreach ($_program_1 as $category => $categoryPrograms) : ?>
+                <h2><?php echo $category; ?></h2>
+                <ul>
+                    <?php foreach ($categoryPrograms as $program) : ?>
+                        <h3><?php echo $program['course_name']; ?></h3>
+                        <p><?php echo $program['course_description']; ?></p>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endforeach; ?>
+        </div>
     </main>
     <footer class="copyright1">
         <?php foreach ($_copyright1 as $copyright1_item) : ?>
