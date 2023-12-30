@@ -1,21 +1,28 @@
+<?php include '../../process/session.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '\config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duck Cover En Roll</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../css/module.css">
-    <link rel="stylesheet" href="../css/button.css">
-    <link rel="stylesheet" href="../css/icon.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="../css/alert.css">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../css/module.css">
+    <link rel="stylesheet" href="../../css/button.css">
+    <link rel="stylesheet" href="../../css/icon.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/forms.css">
+    <link rel="stylesheet" href="../../css/alert.css">
 </head>
+
 <body>
-    <?php include '../process/action.php' ?>
+    <?php include '../../data/data.php'; ?>
+    <?php require_once '../../process/action.php' ?>
+    <?php include '../../data/dashboard-data.php' ?>
+
     <nav class="navbar2">
-        <?php include '../data/navbar-data.php';?>
         <input type="checkbox" id="toggle">
         <label for="toggle" class="toggler">
             <i class="pwd-snd-button">=</i>
@@ -24,15 +31,22 @@
             <h1>Dashboard</h1>
         </div>
         <ul class="navlist">
-            <?php foreach ($_navbar2 as $navbar2_item) : ?>
-                <li><a href="<?php echo $navbar2_item['link']; ?>">
-                <?php echo $navbar2_item['title']; ?></a></li>
+            <?php
+            if ($user['User_Type'] == 'Student') {
+                $_navbar_2_list = $_navbar_2_student;
+            } elseif ($user['User_Type'] == 'Administrator') {
+                $_navbar_2_list = $_navbar_2_admin;
+            }
+            ?>
+            <?php foreach ($_navbar_2_list as $navbar_2_item) : ?>
+                <li><a href="<?php echo $navbar_2_item['link']; ?>">
+                        <?php echo $navbar_2_item['title']; ?></a></li>
             <?php endforeach; ?>
         </ul>
     </nav>
     <br>
-    <section class="application">
-        <?php include '../data/dashboard-data.php'?>
+    <section class="application1 container">
+
         <h1>Application</h1>
         <form action="" method="POST">
             <table>
@@ -49,7 +63,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td  colspan="2">
+                    <td colspan="2">
                         <label for="firstName">First Name</label>
                         <input type="text" id="firstName" name="firstName">
                     </td>
@@ -102,7 +116,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td  colspan="3">
+                    <td colspan="3">
                         <label for="myaddress">Address</label>
                         <input type="text" id="myaddress" name="myaddress">
                     </td>
@@ -110,9 +124,10 @@
                 <tr>
                     <td>
                         <label for="mobileNumber">Mobile Number:</label>
-                        <input type="text" id="mobileNumber" name="mobileNumber">
+                        <input type="number" id="mobileNumber" name="mobileNumber">
                     </td>
-                    <td  colspan="2">
+                    <td colspan="2">
+
                         <label for="eMail">Email:</label>
                         <input type="email" id="eMail" name="eMail">
                     </td>
@@ -126,4 +141,5 @@
         </form>
     </section>
 </body>
+
 </html>
