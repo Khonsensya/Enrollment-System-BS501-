@@ -1,19 +1,22 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '\config.php'; ?>
+<!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Duck Cover En Roll</title>
-            <!-- CSS STYLESHEETS LINKS ARE HERE -->
-            <link rel="stylesheet" href="./style.css">
-            <link rel="stylesheet" href="./src/css/alert.css">
-            <link rel="stylesheet" href="./src/css/animation.css">
-            <link rel="stylesheet" href="./src/css/banner.css">
-            <link rel="stylesheet" href="./src/css/button.css">
-            <link rel="stylesheet" href="./src/css/footer.css">
-            <link rel="stylesheet" href="./src/css/icon.css">
-            <link rel="stylesheet" href="./src/css/navbar.css">
+    <title><?php echo $_Head_Title; ?></title>
+    <link rel="icon" href="<?php echo $_Head_Icon; ?>"/>
+    <!-- CSS STYLESHEETS LINKS ARE HERE -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/css/alert.css">
+    <link rel="stylesheet" href="./src/css/animation.css">
+    <link rel="stylesheet" href="./src/css/banner.css">
+    <link rel="stylesheet" href="./src/css/button.css">
+    <link rel="stylesheet" href="./src/css/footer.css">
+    <link rel="stylesheet" href="./src/css/icon.css">
+    <link rel="stylesheet" href="./src/css/navbar.css">
 </head>
 <body>
     <!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->

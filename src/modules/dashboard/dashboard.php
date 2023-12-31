@@ -1,53 +1,38 @@
+<!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'session.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'get_date.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'data.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'mysql-connection.php'; ?>
 
-<?php include '../../process/session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duck Cover En Roll</title>
-    <link rel="stylesheet" href="../../../style.css">
-    <link rel="stylesheet" href="../../css/module.css">
-    <link rel="stylesheet" href="../../css/button.css">
-    <link rel="stylesheet" href="../../css/icon.css">
-    <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/dashboard.css">
+    <title><?php echo $_Head_Title; ?></title>
+    <link rel="icon" href="<?php echo $_Head_Icon2; ?>"/>
+    <!-- CSS STYLESHEETS LINKS ARE HERE -->
+    <link rel="stylesheet" href="<?php echo $link_3; ?>style.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/module.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/button.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/icon.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/navbar.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/dashboard.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/forms.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/alert.css">
 
 </head>
 
 <body>
-    <?php include '../../data/data.php'; ?>
-    <?php include '../../data/mysql-connection.php'; ?>
-
     <?php if(isset($user)): ?>
-    <nav class="navbar2">
-        <input type="checkbox" id="toggle">
-        <label for="toggle" class="toggler">
-            <i class="pwd-snd-button">=</i>
-        </label>
-        <div class="logo">
-            <h1>Dashboard</h1>
-        </div>
-        <ul class="navlist">
-            <?php
-                if($user['User_Type'] == 'Student') {
-                    $_navbar_2_list = $_navbar_2_student;
-                } elseif ($user['User_Type'] == 'Administrator') {
-                    $_navbar_2_list = $_navbar_2_admin;
-                }
-            ?>
-            <?php foreach ($_navbar_2_list as $navbar_2_item) : ?>
-                <li><a href="<?php echo $navbar_2_item['link']; ?>">
-                        <?php echo $navbar_2_item['title']; ?></a></li>
-            <?php endforeach; ?>
-        </ul>
-    </nav>
-        <?php include '../../process/get_date.php';?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'dashboard-navbar.php'; ?>
+
         <?php if($user['User_Type'] == 'Student'): ?>
-            <div class="dashboard1 container">
-                <main class="content1">
-                    <h3>Hello <?= htmlspecialchars($user['First_Name']) ?>,</h3>
+            <main class="dashboard1 container">
+                <section class="content1">
+                    <h3>Welcome <?= htmlspecialchars($user['First_Name']) ?>,</h3>
                     <ul class="datetime">
                         <li><?php echo $currentDateTime; ?></li>
                         <li><p> : </p></li>
@@ -72,47 +57,63 @@
                             <h2>Yes</h2>
                         </section>
                     </section>
-                </main>
-	        </div>
+                </section>
+	        </main>
         <?php elseif ($user['User_Type'] == 'Administrator'): ?>
-            <div class="dashboard1 container">
-            <main class="content1">
-                <h3>Hello <?= htmlspecialchars($user['First_Name']) ?>,</h3>
-                <ul class="datetime">
-                    <li><?php echo $currentDateTime; ?></li>
-                    <li><p> : </p></li>
-                    <li><p id="clock"></p></li>
-                </ul>
-                <hr>
-                <section class="summary">
-                    <section class="summary-item">
-                        <h4>Academic Year</h4>
-                        <h2>2023-2024</h2>
+            <main class="dashboard1 container">
+                <section class="content1">
+                    <h3>Welcome <?= htmlspecialchars($user['First_Name']) ?>,</h3>
+                    <ul class="datetime">
+                        <li><?php echo $currentDateTime; ?></li>
+                        <li><p> : </p></li>
+                        <li><p id="clock"></p></li>
+                    </ul>
+                    <hr>
+                    <section class="summary">
+                        <section class="summary-item">
+                            <h4>Academic Year</h4>
+                            <h2>2023-2024</h2>
+                        </section>
+                        <section class="summary-item">
+                            <h4>Semester</h4>
+                            <h2>1st Semester</h2>
+                        </section>
+                        <section class="summary-item">
+                            <h4>Number of Students</h4>
+                            <h2>
+                                <?php
+                                    $Total_Users = $mysqli->query("SELECT COUNT(User_ID) as Total_Users FROM users") or die("Connection failed:");
+                                    $display_Total_Users = $Total_Users->fetch_assoc();
+                                    echo $display_Total_Users['Total_Users'];
+                                ?>
+                            </h2>
+                        </section>
+                        <section class="summary-item">
+                            <h4>Number of Enrolled</h4>
+                            <h2>
+                                <?php
+                                    $Total_Enrolled = $mysqli->query("SELECT COUNT(Student_ID) as Total_Enrolled FROM student_info WHERE Enrolled = '1'") or die("Connection failed:");
+                                    $display_Total_Enrolled = $Total_Enrolled->fetch_assoc();
+                                    echo $display_Total_Enrolled['Total_Enrolled'];
+                                ?>
+                            </h2>
+                        </section>
+                        <?php $mysqli -> close(); ?>
                     </section>
-                    <section class="summary-item">
-                        <h4>Semester</h4>
-                        <h2>1st Semester</h2>
+
+                    <section>
+                    <video width="100%" style="padding: 1rem 0;" controls loop autoplay>
+                    <source src="../../assets/videos/ducks.mp4" type="video/mp4">
+                        Your browser does not support HTML video.
+                    </video>
+
+                    <p>
+                    Video courtesy of 
+                    <a href="https://www.youtube.com/watch?v=oumjTrzd-Nc" target="_blank">Ducks</a>.
+                    </p>
                     </section>
-                    <section class="summary-item">
-                        <h4>Number of Students</h4>
-                        <h2>
-                            <?php
-                                echo $mysqli->query("SELECT COUNT(User_ID) FROM users") or die("Connection failed:");
-                            ?>
-                        </h2>
-                    </section>
-                    <section class="summary-item">
-                        <h4>Number of Enrolled</h4>
-                        <h2>
-                            <?php
-                                echo $mysqli->query("SELECT COUNT(Student_ID) FROM student_info WHERE Enrolled = '1'") or die("Connection failed:");
-                            ?>
-                        </h2>
-                    </section>
-                    <?php $mysqli -> close(); ?>
                 </section>
             </main>
-        </div>
         <?php endif; ?>
     <?php else: ?>
         <div class="container">

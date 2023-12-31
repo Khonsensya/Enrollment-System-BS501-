@@ -1,54 +1,32 @@
-<?php include '../../process/session.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '\config.php'; ?>
+<!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'session.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'data.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'action.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duck Cover En Roll</title>
-    <link rel="stylesheet" href="../../../style.css">
-    <link rel="stylesheet" href="../../css/module.css">
-    <link rel="stylesheet" href="../../css/button.css">
-    <link rel="stylesheet" href="../../css/icon.css">
-    <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/dashboard.css">
-    <link rel="stylesheet" href="../../css/forms.css">
-    <link rel="stylesheet" href="../../css/alert.css">
+    <title><?php echo $_Head_Title; ?></title>
+    <link rel="icon" href="<?php echo $_Head_Icon2; ?>"/>
+    <!-- CSS STYLESHEETS LINKS ARE HERE -->
+    <link rel="stylesheet" href="<?php echo $link_3; ?>style.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/module.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/button.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/icon.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/navbar.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/dashboard.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/forms.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/alert.css">
 </head>
-
 <body>
-    <?php include '../../data/data.php'; ?>
-    <?php require_once '../../process/action.php' ?>
-    <?php include '../../data/dashboard-data.php' ?>
-    
-    <nav class="navbar2">
-        <input type="checkbox" id="toggle">
-        <label for="toggle" class="toggler">
-            <i class="pwd-snd-button">=</i>
-        </label>
-        <div class="logo">
-            <h1>Dashboard</h1>
-        </div>
-        <ul class="navlist">
-            <?php
-                if($user['User_Type'] == 'Student') {
-                    $_navbar_2_list = $_navbar_2_student;
-                } elseif ($user['User_Type'] == 'Administrator') {
-                    $_navbar_2_list = $_navbar_2_admin;
-                }
-            ?>
-            <?php foreach ($_navbar_2_list as $navbar_2_item) : ?>
-                <li><a href="<?php echo $navbar_2_item['link']; ?>">
-                        <?php echo $navbar_2_item['title']; ?></a></li>
-            <?php endforeach; ?>
-        </ul>
-    </nav>
-    <br>
-    <section class="application1 container">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'dashboard-navbar.php'; ?>
 
+    <section class="application1 container">
         <h1>Application</h1>
-        <form action="" method="POST">
+        <form method="POST">
             <table>
                 <tr>
                     <td colspan="3">
@@ -141,5 +119,4 @@
         </form>
     </section>
 </body>
-
 </html>
