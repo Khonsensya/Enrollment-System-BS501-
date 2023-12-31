@@ -19,7 +19,7 @@
         $_SESSION['msg_type'] = "createdstudent";
 
         //read all row from database table
-            $mysqli->query("INSERT INTO student_profile (id, firstname, middleinitial, lastname, program, sex, citizenship, civilstatus, dateofbirth, placeofbirth, mobilenumber, email, myaddress) VALUES ('0', '$FirstName', '$MiddleName', '$LastName', '$Program', '$Sex', '$Citizenship', '$CivilStatus', '$DateofBirth', '$BirthPlace', '$MobileNumber', '$Email', '$MyAddress')") or die("Connection failed:");
+            $mysqli->query("INSERT INTO student_info (First_Name, Last_Name, Middle_Initial, Gender, Birthdate, Place_of_Birth, Citizenship, Civil_Status, Mobile_Number, Email, Address) VALUES ( '$FirstName', '$MiddleName', '$LastName', '$Program', '$Sex', '$Citizenship', '$CivilStatus', '$DateofBirth', '$BirthPlace', '$MobileNumber', '$Email', '$MyAddress')") or die("Connection failed:");
                 $mysqli -> close();
 
         header("Refresh:0; url=../modules/dashboard/dashboard.php");

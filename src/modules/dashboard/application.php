@@ -1,8 +1,10 @@
+
 <!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'session.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'data.php'; ?>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'action.php'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +24,9 @@
     <link rel="stylesheet" href="<?php echo $link_2; ?>css/alert.css">
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'dashboard-navbar.php'; ?>
 
+    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'dashboard-navbar.php'; ?>
+    
     <section class="application1 container">
         <h1>Application</h1>
         <form method="POST">
@@ -40,10 +43,13 @@
                         </select>
                     </td>
                 </tr>
+                        <?php
+                            if($user['First_Name'])
+                        ?>
                 <tr>
                     <td colspan="2">
                         <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName">
+                        <input type="text" id="firstName" name="firstName" value="<?= ($user['First_Name'])?>">
                     </td>
                     <td>
                         <label for="dateOfBirth">Date of Birth</label>
@@ -73,7 +79,7 @@
                 <tr>
                     <td td>
                         <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName">
+                        <input type="text" id="lastName" name="lastName" value="<?= ($user['Last_Name'])?>">
                     </td>
                     <td>
                         <label for="civilStatus">Civil Status</label>
@@ -107,7 +113,7 @@
                     <td colspan="2">
 
                         <label for="eMail">Email:</label>
-                        <input type="email" id="eMail" name="eMail">
+                        <input type="email" id="eMail" name="eMail" value="<?= ($user['Email'])?>">
                     </td>
                 </tr>
                 <tr>
