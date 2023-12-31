@@ -32,5 +32,5 @@
             $mysqli->query("DELETE FROM student_info WHERE Student_ID='$id'") or die("Connection failed:");
                 $mysqli -> close();
             
-        header("Refresh:0; url=../modules/dashboard/studentlist.php");
+        header("Refresh:0; url=../dashboard/studentlist.php");
     }

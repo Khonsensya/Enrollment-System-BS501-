@@ -3,7 +3,7 @@
     width: 100%;
     background-image:
     linear-gradient(to bottom, #29adeb45, #32466c95),
-    url(../assets/imgs/background/bg1.jpeg);
+    url(../assets/imgs/background/bg4.jpg);
     background-size: cover;
     background-position: center;
     color: var(--textinverted);
@@ -138,8 +138,25 @@
     padding: 0 5rem;
 }
 .help1 h1,
-.policy1 h1 {
+.policy1 h1,
+.policy1 .subtitle {
     text-align: center;
+}
+.policy1 details {
+    margin-bottom: 1.25rem;
+}
+.policy1 summary {
+    list-style: none;
+}
+.policy1 summary h2 {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.policy1 summary h2::before {
+    content: '+';
+    padding-right: 1rem;
 }
 
 @media (width < 760px) {

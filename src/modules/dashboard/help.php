@@ -1,40 +1,23 @@
-<?php include '../../process/session.php'; ?>
+<!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'session.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'data.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duck Cover En Roll</title>
-    <link rel="stylesheet" href="../../../style.css">
-    <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/module.css">
-    <link rel="stylesheet" href="../../css/footer.css">
+    <title><?php echo $_Head_Title; ?></title>
+    <link rel="icon" href="<?php echo $_Head_Icon2; ?>"/>
+    <!-- CSS STYLESHEETS LINKS ARE HERE -->
+    <link rel="stylesheet" href="<?php echo $link_3; ?>style.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/module.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/navbar.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/footer.css">
 </head>
 <body>
-    <?php include '../../data/data.php'; ?>
-
-    <nav class="navbar2">
-        <input type="checkbox" id="toggle">
-        <label for="toggle" class="toggler">
-            <i class="pwd-snd-button">=</i>
-        </label>
-        <div class="logo">
-            <h1>Dashboard</h1>
-        </div>
-        <ul class="navlist">
-            <?php
-                if($user['User_Type'] == 'Student') {
-                    $_navbar_2_list = $_navbar_2_student;
-                } elseif ($user['User_Type'] == 'Administrator') {
-                    $_navbar_2_list = $_navbar_2_admin;
-                }
-            ?>
-            <?php foreach ($_navbar_2_list as $navbar_2_item) : ?>
-                <li><a href="<?php echo $navbar_2_item['link']; ?>">
-                        <?php echo $navbar_2_item['title']; ?></a></li>
-            <?php endforeach; ?>
-        </ul>
-    </nav>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'dashboard-navbar.php'; ?>
 
     <main class="help1 container">
         <h1>Enrollment System User Manual</h1>
@@ -50,12 +33,8 @@
                 <?php endforeach; ?>
             </div>
     </main>
-    <footer class="copyright1">
-        <?php foreach ($_copyright1 as $copyright1_item) : ?>
-            <p><?php echo $copyright1_item['copyright']; ?></p>
-            <p><?php echo $copyright1_item['signature']; ?></p>
-        <?php endforeach; ?>
-    </footer>
+    
+    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'footer.php'; ?>
 </body>
 </html>
 

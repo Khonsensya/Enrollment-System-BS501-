@@ -7,7 +7,7 @@
             4. HELP
             5. CONTACT
             6. FOOTER
-            7. FORMS
+            7. POLICY
     */
     
     /*
@@ -32,7 +32,7 @@
         ],
 
         [
-            /* a */'bg' => './src/assets/imgs/background/bg1.jpeg',
+            /* a */'bg' => './src/assets/imgs/background/bg2.jpg',
             /* b */'title' => 'En Roll University', 
             /* c */'descline1' => 'Dock Cover En Roll University', 
             /* d */'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
@@ -42,7 +42,7 @@
         ],
 
         [
-            /* a */'bg' => './src/assets/imgs/background/bg1.jpeg',
+            /* a */'bg' => './src/assets/imgs/background/bg3.jpg',
             /* b */'title' => 'Cover', 
             /* c */'descline1' => 'Dock Cover En Roll University', 
             /* d */'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
@@ -310,210 +310,79 @@
     ];
 
     /*
-        7. FORMS
-            a. Code
-            b. Citizenship / Address4 / Address5
+        4. Policy
+            a. Title
+            b. Description
+            c. Item
+                c.1. Item a
+                c.2. Item b
+                c.3. Item c
+                c.4. Item d
+                c.5. Item e
+                c.6. Item f
+                c.7. Item g
+                c.8. Item h
+                c.9. Item i
     */
-    $_citizenship = [
+    $_policy_1 =[
         [
-            /* a */'code' => 'none',
-            /* b */'citizenship' => ''
-        ], 
-        [
-            /* a */'code' => 'ph',
-            /* b */'citizenship' => 'Filipino'
-        ],             
-        [
-            /* a */'code' => 'ch',
-            /* b */'citizenship' => 'Chinese'
-        ],        
-        [
-            /* a */'code' => 'jp',
-            /* b */'citizenship' => 'Japanese'
-        ],         
-        [
-            /* a */'code' => 'usa',
-            /* b */'citizenship' => 'Americas'
-        ],        
-        [
-            /* a */'code' => 'rus',
-            /* b */'citizenship' => 'Russian'
+            /* a */'title' => 'Information Collection', 
+            /* b */'description' => 'We collect personal information necessary for enrollment, including but not limited to:',
+            /* c */'item' => [
+                /* c.1. */'- First Name',
+                /* c.2. */'- Middle Initial (optional)',
+                /* c.3. */'- Last Name',
+                /* c.4. */'- Sex (M/F/O/Prefer not to say)',
+                /* c.5. */'- Age',
+                /* c.6. */'- Your Email or Username',
+                /* c.7. */'- Phone Number (Must be 11 digits and starts at 09-)',
+                /* c.8. */'- Password',
+                /* c.9. */'- Religion'
+            ]
         ],
         [
-            /* a */'code' => 'de',
-            /* b */'citizenship' => 'German'
-        ],  
+            /* a */'title' => 'Use of Information', 
+            /* b */'description' => 'Your information is used solely for enrollment purposes. We do not share or sell your data to third parties for marketing purposes.',
+            /* c */'item' => []
+        ],
         [
-            /* a */'code' => 'tr',
-            /* b */'citizenship' => 'Turkish'
-        ],  
+            /* a */'title' => 'Data Security', 
+            /* b */'description' => 'We employ industry-standard security measures to protect your information from unauthorized access, disclosure, alteration, and destruction.',
+            /* c */'item' => []
+        ],
         [
-            /* a */'code' => 'ca',
-            /* b */'citizenship' => 'Canadian'
-        ], 
+            /* a */'title' => 'Third-Party Services', 
+            /* b */'description' => 'In some cases, we may use third-party services for enrollment. These services are bound by confidentiality agreements to protect your data.',
+            /* c */'item' => []
+        ],
         [
-            /* a */'code' => 'india',
-            /* b */'citizenship' => 'Indian'
-        ],  
+            /* a */'title' => 'Cookies and Tracking', 
+            /* b */'description' => 'We may use cookies to enhance your experience. You can choose to disable cookies in your browser settings, but this may affect the functionality of our system.',
+            /* c */'item' => []
+        ],
         [
-            /* a */'code' => 'mx',
-            /* b */'citizenship' => 'Mexican'
-        ],  
+            /* a */'title' => 'Data Retention', 
+            /* b */'description' => 'Your information is retained for the duration necessary to fulfill the enrollment process. Afterward, it is securely archived or permanently deleted.',
+            /* c */'item' => []
+        ],
         [
-            /* a */'code' => 'fr',
-            /* b */'citizenship' => 'French'
-        ],  
+            /* a */'title' => 'User Control', 
+            /* b */'description' => 'You have the right to review, update, or delete your personal information. Contact us through email for any requests.',
+            /* c */'item' => []
+        ],
         [
-            /* a */'code' => 'ir',
-            /* b */'citizenship' => 'Iranian'
-        ],  
+            /* a */'title' => 'Changes to Policy', 
+            /* b */'description' => 'We reserve the right to update our policy. Changes will be communicated through our website or other appropriate channels.',
+            /* c */'item' => []
+        ],
         [
-            /* a */'code' => 'kr',
-            /* b */'citizenship' => 'Korean'
-        ],  
+            /* a */'title' => 'Compliance with Laws', 
+            /* b */'description' => 'We comply with all relevant data protection laws and regulations.',
+            /* c */'item' => []
+        ],
         [
-            /* a */'code' => 'uk',
-            /* b */'citizenship' => 'British'
-        ],  
-        [
-            /* a */'code' => 'esp',
-            /* b */'citizenship' => 'Spanish'
-        ],   
-        // popular ng countries. atleast 10-15
-        ];
-        
-    $_address4 = [
-        [
-            /* a */'code' => 'none',
-            /* b */'address4' => ''
-        ], 
-        [
-            /* a */'code' => 'qc',
-            /* b */'address4' => 'Quezon City'
-        ],  
-        [
-            /* a */'code' => 'bocaue',
-            /* b */'address4' => 'Bocaue'
-        ],  
-        [
-            /* a */'code' => 'mnl',
-            /* b */'address4' => 'Manila'
-        ], 
-        [
-            /* a */'code' => 'ps',
-            /* b */'address4' => 'Pasay'
-        ], 
-        [
-            /* a */'code' => 'ca',
-            /* b */'address4' => 'Caloocan'
-        ], 
-        [
-            /* a */'code' => 'pat',
-            /* b */'address4' => 'Pateros'
-        ], 
-        [
-            /* a */'code' => 'nav',
-            /* b */'address4' => 'Navotas'
-        ], 
-        [
-            /* a */'code' => 'mdl',
-            /* b */'address4' => 'Mandaluyong'
-        ], 
-        [
-            /* a */'code' => 'psg',
-            /* b */'address4' => 'Pasig'
-        ], 
-        [
-            /* a */'code' => 'vza',
-            /* b */'address4' => 'Valenzuela'
-        ], 
-        [
-            /* a */'code' => 'nju',
-            /* b */'address4' => 'San Juan'
-        ], 
-        [
-            /* a */'code' => 'mnt',
-            /* b */'address4' => 'Muntinlupa'
-        ], 
-        [
-            /* a */'code' => 'mti',
-            /* b */'address4' => 'Makati'
-        ], 
-        [
-            /* a */'code' => 'mar',
-            /* b */'address4' => 'Marikina'
-        ], 
-        [
-            /* a */'code' => 'tau',
-            /* b */'address4' => 'Taguig'
-        ], 
-        // popular ng cities. atleast 10-15
-        ];
-
-    $_address5 = [
-        [
-            /* a */'code' => 'none',
-            /* b */'address5' => ''
-        ], 
-        [
-            /* a */'code' => 'ncr',
-            /* b */'address5' => 'National Capital Region'
-        ],  
-        [
-            /* a */'code' => 'bulacan',
-            /* b */'address5' => 'Bulacan'
-        ],  
-        [
-            /* a */'code' => 'cve',
-            /* b */'address5' => 'Cavite'
-        ], 
-        [
-            /* a */'code' => 'lgu',
-            /* b */'address5' => 'Laguna'
-        ], 
-        [
-            /* a */'code' => 'riz',
-            /* b */'address5' => 'Rizal'
-        ], 
-        [
-            /* a */'code' => 'isa',
-            /* b */'address5' => 'Isabela'
-        ], 
-        [
-            /* a */'code' => 'pan',
-            /* b */'address5' => 'Pangasinan'
-        ], 
-        [
-            /* a */'code' => 'btg',
-            /* b */'address5' => 'Batangas'
-        ], 
-        [
-            /* a */'code' => 'pam',
-            /* b */'address5' => 'Pampanga'
-        ], 
-        [
-            /* a */'code' => 'ili',
-            /* b */'address5' => 'Iloilo'
-        ], 
-        [
-            /* a */'code' => 'das',
-            /* b */'address5' => 'Davao del Sur'
-        ], 
-        [
-            /* a */'code' => 'nue',
-            /* b */'address5' => 'Nueva Ecija'
-        ], 
-        [
-            /* a */'code' => 'que',
-            /* b */'address5' => 'Quezon'
-        ], 
-        [
-            /* a */'code' => 'cas',
-            /* b */'address5' => 'Camarines Sur'
-        ], 
-        [
-            /* a */'code' => 'ley',
-            /* b */'address5' => 'Leyte'
-        ], 
-        // popular ng provinces/regions. atleast 10-15
-        ];
+            /* a */'title' => 'User Agreement', 
+            /* b */'description' => 'By using our online enrollment system, you agree to the terms outlined in this Privacy and Policy.',
+            /* c */'item' => []
+        ]
+    ];

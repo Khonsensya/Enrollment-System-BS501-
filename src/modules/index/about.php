@@ -1,41 +1,27 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '\config.php'; ?>
+<!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'data.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duck Cover En Roll</title>
-    <link rel="stylesheet" href="../../../style.css">
-    <link rel="stylesheet" href="../../css/animation.css">
-    <link rel="stylesheet" href="../../css/banner.css">
-    <link rel="stylesheet" href="../../css/button.css">
-    <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/navbar.css">
-
+    <title><?php echo $_Head_Title; ?></title>
+    <link rel="icon" href="<?php echo $_Head_Icon2; ?>"/>
+    <!-- CSS STYLESHEETS LINKS ARE HERE -->
+    <link rel="stylesheet" href="<?php echo $link_3; ?>style.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/banner.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/button.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/footer.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/navbar.css">
+    <link rel="stylesheet" href="<?php echo $link_2; ?>css/animation.css">
 </head>
 
 <body>
-    <?php include '../../data/data.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'index-navbar.php'; ?>
 
-    <nav class="navbar1">
-        <input type="checkbox" id="toggle">
-        <label for="toggle" class="toggler">
-            <i class="pwd-snd-button">=</i>
-        </label>
-        <div class="logo">
-            <a href="/index.php">
-                <h1>DCERU</h1>
-            </a>
-        </div>
-        <ul class="navlist">
-            <?php foreach ($_navbar_1 as $navbar1_item) : ?>
-                <li><a href="<?php echo $navbar1_item['link']; ?>">
-                        <?php echo $navbar1_item['title']; ?></a></li>
-            <?php endforeach; ?>
-            <a href="../login.php" class="btn1">Login</a>
-        </ul>
-    </nav>
     <?php
     //BAKIT MAY NALILIGAW NA ARRAY DITO, MERON NAMANG DEDICATED FILE PARA RITO
     $about = [
@@ -54,12 +40,7 @@
             <p><?php echo $paragraph; ?></p>
         <?php endforeach; ?>
     </section>
-    <footer class="copyright1">
-        <?php foreach ($_copyright1 as $copyright1_item) : ?>
-            <p><?php echo $copyright1_item['copyright']; ?></p>
-            <p><?php echo $copyright1_item['signature']; ?></p>
-        <?php endforeach; ?>
-    </footer>
+    
+    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'footer.php'; ?>
 </body>
-
 </html>
