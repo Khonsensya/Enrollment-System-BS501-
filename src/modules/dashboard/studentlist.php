@@ -1,9 +1,9 @@
 <!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'session.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'data.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'mysql-connection.php'; ?>
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . PROCESS . 'action.php'; ?>
+<?php include '../../../config.php'; ?>
+<?php include $_C2_data_php; ?>
+<?php include $_C2_session_php; ?>
+<?php include $_C2_mysql_connection_php; ?>
+<?php require_once $_C2_action_php; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,20 +11,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_Head_Title; ?></title>
-    <link rel="icon" href="<?php echo $_Head_Icon2; ?>"/>
+    <link rel="icon" href="<?php echo $_C2_Head_Icon; ?>"/>
     <!-- CSS STYLESHEETS LINKS ARE HERE -->
-    <link rel="stylesheet" href="<?php echo $link_3; ?>style.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/module.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/button.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/icon.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/navbar.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/dashboard.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/forms.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/alert.css">
+    <link rel="stylesheet" href="<?php echo $_C2_style_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_module_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_button_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_icon_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_navbar_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_forms_css; ?>">
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'dashboard-navbar.php'; ?><br>
-
+    <?php include $_C2_dashboard_navbar_php; ?>
+    
     <section class="studentlist1 container">
         <h1>Student List</h1>
         <table>

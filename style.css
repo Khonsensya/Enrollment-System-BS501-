@@ -18,7 +18,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
+    
     --primary: #32466c;
     --secondary: #29adeb;
     --btn1: #3d55bc;
@@ -29,8 +29,6 @@
     --black: #1c232b;
     --darkgray: #1a1a1a;
     --gray: #1e1e1e;
-    
-    --fit: fit-content;
 }
   
 a {

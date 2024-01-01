@@ -9,13 +9,22 @@ td {
 label {
     display: block;
     margin-bottom: .25rem;
-    font-size: min(4vw, 8pt);
+    font-size: min(5vw, 12pt);
+    font-weight: 700;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 select, input {
     width: 100%;
     padding: .5rem;
     border-radius: .5rem;
     border: var(--gray) 1px solid;
+}
+
+select:focus, input:focus {
+    outline: var(--secondary) 2.5px solid;
+    border: #00000000 1px solid;
 }
 
 .password-container {
@@ -27,6 +36,7 @@ select, input {
     top: 30%;
     width: 1rem;
     height: 1rem;
+    cursor: pointer;
 }
 
 @media (width < 760px) {

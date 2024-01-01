@@ -20,6 +20,7 @@
             f. Button 1
             g. Button 2
     */
+    
     $_banner_1 = [
         [
             /* a */'bg' => './src/assets/imgs/background/bg1.jpeg',
@@ -27,8 +28,8 @@
             /* c */'descline1' => 'Dock Cover En Roll University', 
             /* d */'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
             /* e */'descline3' => 'Now recruiting Frats Members', 
-            /* f */'btn1' => 'Sign Up', 
-            /* g */'btn2' => 'Enroll Now!'
+            /* f */'btn1' => '<a href="./src/modules/signup.php" class="btn1">Sign Up</a>', 
+            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn4">Enroll Now!</a>'
         ],
 
         [
@@ -37,8 +38,8 @@
             /* c */'descline1' => 'Dock Cover En Roll University', 
             /* d */'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
             /* e */'descline3' => 'Now recruiting Frats Members', 
-            /* f */'btn1' => 'Sign Up', 
-            /* g */'btn2' => 'Enroll Now!'
+            /* f */'btn1' => '<a href="./src/modules/signup.php" class="btn1">Sign Up</a>', 
+            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn4">Enroll Now!</a>'
         ],
 
         [
@@ -47,8 +48,8 @@
             /* c */'descline1' => 'Dock Cover En Roll University', 
             /* d */'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
             /* e */'descline3' => 'Now recruiting Frats Members', 
-            /* f */'btn1' => 'Sign Up', 
-            /* g */'btn2' => 'Enroll Now!'
+            /* f */'btn1' => '<a href="./src/modules/signup.php" class="btn1">Sign Up</a>', 
+            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn4">Enroll Now!</a>'
         ],    
     ];
 
@@ -60,19 +61,19 @@
     $_navbar_1 = [
         [
             /* a */'title' => 'About',
-            /* b */'link' => '/src/modules/index/about.php'
+            /* b */'link' => './src/modules/index/about.php'
         ],
         [
             /* a */'title' => 'Programs',
-            /* b */'link' =>  '/src/modules/index/programs.php'
+            /* b */'link' =>  './src/modules/index/programs.php'
         ],
         [
             /* a */'title' => 'Admission',
-            /* b */'link' =>  '/src/modules/index/admission.php'
+            /* b */'link' =>  './src/modules/index/admission.php'
         ],
         [
             /* a */'title' => 'Contact Us',
-            /* b */'link' =>  '/src/modules/index/contact_us.php'
+            /* b */'link' =>  './src/modules/index/contact_us.php'
         ],
     ];
     
@@ -289,7 +290,7 @@
                 b.1. Location
                 b.2. Phone
     */
-    $contact1 = [
+    $contact_1 = [
         /* a */'title' => 'DCERU',
         /* b */'paragraphs' => [
             /* b.1. */'Location: ',
@@ -302,7 +303,7 @@
             a. Copyright
             b. Signature
     */
-    $_copyright1 = [
+    $_copyright_1 = [
         [
             'copyright' => '© Copyright. BS501. 2023',
             'signature' => '01000010 01010011 01000011 01010011'

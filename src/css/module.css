@@ -20,7 +20,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--neutral1);
+    background-color: #ffffff25;
+    backdrop-filter: blur(15px);
     max-width: fit-content;
     height: fit-content;
     padding: 2.5rem;
