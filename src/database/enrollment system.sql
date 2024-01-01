@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:4306
--- Generation Time: Dec 30, 2023 at 01:23 PM
+-- Generation Time: Dec 31, 2023 at 12:46 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,22 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `enrollment_system`
 --
-
-DELIMITER $$
---
--- Functions
---
-CREATE DEFINER=`root`@`localhost` FUNCTION `CheckBirthdate` () RETURNS TINYINT(4)  BEGIN
-    DECLARE result TINYINT;
-    IF NEW.Birthdate <= CURDATE() THEN
-        SET result = 1;
-    ELSE
-        SET result = 0;
-    END IF;
-    RETURN result;
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -261,11 +245,11 @@ CREATE TABLE `student_info` (
   `Place_of_Birth` varchar(100) NOT NULL,
   `Citizenship` varchar(50) NOT NULL,
   `Civil_Status` enum('Single','Married','Divorced','Separated','Widowed') NOT NULL,
-  `Mobile_Number` int(11) NOT NULL,
+  `Mobile_Number` varchar(11) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Address` varchar(255) NOT NULL,
   `Enrolled` tinyint(1) NOT NULL DEFAULT 0,
-  `User_ID` bigint(20) NOT NULL
+  `User_ID` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -273,41 +257,60 @@ CREATE TABLE `student_info` (
 --
 
 INSERT INTO `student_info` (`Student_ID`, `First_Name`, `Last_Name`, `Middle_Initial`, `Gender`, `Birthdate`, `Place_of_Birth`, `Citizenship`, `Civil_Status`, `Mobile_Number`, `Email`, `Address`, `Enrolled`, `User_ID`) VALUES
-(1, 'Kobe', 'Malonzo', '', '', '2002-08-07', '', '', 'Single', 0, '', '', 0, 10001),
-(2, 'Mark Limuel', 'Lape', '', '', '0000-00-00', '', '', 'Single', 0, '', '', 0, 10002),
-(3, 'Yranimez', 'Repil', '', '', '0000-00-00', '', '', 'Single', 0, 'yranimezrepil@gmail.com', '', 0, 10003);
+(1, 'Christian Kobe', 'Malonzo', '', 'Male', '2002-08-07', '', '', 'Single', '0', 'kobemalonzo@gmail.com', '', 0, 10001),
+(2, 'Mark Limuel', 'Lape', 'Z', 'Male', '2000-01-01', 'Philippines', 'Filipino', 'Single', '09234567890', 'lapemark@gmail.com', 'Bulacan', 1, 10002),
+(3, 'Yranimez', 'Repil', 'R', 'Male', '0000-00-00', 'Philippines', 'Filipino', 'Single', '09123456789', 'yranimezrepil@gmail.com', 'Quezon City', 1, 10003);
 
 --
 -- Triggers `student_info`
 --
 DELIMITER $$
-CREATE TRIGGER `Before_Insert_Student_Info` BEFORE INSERT ON `student_info` FOR EACH ROW BEGIN
-    IF NEW.Birthdate > CURDATE() THEN
-        SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Birthdate is invalid';
-    END IF;
-END
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `Before_Update_Student_Info` BEFORE UPDATE ON `student_info` FOR EACH ROW BEGIN
-    IF NEW.Birthdate > CURDATE() THEN
-        SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Birthdate is invalid';
-    END IF;
-END
-$$
-DELIMITER ;
-DELIMITER $$
 CREATE TRIGGER `Enrolled_to_Student_Profile` AFTER UPDATE ON `student_info` FOR EACH ROW BEGIN
     -- Check if the Enrolled column is updated to true
     IF NEW.Enrolled = 1 THEN
+	-- Check if student_profile already exists
+ 		IF NOT EXISTS (SELECT 1 FROM student_profile WHERE Student_ID = NEW.Student_ID) THEN
         -- Insert the Student_ID into the student_profile table
-        INSERT INTO student_profile (Student_ID) VALUES (NEW.Student_ID);
+        	INSERT INTO student_profile (Student_ID) VALUES (NEW.Student_ID);
+		END IF;
 	ELSE
         -- Delete the corresponding row from the student_profile table
         DELETE FROM student_profile WHERE Student_ID = NEW.Student_ID;
     END IF;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `Insert_Birthday_Check` BEFORE INSERT ON `student_info` FOR EACH ROW BEGIN
+    IF NEW.Birthdate > CURDATE() THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Birthdate is invalid';
+    END IF;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `Update_Birthday_Check` BEFORE UPDATE ON `student_info` FOR EACH ROW BEGIN
+    IF NEW.Birthdate > CURDATE() THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Birthdate is invalid';
+    END IF;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_student_info_update` AFTER UPDATE ON `student_info` FOR EACH ROW BEGIN
+  IF (
+    NEW.First_Name <> (SELECT First_Name FROM users WHERE User_ID = NEW.User_ID) OR
+    NEW.Last_Name <> (SELECT Last_Name FROM users WHERE User_ID = NEW.User_ID) OR
+    NEW.Email <> (SELECT Email FROM users WHERE User_ID = NEW.User_ID)
+  ) THEN
+    UPDATE users
+    SET First_Name = NEW.First_Name,
+        Last_Name = NEW.Last_Name,
+        Email = NEW.Email
+    WHERE User_ID = NEW.User_ID;
+  END IF;
 END
 $$
 DELIMITER ;
@@ -323,6 +326,14 @@ CREATE TABLE `student_profile` (
   `Student_ID` int(20) NOT NULL,
   `Section_ID` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student_profile`
+--
+
+INSERT INTO `student_profile` (`Student_Number`, `Student_ID`, `Section_ID`) VALUES
+('STDNT002', 2, NULL),
+('STDNT003', 3, NULL);
 
 --
 -- Triggers `student_profile`
@@ -355,15 +366,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`User_ID`, `First_Name`, `Last_Name`, `Email`, `Password`, `User_Type`, `Date_Created`) VALUES
-(10001, 'Christian Kobe', 'Malonzo', 'sample@gmail.com', '1234567890', 'Student', '2023-12-26 13:19:22'),
+(10001, 'Christian Kobe', 'Malonzo', 'kobemalonzo@gmail.com', '1234567890', 'Student', '2023-12-26 13:19:22'),
 (10002, 'Mark Limuel', 'Lape', 'lapemark@gmail.com', '0912345', 'Student', '2023-12-26 14:03:47'),
-(10003, 'Yranimez', 'Repil', 'yranimezrepil@gmail.com', '093218423', 'Student', '2023-12-26 14:06:41');
+(10003, 'Ranimez', 'Repil', 'yranimezrepil@gmail.com', '093218423', 'Student', '2023-12-26 14:06:41');
 
 --
 -- Triggers `users`
 --
 DELIMITER $$
-CREATE TRIGGER `After_Insert_User` AFTER INSERT ON `users` FOR EACH ROW BEGIN
+CREATE TRIGGER `Users_to_Student_Info` AFTER INSERT ON `users` FOR EACH ROW BEGIN
     DECLARE v_UserID INT;
 
     -- Insert into Students table if UserType is 'Student'
@@ -372,6 +383,24 @@ CREATE TRIGGER `After_Insert_User` AFTER INSERT ON `users` FOR EACH ROW BEGIN
         INSERT INTO student_info (First_Name, Last_Name, Email, User_ID)
         VALUES (NEW.First_Name, NEW.Last_Name, NEW.Email, v_UserID);
     END IF;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `after_users_update` AFTER UPDATE ON `users` FOR EACH ROW BEGIN
+  IF NEW.User_Type = 'Student' THEN
+    IF (
+      NEW.First_Name <> (SELECT First_Name FROM student_info WHERE User_ID = NEW.User_ID) OR
+      NEW.Last_Name <> (SELECT Last_Name FROM student_info WHERE User_ID = NEW.User_ID) OR
+      NEW.Email <> (SELECT Email FROM student_info WHERE User_ID = NEW.User_ID)
+    ) THEN
+      UPDATE student_info
+      SET First_Name = NEW.First_Name,
+          Last_Name = NEW.Last_Name,
+          Email = NEW.Email
+      WHERE User_ID = NEW.User_ID;
+    END IF;
+  END IF;
 END
 $$
 DELIMITER ;
@@ -430,7 +459,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `student_info`
 --
 ALTER TABLE `student_info`
-  MODIFY `Student_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Student_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
