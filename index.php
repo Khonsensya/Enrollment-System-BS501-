@@ -1,9 +1,11 @@
+
 <!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
 <?php include './config.php'; ?>
 <?php include $_P_data_php; ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +18,7 @@
     <link rel="stylesheet" href="<?php echo $_P_footer_css; ?>">
     <link rel="stylesheet" href="<?php echo $_P_navbar_css; ?>">
 </head>
+
 <body>
     <nav class="navbar1">
         <input type="checkbox" id="toggle">
@@ -64,4 +67,5 @@
     
     <script defer src="<?php echo $_P_banner_js; ?>"></script>
 </body>
+
 </html>
