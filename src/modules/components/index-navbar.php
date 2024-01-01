@@ -4,7 +4,7 @@
         <i class="pwd-snd-button">=</i>
     </label>
     <div class="logo">
-        <a href="/index.php">
+        <a href="/Enrollment-System-BS501-/index.php">
             <h1>DCERU</h1>
         </a>
     </div>

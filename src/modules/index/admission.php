@@ -1,6 +1,6 @@
 <!-- PHP INCLUDE / REQUIRE LINKS ARE HERE -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . DATA . 'data.php'; ?>
+<?php include '../../../config.php'; ?>
+<?php include $_C2_data_php; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,25 +9,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_Head_Title; ?></title>
-    <link rel="icon" href="<?php echo $_Head_Icon2; ?>"/>
+    <link rel="icon" href="<?php echo $_C2_Head_Icon; ?>"/>
     <!-- CSS STYLESHEETS LINKS ARE HERE -->
-    <link rel="stylesheet" href="<?php echo $link_3; ?>style.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/banner.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/button.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/footer.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/navbar.css">
-    <link rel="stylesheet" href="<?php echo $link_2; ?>css/animation.css">
+    <link rel="stylesheet" href="<?php echo $_C2_style_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_button_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_footer_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_navbar_css; ?>">
 
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'index-navbar.php'; ?>
+    <?php include $_C2_index_navbar_php; ?>
 
     <div class="container">
         Admission
     </div>
     
-    <?php include $_SERVER['DOCUMENT_ROOT'] . COMPONENTS . 'footer.php'; ?>
+    <?php include $_C2_footer_php; ?>
 </body>
 
 </html>
