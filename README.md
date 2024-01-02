@@ -296,10 +296,20 @@ Conggas:
 ### Database
 `Includes:`
 - Create Database:
-  - [ ] xxx
+  - [x] enrollment_system
 - Create Table:
-  - [ ] xxx
-- Automate Database:
-  - [ ] xxx
+  - [x] users
+  - [x] student_info
+  - [x] student_profile
+  - [x] school_courses
+  - [x] school_sections
+- Triggers:
+  - [x] User_to_Student_Info
+  - [x] Sync_to_Users
+  - [x] Birthday_Check
+  - [x] Enrolled_to_Student_Profile
+  - [x] Generate_Student_Number
+  - [x] Generate_Course_GUID
 - Populate Database:
-  - [ ] xxx
+  - [x] Courses
+  - [x] Sections 
