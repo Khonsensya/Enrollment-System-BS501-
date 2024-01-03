@@ -23,7 +23,7 @@ select, input {
 }
 
 select:focus, input:focus {
-    outline: var(--secondary) 2.5px solid;
+    outline: var(--gray) 2.5px solid;
     border: #00000000 1px solid;
 }
 

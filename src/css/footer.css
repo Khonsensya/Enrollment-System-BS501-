@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     padding: 2.5vh 15vw;
-    background-color: #1e1e1e;
-    color: var(--white);
+    background-color: var(--gray);
+    color: var(--white_1);
 }
 
 @media (width < 760px) {

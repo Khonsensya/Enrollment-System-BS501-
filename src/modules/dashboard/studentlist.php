@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<?php echo $_C2_forms_css; ?>">
 </head>
 <body>
+    <?php if(isset($user)): ?>
     <?php include $_C2_dashboard_navbar_php; ?>
     
     <section class="studentlist1 container">
@@ -55,6 +56,12 @@
             </tbody>
         </table>
     </section>
+    <?php else: ?>
+        <div class="container">
+            <h2>Please Login</h2>
+            <a href="<?php echo $_C2_login ?>">Login</a>
+        </div>
+    <?php endif; ?>
 </body>
 </html>
 

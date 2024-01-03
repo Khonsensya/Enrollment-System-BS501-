@@ -41,7 +41,7 @@
     <main class="forms1">
         <section class="center">
             <section class="login">
-                <a href="<?php echo $_C1_index; ?>" class="btn3 back">X</a>
+                <a href="<?php echo $_C1_index; ?>" class="text_button back">X</a>
                 <img src="<?php echo $_C1_body_icon; ?>" alt="" class="icon-s">
                 <h4 class="title"><span>DCER University</span> Portal</h4>
 
@@ -60,7 +60,7 @@
                                     <em>Invalid Login</em>
                                 <?php endif; ?>
                             </p>
-                        <p>Not yet registered? <a href="<?php echo $_C1_signup; ?>" class="btn3">Register Here</a></p>
+                        <p>Not yet registered? <a href="<?php echo $_C1_signup; ?>" class="text_button">Register Here</a></p>
                         <a href="#" class="forgot">Forgot Password?</a><br>
                     </div>
                 </form>

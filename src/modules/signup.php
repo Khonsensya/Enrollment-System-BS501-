@@ -19,7 +19,7 @@
     <main class="forms1">
         <section class="center">
             <section class="login">
-                <a href="<?php echo $_C1_index; ?>" class="btn3 back">X</a>
+                <a href="<?php echo $_C1_index; ?>" class="text_button back">X</a>
                 <img src="<?php echo $_C1_body_icon; ?>" alt="" class="icon-s">
                 <h4 class="title"><span>DCER University</span> Portal</h4>
 
@@ -47,7 +47,7 @@
                     
                     <div class="action-container">
                         <input type= "submit" value="Sign Up" class="btn1">
-                            <a href="<?php echo $_C1_login; ?>" class="btn3">Already have an account?</a>
+                            <a href="<?php echo $_C1_login; ?>" class="text_button">Already have an account?</a>
                     </div>
                 </form>
             </section>
