@@ -34,7 +34,7 @@
                         <option value="default">Default</option>
                         <option value="rejected">Rejected</option>
                     </select>
-                    <input type="submit" name="submit-option" class="btn1">
+                    <input type="submit" name="submit-option" class="btn1" >
                 </td>
             </table>
         </form>
@@ -71,8 +71,8 @@
                             <td class="table_name"><?php echo $row['Last_Name'], ', ', $row['First_Name'], ' ', $row['Middle_Initial'] ?></td>
                             <td class="list-actions">
                                 <div>
-                                    <a href="?approve=<?php echo $row['Student_ID']; ?>" class="btn1 safe"><?php echo $_Btn1 ?></a>
-                                    <a href="?<?php echo $_BtnOption ?>=<?php echo $row['Student_ID']; ?>" class="btn2 danger"><?php echo $_Btn2 ?></a>
+                                    <a onclick="javascript: return confirm('Please confirm deletion');" href="?approve=<?php echo $row['Student_ID']; ?>" class="btn1 safe"><?php echo $_Btn1 ?></a>
+                                    <a onclick="javascript: return confirm('Please confirm deletion');" href="?<?php echo $_BtnOption ?>=<?php echo $row['Student_ID']; ?>" class="btn2 danger"><?php echo $_Btn2 ?></a>
                                 </div>
                             </td>
                         </tr>

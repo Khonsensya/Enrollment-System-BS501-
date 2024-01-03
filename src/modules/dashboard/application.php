@@ -113,7 +113,7 @@
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <button type="submit" name="save" id="submit" class="btn1">Submit</button>
+                            <button onclick="javascript: return confirm('Please confirm deletion');" type="submit" name="save" id="submit" class="btn1">Submit</button>
                         </td>
                     </tr>
                 </table>

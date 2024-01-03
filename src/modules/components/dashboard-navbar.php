@@ -4,7 +4,9 @@
             <i class="pwd-snd-button">=</i>
         </label>
         <div class="logo">
-            <h1>Dashboard</h1>
+            <a href="./dashboard.php">
+                <h1>Dashboard</h1>
+            </a>
         </div>
         <ul class="navlist">
             <?php

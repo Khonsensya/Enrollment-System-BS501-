@@ -49,7 +49,7 @@
                                     <div>
                                         <a href="dashboard.php?view=<?php echo $row['Student_ID']; ?>" class="btn1 safe">View</a>
                                         <a href="dashboard.php?edit=<?php echo $row['Student_ID']; ?>" class="btn2 warning">Edit</a>
-                                        <a href="studentlist.php?delete=<?php echo $row['Student_ID']; ?>" class="btn2 danger">Delete</a>
+                                        <a onclick="javascript: return confirm('Please confirm deletion');" href="studentlist.php?delete=<?php echo $row['Student_ID']; ?>" class="btn2 danger">Delete</a>
                                     </div>
                                 </td>
                             </tr>
