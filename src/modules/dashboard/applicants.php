@@ -48,21 +48,23 @@
                 </tr>
             </thead>
             <tbody>
-            <?php if(isset($_POST['submit-option'])): ?>
-                <?php 
-                    if ($_POST['applicant_type_1'] == 'rejected') {
-                        $_Status = '2';
-                        $_Btn1 = 'Reconsider';
-                        $_Btn2 = 'Delete';
-                        $_BtnOption = 'delete';
-                    }
-                    else {
-                        $_Status = '0';
-                        $_Btn1 = 'Approve';
-                        $_Btn2 = 'Reject';
-                        $_BtnOption = 'reject';
-                    }
-                ?>
+                <?php $_Status = '0'; $_Btn1 = 'Approve'; $_Btn2 = 'Reject'; $_BtnOption = 'reject'; ?>
+                    <?php if(isset($_POST['submit-option'])): ?>
+                        <?php 
+                            if ($_POST['applicant_type_1'] == 'rejected') {
+                                $_Status = '2';
+                                $_Btn1 = 'Reconsider';
+                                $_Btn2 = 'Delete';
+                                $_BtnOption = 'delete';
+                            }
+                            else {
+                                $_Status = '0';
+                                $_Btn1 = 'Approve';
+                                $_Btn2 = 'Reject';
+                                $_BtnOption = 'reject';
+                            }
+                    ?>
+                    <?php endif; ?>
                     <?php $result = $mysqli->query("SELECT * FROM student_info WHERE Status='$_Status'") or die("Invalid query: ". $mysqli->error); ?>
                     <?php while ($row = $result->fetch_assoc()):?>
                         <tr>
@@ -77,7 +79,6 @@
                             </td>
                         </tr>
                     <?php endwhile ?>
-            <?php endif; ?>
             </tbody>
         </table>
     </section>
