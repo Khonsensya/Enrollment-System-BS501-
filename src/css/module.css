@@ -38,7 +38,7 @@
 .forms1 a {
     text-decoration: underline;
     padding: .5rem;
-    color: var(--textinverted);
+    color: var(--white_1);
 }
 .forms1 .forgot {
     display: block;
@@ -46,7 +46,7 @@
     padding: 0;
 }
 .forms1 .forgot:hover {
-    color: var(--secondary);
+    color: var(--light_blue);
 }
 .forms1 .title {
     width: 30rem;
@@ -102,8 +102,8 @@
 .summary-item {
     flex: 25%;
     padding: 1.5rem;
-    color: var(--white);
-    background-color: var(--secondary);
+    color: var(--white_1);
+    background-color: var(--light_blue);
 }
 /*  */
 .studentlist1 table {

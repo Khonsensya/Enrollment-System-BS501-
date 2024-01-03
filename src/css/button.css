@@ -5,17 +5,17 @@
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 700;
     font-family: inherit;
-    background-color: var(--secondary);
     cursor: pointer;
-    transition: border-color 0.25s;
-    color: var(--white);
+    transition: all 0.25s;
+    background-color: var(--light_blue);
+    color: var(--white_1);
 }
 .btn1:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
-    background-color: #00000000;
+    border-color: var(--mid_blue);
+    color: var(--white_1);
+    background-color: var(--mid_blue);
 }
 
 .btn2 {
@@ -27,34 +27,18 @@
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: var(--btn2);
     cursor: pointer;
-    transition: border-color 0.25s;
-    color: var(--white);
+    transition: all 0.25s;
+    background-color: var(--mid_blue);
+    color: var(--white_1);
 }
 .btn2:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
-    background-color: #00000000;
+    border-color: var(--dark_blue);
+    color: var(--white_1);
+    background-color: var(--dark_blue);
 }
 
 .btn3 {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    color: var(--white);
-    text-decoration: underline;
-}
-.btn3:hover {
-    color: var(--secondary);
-}
-
-.btn4 {
     display: block;
     border-radius: 8px;
     border: 1px solid transparent;
@@ -63,15 +47,34 @@
     font-weight: 500;
     font-family: inherit;
     cursor: pointer;
+    transition: all 0.25s;
+    background-color: transparent;
+    color: var(--white_1);
+    border-color: var(--white_1);
+}
+.btn3:hover {
+    border-color: var(--light_blue);
+    color: var(--light_blue);
+}
+
+/* Text Button */
+.text_button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
     transition: border-color 0.25s;
     color: var(--white);
-    border-color: var(--white);
     text-decoration: underline;
+    background-color: transparent;
 }
-.btn4:hover {
-    border-color: var(--secondary);
-    color: var(--white);
+.text_button:hover {
+    color: var(--light_blue);
 }
+
 
 .btn5 {
     display: block;
@@ -83,13 +86,13 @@
     font-family: inherit;
     cursor: pointer;
     transition: border-color 0.25s;
-    color: var(--btn2);
-    border-color: var(--btn2);
+    color: var(--light_blue);
+    border-color: var(--light_blue);
     text-decoration: underline;
 }
 .btn5:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
+    border-color: var(--dark_blue);
+    color: var(--dark_blue);
     background-color: #00000000;
 }
 

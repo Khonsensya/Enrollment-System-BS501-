@@ -121,6 +121,7 @@
         </section>
     <?php else: ?>
         <div class="container">
+            <h2>Please Login</h2>
             <a href="<?php echo $_C2_login ?>">Login</a>
         </div>
     <?php endif; ?>

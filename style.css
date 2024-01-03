@@ -12,23 +12,27 @@
     font-weight: 400;
 
     color: var(--black);
-    background-color: var(--neutral1);
+    background-color: var(--white_1);
   
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
-    --primary: #32466c;
-    --secondary: #29adeb;
-    --btn1: #3d55bc;
-    --btn2: #fa5477;
-    --neutral1: #f4f5f6;
-    --neutral2: #e8ecec;
-    --white: #f5f5f7;
-    --black: #1c232b;
-    --darkgray: #1a1a1a;
+
+    /* Color */
+    --dark_blue: #003e5d;
+    --mid_blue: #0176aa;
+    --light_blue: #00acf8;
+    --orange: #f89807;
+    --green: #06a948;
+    --red: #ff3b30;
+    /* Light */
+    --white_1: #f4f5f6;
+    --white_2: #e8ecec;
+    /* Shadow */
     --gray: #1e1e1e;
+    --dark_gray: #1a1a1a;
+    --black: #1c232b;
 }
   
 a {

@@ -29,7 +29,7 @@
             /* d */'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
             /* e */'descline3' => 'Now recruiting Frats Members', 
             /* f */'btn1' => '<a href="./src/modules/signup.php" class="btn1">Sign Up</a>', 
-            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn4">Enroll Now!</a>'
+            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn3">Enroll Now!</a>'
         ],
 
         [
@@ -39,7 +39,7 @@
             /* d */'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
             /* e */'descline3' => 'Now recruiting Frats Members', 
             /* f */'btn1' => '<a href="./src/modules/signup.php" class="btn1">Sign Up</a>', 
-            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn4">Enroll Now!</a>'
+            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn3">Enroll Now!</a>'
         ],
 
         [
@@ -49,7 +49,7 @@
             /* d */'descline2' => 'INNOVATIVE UNDERGRADUATE PROGRAM', 
             /* e */'descline3' => 'Now recruiting Frats Members', 
             /* f */'btn1' => '<a href="./src/modules/signup.php" class="btn1">Sign Up</a>', 
-            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn4">Enroll Now!</a>'
+            /* g */'btn2' => '<a href="./src/modules/login.php>" class="btn3">Enroll Now!</a>'
         ],    
     ];
 

@@ -1,11 +1,11 @@
 .navbar1 {
     width: 100%;
-    height: var(--fit);
+    height: fit-content;
     padding: 1vh 15vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--neutral1);
+    background-color: var(--white_1);
     color: var(--black);
 }
 .navbar1 .toggler {
@@ -44,8 +44,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--secondary);
-    color: var(--white);
+    background-color: var(--light_blue);
+    color: var(--white_1);
 }
 .navbar2 .toggler {
     font-size: min(7vw, 32pt);
@@ -68,7 +68,7 @@
 }
 .navbar2 .navlist li a:hover {
     text-decoration: underline;
-    color: var(--white);
+    color: var(--white_1);
 }
 .navbar2 .btn-1 {
     width: 8rem;
@@ -86,7 +86,7 @@
         position: absolute;
         width: 100%;
         height: 100vh;
-        background-color: var(--primary);
+        background-color: var(--dark_blue);
         top: -100%;
         left: 0;
         display: flex;
@@ -110,12 +110,12 @@
         opacity: 1;
     }
     .navbar1 #toggle:checked ~ ul li a {
-        color: var(--white);
+        color: var(--white_1);
     }
     .navbar1:has(#toggle:checked ~ ul) {
        height: 10vh;
-       background-color: var(--primary);
-       color: var(--white);
+       background-color: var(--dark_blue);
+       color: var(--white_1);
     }
     .navbar1 .toggler:has(#toggle:checked ~ ul) {
         padding: 0;
@@ -133,7 +133,7 @@
         position: absolute;
         width: 100%;
         height: 100vh;
-        background-color: var(--primary);
+        background-color: var(--dark_blue);
         top: -100%;
         left: 0;
         display: flex;
@@ -157,12 +157,12 @@
         opacity: 1;
     }
     .navbar2 #toggle:checked ~ ul li a {
-        color: var(--white);
+        color: var(--white_1);
     }
     .navbar2:has(#toggle:checked ~ ul) {
        height: 10vh;
-       background-color: var(--primary);
-       color: var(--white);
+       background-color: var(--dark_blue);
+       color: var(--white_1);
     }
     .navbar2 .toggler:has(#toggle:checked ~ ul) {
         padding: 0;
