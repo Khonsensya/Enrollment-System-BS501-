@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?php echo $_C2_icon_css; ?>">
     <link rel="stylesheet" href="<?php echo $_C2_navbar_css; ?>">
     <link rel="stylesheet" href="<?php echo $_C2_forms_css; ?>">
+    <link rel="stylesheet" href="<?php echo $_C2_table_css; ?>">
 </head>
 <body>
     <?php if(isset($user)): ?>
@@ -29,11 +30,11 @@
         <table>
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>User_ID</td>
-                    <td  style="width: 45rem; text-align: left; padding-left: 5rem;">Name</td>
-                    <td>Enrolled</td>
-                    <td>Actions</td>
+                    <td><p>ID</p></td>
+                    <td><p>User_ID</p></td>
+                    <td class="table_name"><p>Name</p></td>
+                    <td><p>Enrolled</p></td>
+                    <td><p>Actions</p></td>
                 </tr>
             </thead>
             <tbody>
@@ -42,13 +43,13 @@
                             <tr>
                                 <td><?php echo $row['Student_ID'] ?></td>
                                 <td><?php echo $row['User_ID'] ?></td>
-                                <td style="width: 45rem; text-align: left; padding-left: 5rem;"><?php echo $row['Last_Name'], ', ', $row['First_Name'], ' ', $row['Middle_Initial'] ?></td>
+                                <td class="table_name"><?php echo $row['Last_Name'], ', ', $row['First_Name'], ' ', $row['Middle_Initial'] ?></td>
                                 <td><?php echo ($row['Enrolled'] == 1 ? 'Enrolled' : 'Pending'); ?></td>
                                 <td class="list-actions">
                                     <div>
-                                        <a href="dashboard.php?view=<?php echo $row['Student_ID']; ?>" class="btn1">View</a>
-                                        <a href="dashboard.php?edit=<?php echo $row['Student_ID']; ?>" class="btn2">Edit</a>
-                                        <a href="studentlist.php?delete=<?php echo $row['Student_ID']; ?>" class="btn5">Delete</a>
+                                        <a href="dashboard.php?view=<?php echo $row['Student_ID']; ?>" class="btn1 safe">View</a>
+                                        <a href="dashboard.php?edit=<?php echo $row['Student_ID']; ?>" class="btn2 warning">Edit</a>
+                                        <a href="studentlist.php?delete=<?php echo $row['Student_ID']; ?>" class="btn2 danger">Delete</a>
                                     </div>
                                 </td>
                             </tr>

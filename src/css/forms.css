@@ -10,7 +10,7 @@ label {
     display: block;
     margin-bottom: .25rem;
     font-size: min(5vw, 12pt);
-    font-weight: 700;
+    font-weight: 600;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */

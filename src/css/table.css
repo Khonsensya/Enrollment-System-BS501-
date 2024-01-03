@@ -1,0 +1,36 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td,
+th {
+    padding: 1rem .25rem;
+    border: black 1px solid;
+    text-align: center;
+}
+td p {
+    font-weight: 700;
+}
+.list-actions div {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+.table_name {
+    width: 50rem;
+    text-align: left;
+    padding-left: 5rem;
+}
+@media (width < 760px) {
+    table {
+        border-collapse: collapse;
+    }
+    td {
+        width: 86vw;
+    }
+    .table_name {
+        width: 100%;
+        text-align: center;
+        padding-left: 0rem;
+    }
+}

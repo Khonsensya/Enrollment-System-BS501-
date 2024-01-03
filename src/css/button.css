@@ -96,6 +96,16 @@
     background-color: #00000000;
 }
 
+.safe {
+    background-color: var(--green);
+}
+.warning {
+    background-color: var(--orange);
+}
+.danger {
+    background-color: var(--red);
+}
+
 
 button:focus,
 button:focus-visible {

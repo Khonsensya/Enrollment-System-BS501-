@@ -106,21 +106,7 @@
     background-color: var(--light_blue);
 }
 /*  */
-.studentlist1 table {
-    width: 100%;
-    border-collapse: collapse;
-}
-.studentlist1 td,
-.studentlist1 th {
-    padding: .5rem .25rem;
-    border: black 1px solid;
-    text-align: center;
-}
-.studentlist1 .list-actions div {
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
-}
+
 /*  */
 .help1 div,
 .policy1 div,
@@ -159,6 +145,22 @@
     content: '+';
     padding-right: 1rem;
 }
+/*  */
+.applicants1 #applicant_type_1 {
+    width: 20rem;
+}
+.applicants1 form table {
+    border-collapse:unset;
+}
+.applicants1 form table td {
+    border: none;
+}
+.applicants1 .dropdown_container {
+    width: 100%;
+    display: inline-flex;
+    justify-content: right;
+    gap: 1rem;
+}
 
 @media (width < 760px) {
     .dashboard1 .summary {
@@ -172,9 +174,6 @@
     /*  */
     .dashboard1 {
         padding: 1rem 5vw;
-    }
-    .dashboard1 .sidebar1 {
-        display: none;
     }
     /*  */
     .help1 div,

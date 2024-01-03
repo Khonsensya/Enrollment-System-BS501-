@@ -110,6 +110,10 @@
             /* b */'link' =>  './application.php',
         ],
         [
+            /* a */'title' => 'Applicant List',
+            /* b */'link' => './applicants.php',
+        ],
+        [
             /* a */'title' => 'Student List',
             /* b */'link' => './studentlist.php',
         ],

@@ -38,6 +38,7 @@
 	$_C2_icon_css = '../../css/icon.css';
 	$_C2_module_css = '../../css/module.css';
 	$_C2_navbar_css = '../../css/navbar.css';
+	$_C2_table_css = '../../css/table.css';
 
 	// JAVASCRIPT SCRIPTS LINKS ARE HERE
 	$_P_banner_js = './src/js/banner.js';
