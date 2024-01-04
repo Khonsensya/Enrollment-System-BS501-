@@ -18,9 +18,10 @@
 
         $_SESSION['message'] = "?";
         $_SESSION['msg_type'] = "createdstudent";
+        $session_id = $_SESSION['user_id'];
 
         //read all row from database table
-            $mysqli->query("UPDATE student_info SET First_Name = '$FirstName', Middle_Initial = '$MiddleName', Last_Name = '$LastName', Gender = '$Sex' WHERE Student_ID = '$id'") or die("Connection failed:");
+            $mysqli->query("UPDATE student_info SET First_Name = '$FirstName', Middle_Initial = '$MiddleName', Last_Name = '$LastName', Gender = '$Sex' WHERE User_ID = '$session_id'") or die("Connection failed:");
             $mysqli -> close();
 
         header("Refresh:0; url=../modules/dashboard/dashboard.php");

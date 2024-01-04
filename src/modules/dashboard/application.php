@@ -31,10 +31,11 @@
         $default_lastname = $user['Last_Name'];
         $default_email = $user['Email'];
         
+        echo $_SESSION['user_id'];
         ?>
         <section class="application1 container">
             <h1>Application</h1>
-            <form method="POST">
+            <form action="" method="POST">
                 <table>
                     <tr>
                         <td colspan="3">
@@ -120,7 +121,7 @@
                     </tr>
                     <tr>
                         <td colspan="3">
-                        <a href="./studentlist_view.php?save=<?php echo $row['Student_ID']; ?>" class="btn1">Save</a>
+                        <button onclick="javascript: return confirm('Please confirm deletion');" type="submit" name="save" id="submit" class="btn1">Submit</button>
                         </td>
                     </tr>
                 </table>
