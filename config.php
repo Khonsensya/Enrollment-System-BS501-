@@ -64,6 +64,8 @@
 	$_C2_action_php = '../../process/action.php';
 	$_C2_get_date_php = '../../process/get_date.php';
 	$_C2_mysql_connection_php = '../../data/mysql-connection.php';
+	$_C2_dashboard_data_php = '../../data/dashboard-data.php';
+
 
 	
 	// PATH LINKS ARE HERE

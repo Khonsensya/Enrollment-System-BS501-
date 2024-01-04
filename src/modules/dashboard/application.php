@@ -4,6 +4,8 @@
 <?php include $_C2_data_php; ?>
 <?php include $_C2_session_php; ?>
 <?php include $_C2_action_php; ?>
+<?php include $_C2_dashboard_data_php; ?>
+
 
 
 <!DOCTYPE html>
@@ -24,7 +26,12 @@
 <body>
     <?php if(isset($user)): ?>
         <?php include $_C2_dashboard_navbar_php; ?>
-
+        <?php 
+        $default_firstname = $user['First_Name'];
+        $default_lastname = $user['Last_Name'];
+        $default_email = $user['Email'];
+        
+        ?>
         <section class="application1 container">
             <h1>Application</h1>
             <form method="POST">
@@ -34,7 +41,7 @@
                             <label for="program">Program</label>
                             <select name="program" id="program">
                                 <?php foreach ($_program as $program_item) : ?>
-                                    <option value="<?php echo $program_item['code']; ?>">
+                                    <option value="<?php echo $program_item['program']; ?>">
                                         <?php echo $program_item['program']; ?>
                                     </option>
                                 <?php endforeach; ?>
@@ -44,7 +51,7 @@
                     <tr>
                         <td colspan="2">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName">
+                            <input type="text" id="firstName" name="firstName" value=<?= $user['First_Name']; ?>>
                         </td>
                         <td>
                             <label for="dateOfBirth">Date of Birth</label>
@@ -64,7 +71,7 @@
                             <label for="citizenship">Citizenship</label>
                             <select name="citizenship" id="citizenship">
                                 <?php foreach ($_citizenship as $citizenship_item) : ?>
-                                    <option value="<?php echo $citizenship_item['code']; ?>">
+                                    <option value="<?php echo $citizenship_item['citizenship']; ?>">
                                         <?php echo $citizenship_item['citizenship']; ?>
                                     </option>
                                 <?php endforeach; ?>
@@ -74,7 +81,7 @@
                     <tr>
                         <td td>
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName">
+                            <input type="text" id="lastName" name="lastName" value = <?= $user['Last_Name']; ?>>
                         </td>
                         <td>
                             <label for="civilStatus">Civil Status</label>
@@ -89,8 +96,8 @@
                             <label for="sex">Sex</label>
                             <select name="sex" id="sex">
                                 <option value=""></option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </td>
                     </tr>
@@ -108,12 +115,12 @@
                         <td colspan="2">
 
                             <label for="eMail">Email:</label>
-                            <input type="email" id="eMail" name="eMail">
+                            <input type="email" id="eMail" name="eMail" value= <?= $user['Email']; ?>>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <button type="submit" name="save" id="submit" class="btn1">Submit</button>
+                        <a href="./studentlist_view.php?save=<?php echo $row['Student_ID']; ?>" class="btn1">Save</a>
                         </td>
                     </tr>
                 </table>

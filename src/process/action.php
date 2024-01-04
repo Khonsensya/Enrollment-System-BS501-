@@ -1,5 +1,6 @@
 <?php 
     include '../../data/mysql-connection.php';
+    
     if(isset($_POST['save'])) { 
         
         $FirstName = $_POST['firstName'];
@@ -19,8 +20,8 @@
         $_SESSION['msg_type'] = "createdstudent";
 
         //read all row from database table
-            $mysqli->query("INSERT INTO student_info (First_Name, Last_Name, Middle_Initial, Gender, Birthdate, Place_of_Birth, Citizenship, Civil_Status, Mobile_Number, Email, Address) VALUES ( '$FirstName', '$MiddleName', '$LastName', '$Program', '$Sex', '$Citizenship', '$CivilStatus', '$DateofBirth', '$BirthPlace', '$MobileNumber', '$Email', '$MyAddress')") or die("Connection failed:");
-                $mysqli -> close();
+            $mysqli->query("UPDATE student_info SET First_Name = '$FirstName', Middle_Initial = '$MiddleName', Last_Name = '$LastName', Gender = '$Sex' WHERE Student_ID = '$id'") or die("Connection failed:");
+            $mysqli -> close();
 
         header("Refresh:0; url=../modules/dashboard/dashboard.php");
                 
@@ -34,3 +35,6 @@
             
         header("Refresh:0; url=../dashboard/studentlist.php");
     }
+
+
+    //(First_Name, Last_Name, Middle_Initial, Gender, Birthdate, Place_of_Birth, Citizenship, Civil_Status, Mobile_Number, Email, Address) VALUES ( '$FirstName', '$LastName', '$MiddleName', '$Sex', '$DateofBirth', '$BirthPlace', '$Citizenship', '$CivilStatus', '$MobileNumber', '$Email', '$MyAddress')
