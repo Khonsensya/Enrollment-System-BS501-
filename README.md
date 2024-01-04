@@ -244,12 +244,16 @@ Conggas:
   - [x] Check Pass (checkpass.js)
 - Overall CSS (style.css, css folder)
 - Assets (background & icons)
-### Create Registration Page
+- Fixed overall styling
+### Create Registration Page (Signup)
 `Includes:`
 - Catch Errors for Registration
 - Database Query
 - Hashed Password
 - Process Registration
+### Create Session and Logout
+`Includes:`
+- Session
 ### Create Login Page
 `Includes:`
 - Catch Errors for Login
@@ -271,6 +275,7 @@ Conggas:
 - Meeting Organizer (day 2)
 - Group Documentation
 - Group Assignment/Task
+### Create Application List (extra)
 
 
 ## Malonzo:
