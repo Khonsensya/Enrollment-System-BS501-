@@ -21,7 +21,9 @@
          'link' => './studentlist.php',],
         ['title' => 'Policy', 
          'link' => '#',],
-         ['title' => 'Help', 
-          'link' => '#',],
+        ['title' => 'Help', 
+        'link' => '#',],
+        ['title' => 'Logout', 
+        'link' => './login.php',],
         ];
 ?>
