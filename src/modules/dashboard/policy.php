@@ -8,8 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $_Head_Title; ?></title>
-    <link rel="icon" href="<?php echo $_C2_Head_Icon; ?>"/>
+    <title><?php echo $_Head_Title; ?></title> <!-- title -->
+    <link rel="icon" href="<?php echo $_C2_Head_Icon; ?>"/> <!-- icon -->
     <!-- CSS STYLESHEETS LINKS ARE HERE -->
     <link rel="stylesheet" href="<?php echo $_C2_style_css; ?>">
     <link rel="stylesheet" href="<?php echo $_C2_module_css; ?>">

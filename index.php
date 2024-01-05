@@ -8,8 +8,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $_Head_Title; ?></title>
-    <link rel="icon" href="<?php echo $_P_Head_Icon; ?>"/>
+    <title><?php echo $_Head_Title; ?></title> <!-- title -->
+    <link rel="icon" href="<?php echo $_P_Head_Icon; ?>" /> <!-- icon -->
+    <!-- CSS LINKS ARE HERE -->
     <link rel="stylesheet" href="<?php echo $_P_style_css; ?>">
     <link rel="stylesheet" href="<?php echo $_P_animation_css; ?>">
     <link rel="stylesheet" href="<?php echo $_P_banner_css; ?>">
@@ -30,40 +31,43 @@
             </a>
         </div>
         <ul class="navlist">
+            <!-- is an array found inside data.php -->
             <?php foreach ($_navbar_1 as $navbar_1_item) : ?>
-                <li><a href="<?php echo $navbar_1_item['link']; ?>">
-                        <?php echo $navbar_1_item['title']; ?></a></li>
+                <li><a href="<?php echo $navbar_1_item['link']; ?>"><?php echo $navbar_1_item['title']; ?></a></li>
             <?php endforeach; ?>
-            <a href="<?php echo $_P_login; ?>" class="btn1">Login</a>
+            <a href="<?php echo $_P_login; ?>" class="btn1">Login</a> <!-- will redirect the user to the login page -->
         </ul>
     </nav>
 
     <header class="banner1">
+        <!-- is an array found inside data.php -->
         <?php foreach ($_banner_1 as $banner_1_item) : ?>
             <div class="banner-item fade">
                 <img src="<?php echo $banner_1_item['bg']; ?>" alt="">
                 <div class="banner-overlay">
                     <h1><?php echo $banner_1_item['title']; ?></h1>
                     <p><?php echo $banner_1_item['descline1']; ?><br>
-                       <?php echo $banner_1_item['descline2']; ?><br>
-                       <?php echo $banner_1_item['descline3']; ?></p>
+                        <?php echo $banner_1_item['descline2']; ?><br>
+                        <?php echo $banner_1_item['descline3']; ?></p>
                     <div class="banner-btn">
                         <?php echo $banner_1_item['btn1']; ?>
                         <?php echo $banner_1_item['btn2']; ?>
                     </div>
                 </div>
-
             </div>
         <?php endforeach; ?>
     </header>
 
     <footer class="copyright1">
+        <!-- is an array found inside data.php -->
         <?php foreach ($_copyright_1 as $copyright1_item) : ?>
             <p><?php echo $copyright1_item['copyright']; ?></p>
             <p><?php echo $copyright1_item['signature']; ?></p>
         <?php endforeach; ?>
     </footer>
-    
+
+
+    <!-- contains script to automatically changes the banner per setted seconds -->
     <script defer src="<?php echo $_P_banner_js; ?>"></script>
 </body>
 

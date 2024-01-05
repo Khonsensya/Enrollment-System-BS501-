@@ -1,17 +1,14 @@
 <?php
-    session_start();
-    if(isset($_SESSION['user_id'])) {
-        require '../../data/mysql-connection.php';
+session_start();
+if (isset($_SESSION['user_id'])) {
+    require $_C2_mysql_connection_php;
 
-        $sql = "SELECT * FROM users WHERE User_ID = {$_SESSION['user_id']}";
-        $result = $mysqli->query($sql);
-        $user = $result->fetch_assoc();
-    }
-    if(isset($_SESSION['Firstname'])) {
-        require '../../data/mysql-connection.php';
+    $result = $mysqli->query("SELECT * FROM users WHERE User_ID = {$_SESSION['user_id']}");
+    $user = $result->fetch_assoc();
+}
+if (isset($_SESSION['Firstname'])) {
+    require $_C2_mysql_connection_php;
 
-        $sql = "SELECT First_Name FROM users WHERE User_ID = {$_SESSION['Firstname']}";
-        $result = $mysqli->query($sql);
-        $user = $result->fetch_assoc();
-    }
-?>
+    $result = $mysqli->query("SELECT First_Name FROM users WHERE User_ID = {$_SESSION['Firstname']}");
+    $user = $result->fetch_assoc();
+}
