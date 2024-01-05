@@ -47,7 +47,7 @@
                                 <td class="list-actions">
                                     <div>
                                         <a href="./studentlist_view.php?view=<?php echo $row['Student_ID']; ?>" class="btn1">View</a>
-                                        <a href="./studentlist_edit.php?edit=<?php echo $row['Student_ID']; ?>" class="btn2">Edit</a>
+                                        <a href="./studentlist_edit.php?id =<?php echo $row['Student_ID']; ?>" class="btn2">Edit</a>
                                         <a href="studentlist.php?delete=<?php echo $row['Student_ID']; ?>" class="btn5">Delete</a>
                                     </div>
                                 </td>

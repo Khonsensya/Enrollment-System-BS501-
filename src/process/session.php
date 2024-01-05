@@ -14,5 +14,4 @@
         $result = $mysqli->query($sql);
         $user = $result->fetch_assoc();
     }
-    print_r($_SESSION);
 ?>

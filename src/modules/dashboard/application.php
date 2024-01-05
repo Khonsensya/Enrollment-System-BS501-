@@ -26,13 +26,6 @@
 <body>
     <?php if(isset($user)): ?>
         <?php include $_C2_dashboard_navbar_php; ?>
-        <?php 
-        $default_firstname = $user['First_Name'];
-        $default_lastname = $user['Last_Name'];
-        $default_email = $user['Email'];
-        
-        echo $_SESSION['user_id'];
-        ?>
         <section class="application1 container">
             <h1>Application</h1>
             <form action="" method="POST">
