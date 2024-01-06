@@ -6,26 +6,33 @@ body {
     text-align: left;
 }
 
-.dashboard1 {
+.dashboard_1 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     margin-bottom: 15px;
     padding: 0;
+    flex-grow: 1;
 }
 
-.dashboard2 {
+.container2{
     display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    margin-bottom: 15px;
+    flex-direction: row;
 }
 
-.dashboard3 {
+.dashboard_2 {
     display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
+    flex-direction: column;
     margin-bottom: 15px;
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+.dashboard_3 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    max-width: 100%;
+    max-height: 600px;
 }
 
 .statistic {
@@ -36,7 +43,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex-basis: 280px; 
-    max-width: 280px;
+    flex-grow: 1;
+    max-height: 100%;
 }
 .statistic2 {
     background-color: #fff;
@@ -44,8 +52,24 @@ body {
     margin: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
     text-align: center;
-    max-width: 3000px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    /* Add styles for smaller screens */
+    .container2 {
+        flex-direction: column; /* Adjust as needed for your layout */
+    }
+    .dashboard_3 {
+        max-width: 100%; /* Allow it to take the full width on smaller screens */
+        max-height: none; /* Allow it to grow vertically based on content */
+    }
+    .statistic2 {
+        max-width: 100%; /* Allow it to take the full width on smaller screens */
+    }
 }
 
 h2 {

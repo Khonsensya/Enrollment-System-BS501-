@@ -37,20 +37,25 @@ $enrolledQuery = "SELECT COUNT(*) AS enrolledCount FROM student_info WHERE ENROL
 $enrolledResult = $conn->query($enrolledQuery);
 $enrolledCount = $enrolledResult->fetch_assoc()['enrolledCount'];
 
-// Query to get gender distribution from the database
-$genderQuery = "SELECT gender, COUNT(*) AS genderCount FROM student_info GROUP BY gender";
-$genderResult = $conn->query($genderQuery);
-
 // Query to get the count of students who have applied
 $appliedQuery = "SELECT COUNT(*) AS appliedCount FROM student_profile";
 $appliedResult = $conn->query($appliedQuery);
 $appliedCount = ($appliedResult->num_rows > 0) ? $appliedResult->fetch_assoc()["appliedCount"] : 0;
 
+// Query to get bar graph data
+$barGraphQuery = "
+    SELECT sc.Course_Category, COUNT(sp.Section_ID) AS StudentCount
+    FROM student_profile sp
+    JOIN school_sections ss ON sp.Section_ID = ss.Section_ID
+    JOIN school_courses sc ON ss.Course_ID = sc.Course_ID
+    GROUP BY sc.Course_Category";
 
-// Query to get student information
-$studentInfoQuery = "SELECT Student_ID, CONCAT(First_Name, ' ', Middle_Initial, ' ', Last_Name) AS full_name, Email FROM student_info";
-$studentInfoResult = $conn->query($studentInfoQuery);
+$barGraphResults = $conn->query($barGraphQuery);
+$barChartData = array();
 
+while ($row = $barGraphResults->fetch_assoc()) {
+    $barChartData[] = $row;
+}
 
 // Close the database connection
 $conn->close();
@@ -69,7 +74,7 @@ $conn->close();
     <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/new_dashboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
 <body>
     <nav class="navbar2">
         <?php include '../data/navbar-data.php';?>
@@ -94,7 +99,7 @@ $conn->close();
                 Statistics Overview
             </ul>
         </nav>
-            <div class="dashboard1">
+            <div class="dashboard_1">
 
                 <div class="statistic">
                     <h2 class="card-text">Students</h2>
@@ -109,28 +114,25 @@ $conn->close();
                     <p id="sectionCount"><?php echo $sectionCount; ?></p>
                 </div>
             </div>
+            <div class ="container2">
+            <div class="dashboard_2">
 
-            <div class="dashboard2">
+                    <div class="statistic">
+                        <h2 class="card-text">Enrollment Statistic</h2>
+                        <canvas id="enrollmentChart" width="180" height="300"></canvas>
+                    </div>
+                    <div class="statistic">
+                        <h2 class="card-text">Application</h2>
+                        <canvas id="applicationChart" width="180" height="300"></canvas>
+                    </div>
+        
+                </div>
 
-                <div class="statistic">
-                    <h2 class="card-text">Enrollment Statistic</h2>
-                    <canvas id="enrollmentChart" width="180" height="300"></canvas>
-                </div>
-                <div class="statistic">
-                    <h2 class="card-text">Gender</h2>
-                    <canvas id="genderChart" width="180" height="300"></canvas>
-                </div>
-                <div class="statistic">
-                    <h2 class="card-text">Applied</h2>
-                    <canvas id="applicationChart" width="180" height="300"></canvas>
-                </div>
-    
-            </div>
-
-            <div class="dashboard3">
-                <div class="statistic2">
-                    <h2 class="card-text">Students in Courses</h2>
-                    <canvas id="courseChart" width="600" height="300"></canvas>
+                <div class="dashboard_3">
+                    <div class="statistic2">
+                        <h2 class="card-text">Number of Students by Department</h2>
+                        <canvas id="courseChart" ></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,38 +164,11 @@ $conn->close();
                 </tbody>
         </table>
 
-        <nav class="category-nav">
-            <ul>
-                List of Students
-            </ul>
-        </nav>
-
-        <table class="student-table">
-            <thead>
-                <tr>
-                    <th>Student ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                while ($row = $studentInfoResult->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row['Student_ID'] . "</td>";
-                    echo "<td>" . $row['full_name'] . "</td>";
-                    echo "<td>" . $row['Email'] . "</td>";
-                    echo "</tr>";
-                }
-                ?>
-            </tbody>
-        </table>
-
-
     </div>
 
 
     <script>
+    
         // Get data from PHP variables
     var enrolledCount = <?php echo $enrolledCount; ?>;
     var notEnrolledCount = <?php echo ($userCount - $enrolledCount); ?>;
@@ -209,28 +184,6 @@ $conn->close();
             datasets: [{
                 data: [enrolledCount, notEnrolledCount],
                 backgroundColor: ['#36A2EB', '#FF6384']
-            }]
-        }
-    });
-
-    // Get data from PHP variables
-    var genderData = <?php echo json_encode($genderResult->fetch_all(MYSQLI_ASSOC)); ?>;
-
-    // Get canvas element
-    var genderCanvas = document.getElementById('genderChart').getContext('2d');
-
-    // Extract labels and data for the chart
-    var genderLabels = genderData.map(item => item.gender);
-    var genderCounts = genderData.map(item => item.genderCount);
-
-    // Create pie chart
-    var genderChart = new Chart(genderCanvas, {
-        type: 'pie',
-        data: {
-            labels: genderLabels,
-            datasets: [{
-                data: genderCounts,
-                backgroundColor: ['#FF6384', '#36A2EB'] // Customize as needed
             }]
         }
     });
@@ -254,10 +207,10 @@ $conn->close();
 
     document.addEventListener("DOMContentLoaded", function () {
         var courseData = {
-            labels: ["IT", "BM", "HM", "TM", "Engineering", "Arts & Sciences", "Maritime"],
+            labels: <?php echo json_encode(array_column($barChartData, 'Course_Category')); ?>,
             datasets: [{
                 label: "Number of Students",
-                data: [/* Add your data here */],
+                data: <?php echo json_encode(array_column($barChartData, 'StudentCount')); ?>,
                 backgroundColor: "#3498db", // Customize as needed
                 borderColor: "#2980b9", // Customize as needed
                 borderWidth: 1
@@ -272,13 +225,18 @@ $conn->close();
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true,
-                        precision: 0, // Display integers only
+
+                        ticks: {
+                            beginAtZero: false,
+                            precision: 0
+                        }   
+                            
                     }
                 }
             }
         });
     });
+
     </script>
     
 
