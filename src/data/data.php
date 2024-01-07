@@ -87,6 +87,10 @@
             /* b */'link' =>  './application.php',
         ],
         [
+            /* a */'title' => 'Profile',
+            /* b */'link' =>  './profile.php',
+        ],
+        [
             /* a */'title' => 'Policy',
             /* b */'link' => './policy.php',
         ],
@@ -114,6 +118,11 @@
             /* b */'link' => './studentlist.php',
         ],
         [
+            /* a */'title' => 'Profile',
+            /* b */'link' => './admin_profile.php',
+        ],
+
+        [
             /* a */'title' => 'Policy',
             /* b */'link' => './policy.php',
         ],
@@ -125,6 +134,7 @@
             /* a */'title' => 'Logout',
             /* b */'link' => '../../process/logout.php',
         ]
+        
     ];
 
     /*
