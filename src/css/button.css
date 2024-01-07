@@ -1,113 +1,118 @@
 .btn1 {
-    display: block;
-    width: fit-content;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 700;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.25s;
-    background-color: var(--light_blue);
-    color: var(--white_1);
+  display: block;
+  width: fit-content;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s;
+  background-color: var(--light_blue);
+  color: var(--white_1);
 }
 .btn1:hover {
-    border-color: var(--mid_blue);
-    color: var(--white_1);
-    background-color: var(--mid_blue);
+  border-color: var(--mid_blue);
+  color: var(--white_1);
+  background-color: var(--mid_blue);
 }
 
 .btn2 {
-    display: block;
-    width: fit-content;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.25s;
-    background-color: var(--mid_blue);
-    color: var(--white_1);
+  display: block;
+  width: fit-content;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s;
+  background-color: var(--mid_blue);
+  color: var(--white_1);
 }
 .btn2:hover {
-    border-color: var(--dark_blue);
-    color: var(--white_1);
-    background-color: var(--dark_blue);
+  border-color: var(--dark_blue);
+  color: var(--white_1);
+  background-color: var(--dark_blue);
 }
 
 .btn3 {
-    display: block;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.25s;
-    background-color: transparent;
-    color: var(--white_1);
-    border-color: var(--white_1);
+  display: block;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s;
+  background-color: transparent;
+  color: var(--white_1);
+  border-color: var(--white_1);
 }
 .btn3:hover {
-    border-color: var(--light_blue);
-    color: var(--light_blue);
+  border-color: var(--light_blue);
+  color: var(--light_blue);
 }
 
 /* Text Button */
 .text_button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    color: var(--white);
-    text-decoration: underline;
-    background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: var(--white);
+  text-decoration: underline;
+  background-color: transparent;
 }
 .text_button:hover {
-    color: var(--light_blue);
+  color: var(--light_blue);
 }
-
 
 .btn5 {
-    display: block;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    color: var(--light_blue);
-    border-color: var(--light_blue);
-    text-decoration: underline;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: var(--light_blue);
+  border-color: var(--light_blue);
+  text-decoration: underline;
 }
 .btn5:hover {
-    border-color: var(--dark_blue);
-    color: var(--dark_blue);
-    background-color: #00000000;
+  border-color: var(--dark_blue);
+  color: var(--dark_blue);
+  background-color: #00000000;
 }
 
 .safe {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 .warning {
-    background-color: var(--orange);
+  background-color: var(--orange);
 }
 .danger {
-    background-color: var(--red);
+  background-color: var(--red);
 }
-
 
 button:focus,
 button:focus-visible {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
+}
+
+td .btn1 {
+  padding: .25rem .75rem;
+}
+
+@media (width < 760px) {
 }

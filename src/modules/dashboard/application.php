@@ -27,7 +27,8 @@
         <?php include $_C2_dashboard_navbar_php; ?>
 
         <section class="application1 container">
-            <h1>Application</h1>
+            <h2 class="page_title">Application</h2>
+            <hr class="title_line">
             <form method="POST">
                 <table>
                     <tr>

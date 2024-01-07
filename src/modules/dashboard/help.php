@@ -23,15 +23,22 @@
 
     <main class="help1 container">
         <h1>Enrollment System User Manual</h1>
-        <div>
+        <hr class="title_line">
+        <p class="page_subtitle"> Welcome to our online enrollment system. Before you proceed, please read and understand our User Manual.</p>
+        <div class="content">
             <?php foreach ($_help_1 as $help1_item) : ?>
-                <h2><?php echo $help1_item['title']; ?></h2>
-                <p>
-                    <?php echo $help1_item['description']; ?>
-                <ul class="help-list">
-                    <?php echo implode("<br>", $help1_item['item']); ?>
-                </ul>
-                </p>
+                <details>
+                    <summary class="summary_row">
+                        <h3 class="no_highlight pointer"><?php echo $help1_item['title']; ?></h3>
+                        <h3 class="no_highlight pointer">-</h3>
+                    </summary>
+                    <div class="content">
+                        <p><?php echo $help1_item['description']; ?>
+                        <ul class="help-list">
+                            <?php echo implode("<br>", $help1_item['item']); ?>
+                        </ul>
+                    </div>
+                </details>
             <?php endforeach; ?>
         </div>
     </main>
