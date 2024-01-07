@@ -30,7 +30,7 @@
         <?php if($user['User_Type'] == 'Student'): ?>
             <main class="dashboard1 container">
                 <section class="content1">
-                    <h3>Welcome <?= htmlspecialchars($user['First_Name']) ?>,</h3>
+                    <h3>Welcome <?= htmlspecialchars($user['First_Name']) ?> (Student),</h3>
                     <ul class="datetime">
                         <li><?php echo $currentDateTime; ?></li>
                         <li><p> : </p></li>
@@ -60,7 +60,7 @@
         <?php elseif ($user['User_Type'] == 'Administrator'): ?>
             <main class="dashboard1 container">
                 <section class="content1">
-                    <h3>Welcome <?= htmlspecialchars($user['First_Name']) ?>,</h3>
+                    <h3>Welcome <?= htmlspecialchars($user['First_Name']) ?> (Admin),</h3>
                     <ul class="datetime">
                         <li><?php echo $currentDateTime; ?></li>
                         <li><p> : </p></li>
