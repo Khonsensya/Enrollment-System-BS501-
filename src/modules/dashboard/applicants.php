@@ -27,8 +27,8 @@
     <?php if (isset($user)) : ?>
         <?php include $_C2_dashboard_navbar_php; ?>
 
-        <section class="studentlist1 container">
-            <h2 class="page_title ">Student List</h2>
+        <section class="applicants1 container">
+            <h2 class="page_title ">Applicant List</h2>
             <hr class="title_line">
             <form method="post">
                 <table>
@@ -54,26 +54,40 @@
                             <p>Name</p>
                         </td>
                         <td>
-                            <p>Enrolled</p>
-                        </td>
-                        <td>
                             <p>Actions</p>
                         </td>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $result = $mysqli->query("SELECT * FROM student_info") or die("Invalid query: " . $mysqli->error); ?>
+                    <?php $_Status = '0';
+                    $_Btn1 = 'Approve';
+                    $_Btn2 = 'Reject';
+                    $_BtnOption = 'reject'; ?>
+                    <?php if (isset($_POST['submit-option'])) : ?>
+                        <?php
+                        if ($_POST['applicant_type_1'] == 'rejected') {
+                            $_Status = '2';
+                            $_Btn1 = 'Reconsider';
+                            $_Btn2 = 'Delete';
+                            $_BtnOption = 'delete';
+                        } else {
+                            $_Status = '0';
+                            $_Btn1 = 'Approve';
+                            $_Btn2 = 'Reject';
+                            $_BtnOption = 'reject';
+                        }
+                        ?>
+                    <?php endif; ?>
+                    <?php $result = $mysqli->query("SELECT * FROM student_info WHERE Status='$_Status'") or die("Invalid query: " . $mysqli->error); ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <tr>
                             <td><?php echo $row['Student_ID'] ?></td>
                             <td><?php echo $row['User_ID'] ?></td>
                             <td class="table_name"><?php echo $row['Last_Name'], ', ', $row['First_Name'], ' ', $row['Middle_Initial'] ?></td>
-                            <td><?php echo ($row['Enrolled'] == 1 ? 'Enrolled' : 'Pending'); ?></td>
                             <td class="list-actions">
                                 <div>
-                                    <a href="dashboard.php?view=<?php echo $row['Student_ID']; ?>" class="btn1 safe">View</a>
-                                    <a href="dashboard.php?edit=<?php echo $row['Student_ID']; ?>" class="btn1 warning">Edit</a>
-                                    <a onclick="javascript: return confirm('Please confirm deletion');" href="studentlist.php?delete=<?php echo $row['Student_ID']; ?>" class="btn1 danger">Delete</a>
+                                    <a onclick="javascript: return confirm('Please confirm deletion');" href="?approve=<?php echo $row['Student_ID']; ?>" class="btn1 safe"><?php echo $_Btn1 ?></a>
+                                    <a onclick="javascript: return confirm('Please confirm deletion');" href="?<?php echo $_BtnOption ?>=<?php echo $row['Student_ID']; ?>" class="btn1 danger"><?php echo $_Btn2 ?></a>
                                 </div>
                             </td>
                         </tr>

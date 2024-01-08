@@ -1,47 +1,49 @@
 form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 td {
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
 }
 label {
-    display: block;
-    margin-bottom: .25rem;
-    font-size: min(5vw, 12pt);
-    font-weight: 700;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: min(5vw, 12pt);
+  font-weight: 600;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
-select, input {
-    width: 100%;
-    padding: .5rem;
-    border-radius: .5rem;
-    border: var(--gray) 1px solid;
+select,
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: var(--gray) 1px solid;
 }
 
-select:focus, input:focus {
-    outline: var(--gray) 2.5px solid;
-    border: #00000000 1px solid;
+select:focus,
+input:focus {
+  outline: var(--gray) 2.5px solid;
+  border: #00000000 1px solid;
 }
 
 .password-container {
-    position: relative;
+  position: relative;
 }
-.password-container input[type=checkbox] {
-    position: absolute;
-    right: 1rem;
-    top: 30%;
-    width: 1rem;
-    height: 1rem;
-    cursor: pointer;
+.password-container input[type="checkbox"] {
+  position: absolute;
+  right: 1rem;
+  top: 30%;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
 }
 
 @media (width < 760px) {
-    tr {
-        display: flex;
-        flex-direction: column;
-    }
+  .application1 tr {
+    display: flex;
+    flex-direction: column;
+  }
 }

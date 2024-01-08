@@ -1,0 +1,46 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: 1rem 0.5rem;
+  border: black 1px solid;
+  text-align: center;
+}
+td p {
+  font-weight: 700;
+}
+.list-actions div {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.table_name {
+  width: 50rem;
+  text-align: left;
+  padding-left: 5rem;
+}
+.dropdown_container {
+  width: 100%;
+  display: inline-flex;
+  justify-content: right;
+  gap: 1rem;
+  border: none;
+}
+.dropdown_content {
+  width: 20rem;
+}
+@media (width < 760px) {
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    width: fit-content;
+  }
+  .table_name {
+    width: 100%;
+    text-align: center;
+    padding-left: 0rem;
+  }
+}
