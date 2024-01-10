@@ -9,6 +9,7 @@
             6. FOOTER
             7. POLICY
             8. SUMMARY ITEM 
+            9. FORMS DATA
     */
 
 /*
@@ -98,6 +99,11 @@ $_navbar_2_student = [
     ],
     [
         /* a */
+        'title' => 'Enrollment',
+        /* b */ 'link' =>  './enrollment.php',
+    ],
+    [
+        /* a */
         'title' => 'Policy',
         /* b */ 'link' => './policy.php',
     ],
@@ -118,11 +124,6 @@ $_navbar_2_admin = [
         /* a */
         'title' => 'Dashboard',
         /* b */ 'link' =>  './dashboard.php',
-    ],
-    [
-        /* a */
-        'title' => 'Application',
-        /* b */ 'link' =>  './application.php',
     ],
     [
         /* a */
@@ -447,4 +448,206 @@ $_policy_1 = [
         /* b */ 'description' => 'By using our online enrollment system, you agree to the terms outlined in this Privacy and Policy.',
         /* c */ 'item' => []
     ]
+];
+
+
+$_citizenship = [
+    [
+        /* a */
+        'code' => 'none',
+        /* b */ 'citizenship' => ''
+    ],
+    [
+        /* a */
+        'code' => 'ph',
+        /* b */ 'citizenship' => 'Filipino'
+    ],
+    [
+        /* a */
+        'code' => 'ch',
+        /* b */ 'citizenship' => 'Chinese'
+    ],
+    [
+        /* a */
+        'code' => 'jp',
+        /* b */ 'citizenship' => 'Japanese'
+    ],
+    [
+        /* a */
+        'code' => 'usa',
+        /* b */ 'citizenship' => 'Americas'
+    ],
+    [
+        /* a */
+        'code' => 'de',
+        /* b */ 'citizenship' => 'German'
+    ],
+    [
+        /* a */
+        'code' => 'tr',
+        /* b */ 'citizenship' => 'Turkish'
+    ],
+    [
+        /* a */
+        'code' => 'ca',
+        /* b */ 'citizenship' => 'Canadian'
+    ],
+    [
+        /* a */
+        'code' => 'india',
+        /* b */ 'citizenship' => 'Indian'
+    ],
+    [
+        /* a */
+        'code' => 'mx',
+        /* b */ 'citizenship' => 'Mexican'
+    ],
+    [
+        /* a */
+        'code' => 'fr',
+        /* b */ 'citizenship' => 'French'
+    ],
+    [
+        /* a */
+        'code' => 'ir',
+        /* b */ 'citizenship' => 'Iranian'
+    ],
+    [
+        /* a */
+        'code' => 'kr',
+        /* b */ 'citizenship' => 'Korean'
+    ],
+    [
+        /* a */
+        'code' => 'uk',
+        /* b */ 'citizenship' => 'British'
+    ],
+    [
+        /* a */
+        'code' => 'esp',
+        /* b */ 'citizenship' => 'Spanish'
+    ],
+    // popular ng countries. atleast 10-15
+];
+
+$_program = [
+    [
+        'code' => 'none',
+        'program' => ''
+    ],
+    [
+        'code' => 'bscs',
+        'program' => 'Bachelor of Science in Computer Science'
+    ],
+    [
+        'code' => 'psych',
+        'program' => 'Bachelor of Science in Psychology'
+    ],
+    [
+        'code' => 'bsit',
+        'program' => 'BS in Information Technology'
+    ],
+    [
+        'code' => 'bsis',
+        'program' => 'BS in Information Systems'
+    ],
+    [
+        'code' => 'it',
+        'program' => '2-yr Infortmation Technology'
+    ],
+    [
+        'code' => 'act',
+        'program' => '2-yr Associate in Computer Technology'
+    ],
+    [
+        'code' => 'bsba',
+        'program' => 'BS in Business Administration'
+    ],
+    [
+        'code' => 'bsa',
+        'program' => 'BS in Accountancy'
+    ],
+    [
+        'code' => 'bsais',
+        'program' => 'BS in Accounting Information System'
+    ],
+    [
+        'code' => 'bsma',
+        'program' => 'BS in Management Accounting'
+    ],
+    [
+        'code' => 'bsrtcs',
+        'program' => 'BS in Retail Technology and Consumer Science'
+    ],
+    [
+        'code' => 'art',
+        'program' => '2-yr Associate in Retail Technology'
+    ],
+    [
+        'code' => 'bshm',
+        'program' => 'BS in Hospitality Management'
+    ],
+    [
+        'code' => 'bscm',
+        'program' => 'BS in Culinary Management'
+    ],
+    [
+        'code' => 'hra',
+        'program' => '3-yr Hotel and Restaurant Administration'
+    ],
+    [
+        'code' => 'hrs',
+        'program' => '2-yr Hospitality and Restaurant Services'
+    ],
+    [
+        'code' => 'bstm',
+        'program' => 'BS in Tourism Management'
+    ],
+    [
+        'code' => 'tem',
+        'program' => '2-yr Tourism and Events Management'
+    ],
+    [
+        'code' => 'bscpe',
+        'program' => 'BS in Computer Engineering'
+    ],
+    [
+        'code' => 'bmma',
+        'program' => 'Bachelor of Multimedia Arts'
+    ],
+    [
+        'code' => 'bacomm',
+        'program' => 'BA in Communication'
+    ],
+    [
+        'code' => 'bsmt',
+        'program' => 'Bachelor of Science in Marine Transportation'
+    ],
+    [
+        'code' => 'bsmare',
+        'program' => 'Bachelor of Science in Marine Engineering'
+    ],
+    [
+        'code' => 'bsname',
+        'program' => 'Bachelor of Science in Naval Architecture and Marine Engineering'
+    ],
+    //  atleast ung mga available sa sti page  
+];
+
+$_payment_type = [
+    [
+        /* a */
+        'code' => 'none',
+        /* b */ 'paymenttype' => ''
+    ],
+    [
+        /* a */
+        'code' => 'monthly',
+        /* b */ 'paymenttype' => 'Monthly'
+    ],
+    [
+        /* a */
+        'code' => 'full',
+        /* b */ 'paymenttype' => 'Full Payment'
+    ],
 ];

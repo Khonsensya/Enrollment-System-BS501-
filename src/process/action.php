@@ -1,4 +1,7 @@
 <?php
+
+$session_id = $_SESSION['user_id'];
+
 // application.php
 if (isset($_POST['save'])) {
 
@@ -18,8 +21,20 @@ if (isset($_POST['save'])) {
     $_SESSION['message'] = "?";
     $_SESSION['msg_type'] = "createdstudent";
 
-    $mysqli->query("INSERT INTO student_info (First_Name, Last_Name, Middle_Initial, Gender, Birthdate, Place_of_Birth, Citizenship, Civil_Status, Mobile_Number, Email, Address) VALUES ( '$FirstName', '$MiddleName', '$LastName', '$Program', '$Sex', '$Citizenship', '$CivilStatus', '$DateofBirth', '$BirthPlace', '$MobileNumber', '$Email', '$MyAddress')") or die("Connection failed:");
-    header("Refresh:0; url=../modules/dashboard/dashboard.php");
+    $mysqli->query("UPDATE student_info SET First_Name = '$FirstName', Middle_Initial = '$MiddleName', Last_Name = '$LastName', Gender = '$Sex', Citizenship = '$Citizenship', Civil_Status = '$CivilStatus' WHERE User_ID = '$session_id'") or die("Connection failed:");
+    $mysqli->close();
+    header("Refresh:0; url=./dashboard.php");
+}
+// enrollment.php
+if (isset($_POST['enroll'])) {
+
+    $Student_ID = $_POST['studentid'];
+    $Payment_Type = $_POST['paymenttype'];
+    $Amount = $_POST['amount'];
+
+    $mysqli->query("UPDATE student_info SET Enrolled='1' WHERE User_ID = '$session_id'") or die("Connection failed:");
+    $mysqli->close();
+    header("Refresh:0; url=./dashboard.php");
 }
 // studentlist.php
 if (isset($_GET['delete'])) {

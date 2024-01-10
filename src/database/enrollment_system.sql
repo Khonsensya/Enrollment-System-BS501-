@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:4306
--- Generation Time: Dec 31, 2023 at 12:46 PM
+-- Host: 127.0.0.1
+-- Generation Time: Jan 10, 2024 at 05:42 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -249,17 +249,21 @@ CREATE TABLE `student_info` (
   `Email` varchar(100) NOT NULL,
   `Address` varchar(255) NOT NULL,
   `Enrolled` tinyint(1) NOT NULL DEFAULT 0,
-  `User_ID` bigint(20) DEFAULT NULL
+  `User_ID` bigint(20) DEFAULT NULL,
+  `Status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `student_info`
 --
 
-INSERT INTO `student_info` (`Student_ID`, `First_Name`, `Last_Name`, `Middle_Initial`, `Gender`, `Birthdate`, `Place_of_Birth`, `Citizenship`, `Civil_Status`, `Mobile_Number`, `Email`, `Address`, `Enrolled`, `User_ID`) VALUES
-(1, 'Christian Kobe', 'Malonzo', '', 'Male', '2002-08-07', '', '', 'Single', '0', 'kobemalonzo@gmail.com', '', 0, 10001),
-(2, 'Mark Limuel', 'Lape', 'Z', 'Male', '2000-01-01', 'Philippines', 'Filipino', 'Single', '09234567890', 'lapemark@gmail.com', 'Bulacan', 1, 10002),
-(3, 'Yranimez', 'Repil', 'R', 'Male', '0000-00-00', 'Philippines', 'Filipino', 'Single', '09123456789', 'yranimezrepil@gmail.com', 'Quezon City', 1, 10003);
+INSERT INTO `student_info` (`Student_ID`, `First_Name`, `Last_Name`, `Middle_Initial`, `Gender`, `Birthdate`, `Place_of_Birth`, `Citizenship`, `Civil_Status`, `Mobile_Number`, `Email`, `Address`, `Enrolled`, `User_ID`, `Status`) VALUES
+(1, 'Christian Kobe', 'Malonzo', '', 'Male', '2002-08-07', '', '', 'Single', '0', 'kobemalonzo@gmail.com', '', 0, 10001, 1),
+(2, 'Mark Limuel', 'Lape', 'Z', 'Male', '2000-01-01', 'Philippines', 'Filipino', 'Single', '09234567890', 'lapemark@gmail.com', 'Bulacan', 1, 10002, 1),
+(3, 'Yranimez', 'Repil', 'R', 'Male', '0000-00-00', 'Philippines', 'Filipino', 'Single', '09123456789', 'yranimezrepil@gmail.com', 'Quezon City', 1, 10003, 1),
+(7, 'Walkman', 'Powd', '', '', '0000-00-00', '', '', 'Single', '', 'WalkmanPowd@gmail.com', '', 0, 10005, 2),
+(8, '@', 'admin', '', '', '0000-00-00', '', '', 'Single', '', 'admin@dceru.edu', '', 0, 10006, 1),
+(9, 'Mark Limueldasda', 'dasdas', 'd', 'male', '0000-00-00', '', 'ph', '', '', 'student@dceru.edu', '', 1, 10007, 1);
 
 --
 -- Triggers `student_info`
@@ -333,7 +337,8 @@ CREATE TABLE `student_profile` (
 
 INSERT INTO `student_profile` (`Student_Number`, `Student_ID`, `Section_ID`) VALUES
 ('STDNT002', 2, NULL),
-('STDNT003', 3, NULL);
+('STDNT003', 3, NULL),
+('STDNT009', 9, NULL);
 
 --
 -- Triggers `student_profile`
@@ -368,7 +373,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`User_ID`, `First_Name`, `Last_Name`, `Email`, `Password`, `User_Type`, `Date_Created`) VALUES
 (10001, 'Christian Kobe', 'Malonzo', 'kobemalonzo@gmail.com', '1234567890', 'Student', '2023-12-26 13:19:22'),
 (10002, 'Mark Limuel', 'Lape', 'lapemark@gmail.com', '0912345', 'Student', '2023-12-26 14:03:47'),
-(10003, 'Ranimez', 'Repil', 'yranimezrepil@gmail.com', '093218423', 'Student', '2023-12-26 14:06:41');
+(10003, 'Yranimez', 'Repil', 'yranimezrepil@gmail.com', '093218423', 'Student', '2023-12-26 14:06:41'),
+(10005, 'Walkman', 'Powd', 'WalkmanPowd@gmail.com', '$2y$10$iNBNs4CZ6bixKCIN.eTpHOKOam0JSQynqL4NJcZ8.HojWiQ1W29Ta', 'Administrator', '2024-01-10 15:26:51'),
+(10006, '@', 'admin', 'admin@dceru.edu', '$2y$10$AL5a8zOaUzaeH/qMRmrnAuzzrEjuH0aCRZZk.2J1g3n5yTsOopefi', 'Administrator', '2024-01-10 15:32:43'),
+(10007, 'Mark Limueldasda', 'dasdas', 'student@dceru.edu', '$2y$10$zf02zjGWXoeMs5eS9eBAFOo4v/c1jKPPfCdsPwszTBRasQYt0Z/du', 'Student', '2024-01-10 15:33:40');
 
 --
 -- Triggers `users`
@@ -459,13 +467,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `student_info`
 --
 ALTER TABLE `student_info`
-  MODIFY `Student_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Student_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10005;
+  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10008;
 
 --
 -- Constraints for dumped tables

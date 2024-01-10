@@ -37,6 +37,7 @@ $appliedQuery = "SELECT COUNT(*) AS appliedCount FROM student_profile";
 $appliedResult = $mysqli->query($appliedQuery);
 $appliedCount = ($appliedResult->num_rows > 0) ? $appliedResult->fetch_assoc()["appliedCount"] : 0;
 
+
 // Query to get bar graph data
 $barGraphQuery = "
     SELECT sc.Course_Category, COUNT(sp.Section_ID) AS StudentCount
@@ -73,7 +74,7 @@ $mysqli->close();
     <link rel="stylesheet" href="<?php echo $_C2_navbar_css; ?>">
     <link rel="stylesheet" href="<?php echo $_C2_forms_css; ?>">
     <!-- JS CDN REQUESTS ARE HERE -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
 
 </head>
 
