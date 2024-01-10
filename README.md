@@ -46,8 +46,8 @@
 
 
 ## Austria:
-> [!IMPORTANT]
-> Assigned to Application Approval & Enrollment
+> [!WARNING]
+> NO FURTHER CONTRIBUTION OTHER THAN DASHBOARD PLACEHOLDER AND BASE_LINKS
 
 ### Creates Configuration
 `Includes:`
@@ -83,7 +83,7 @@
 
 ## Cortez:
 > [!CAUTION]
-> Assigned to Unreachable
+> REPORT IF FOUND
 
 ### System Requirements
 `Includes:`
@@ -95,12 +95,13 @@ Wrong inputs / Misaligned Data (task to be revised, redo by Dela Cruz, Lape, Mal
 
 
 Conggas:
-> [!WARNING]
-> Assigned to No Updates
+> [!CAUTION]
+> REPORT IF FOUND
 
 ### Creates Database
 `Includes:`
 - Database Connection
+   : Another database connection, other php file
  `
  Issue:
  Late Submission (reassigned to Lape)
@@ -123,10 +124,38 @@ Conggas:
  'Persisting' Issue, process is not working (redo by Lape)
  Is not Connected to Database (fixed by Lape)
  `
-
+### Creates For Admin PHP
+`Includes:`
+- Database Creation for Admin Page
+  : Sample Header
+  : Lorem Ipsum Classes
+  : RickRoll Text
+  : Database Connection
+  : Sample footer - labeled as created by name
+ `
+ Issue:
+ Creating a new admin page whereas admin page is already available
+   : All works are just simply placeholder
+   : Rickroll
+   : Database connection duplication just a different and longer version of the connection, not even connected to the team's database
+   : Sample Footer
+ `
+### Creates Controller Verification
+`Includes:`
+- class Controller
+  : switch case 
+  : first case - saving 'person' into database - duplicate of student application
+ `
+ Issue:
+ Creating a new admin page whereas admin page is already available
+   : Template
+   : not connected to database
+   : data verification but is a save insert query
+   : not connected into any forms
+ `
 
 ## Abungin:
-> [!WARNING]
+> [!NOTE]
 > Assigned to Dashboard
 
 ### Creates Register Page
@@ -138,11 +167,21 @@ Conggas:
  Does not include Checkbox for Passwords (fixed by Lape)
  No Processes (reassigned to Lape)
  `
-
+### Added additionals into the Dashboard
+`Includes:`
+- Graphs and Summary
+   - [x] number of students
+   - [x] courses available
+   - [x] number of courses available
+   - [x] sections available
+   - [x] enrolled statistics
+   - [x] application statuses
+   - [x] number of students per department
+- Fix UI for Dashboard
 
 ## Soriano:
-> [!WARNING]
-> Assigned to Dashboard
+> [!CAUTION]
+> REPORT IF FOUND
 
 ### Contributed to Policy Page
 `Includes:`
@@ -208,7 +247,9 @@ Conggas:
 ### Create Edit Page
 `Includes:`
 - Edit existing profile
-
+### Create Profile Page
+`Includes:`
+- View existing profile
 
 ## Lape:
 > [!NOTE]
@@ -244,12 +285,16 @@ Conggas:
   - [x] Check Pass (checkpass.js)
 - Overall CSS (style.css, css folder)
 - Assets (background & icons)
-### Create Registration Page
+- Fixed overall styling
+### Create Registration Page (Signup)
 `Includes:`
 - Catch Errors for Registration
 - Database Query
 - Hashed Password
 - Process Registration
+### Create Session and Logout
+`Includes:`
+- Session
 ### Create Login Page
 `Includes:`
 - Catch Errors for Login
@@ -258,17 +303,25 @@ Conggas:
 - Session
 - Process Login
 - Logout
+### Create Applicant and Student List
+  - [x] Database Read all into tables
+  - [x] Working action bars
+        : Approve
+        : Reject
+        : Reconsider
+        : Delete
+  - [x] Confirm Buttons (to change)
 ### File Management
 `Includes:`
 - Organization of files (folder formatting)
-- Code Cleaning
+- Constant Code Cleaning
 - Configurations:
   - [x] File Links
   - [x] HTML Title
   - [x] HTML Icon
 ### Group Management
 `Includes:`
-- Meeting Organizer (day 2)
+- Meeting Organizer
 - Group Documentation
 - Group Assignment/Task
 
@@ -285,7 +338,7 @@ Conggas:
 
 ### Group Management
 `Includes:`
-- Meeting Organizer (day 1)
+- Meeting Organizer
 - Group Assignment/Task
 - Repository Holder (Github):
   - [x] Permission Setter
@@ -296,10 +349,23 @@ Conggas:
 ### Database
 `Includes:`
 - Create Database:
-  - [ ] xxx
+  - [x] enrollment_system
 - Create Table:
-  - [ ] xxx
-- Automate Database:
-  - [ ] xxx
+  - [x] users
+  - [x] student_info
+  - [x] student_profile
+  - [x] school_courses
+  - [x] school_sections
+- Triggers:
+  - [x] User_to_Student_Info
+  - [x] Sync_to_Users
+  - [x] Birthday_Check
+  - [x] Enrolled_to_Student_Profile
+  - [x] Generate_Student_Number
+  - [x] Generate_Course_GUID
 - Populate Database:
-  - [ ] xxx
+  - [x] Courses
+  - [x] Sections
+ 
+
+'updated as of 08/01/2024'.
