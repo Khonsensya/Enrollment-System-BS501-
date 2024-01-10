@@ -44,4 +44,3 @@ if (isset($_GET['student_edit'])) {
     $result = $mysqli->query($sql);
     $row = $result->fetch_assoc();
 }
-print_r($_SESSION);
