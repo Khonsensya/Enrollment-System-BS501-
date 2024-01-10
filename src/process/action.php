@@ -1,16 +1,4 @@
 <?php
-require $_C2_mysql_connection_php;
-
-// total users
-$query_total_users = $mysqli->query("SELECT COUNT(User_ID) as Total_Users FROM users") or die("Connection failed:");
-$assoc_total_users = $query_total_users->fetch_assoc();
-$display_total_users = $assoc_total_users['Total_Users'];
-
-// total enrolled
-$query_total_enrolled = $mysqli->query("SELECT COUNT(Student_ID) as Total_Enrolled FROM student_info WHERE Enrolled = '1'") or die("Connection failed:");
-$assoc_total_enrolled = $query_total_enrolled->fetch_assoc();
-$display_total_enrolled = $assoc_total_enrolled['Total_Enrolled'];
-
 // application.php
 if (isset($_POST['save'])) {
 
