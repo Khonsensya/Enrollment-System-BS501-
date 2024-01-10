@@ -132,8 +132,8 @@ $_navbar_2_admin = [
     ],
     [
         /* a */
-        'title' => 'Application',
-        /* b */ 'link' =>  './application.php',
+        'title' => 'Applicant List',
+        /* b */ 'link' =>  './applicants.php',
     ],
     [
         /* a */
