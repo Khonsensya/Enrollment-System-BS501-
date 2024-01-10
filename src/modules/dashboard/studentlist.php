@@ -33,10 +33,7 @@
             <form method="post">
                 <table>
                     <td class="dropdown_container">
-                        <select name="applicant_type_1" id="applicant_type_1" class="dropdown_content">
-                            <option value="default">Default</option>
-                            <option value="rejected">Rejected</option>
-                        </select>
+                        <input type="text" class="dropdown_content" placeholder="Search...">
                         <input type="submit" name="submit-option" class="btn1">
                     </td>
                 </table>
@@ -62,7 +59,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $result = $mysqli->query("SELECT * FROM student_info") or die("Invalid query: " . $mysqli->error); ?>
+                    <?php $result = $mysqli->query("SELECT * FROM student_info WHERE Status='1'") or die("Invalid query: " . $mysqli->error); ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <tr>
                             <td><?php echo $row['Student_ID'] ?></td>
