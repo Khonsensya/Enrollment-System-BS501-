@@ -104,6 +104,11 @@ $_navbar_2_student = [
     ],
     [
         /* a */
+        'title' => 'Profile',
+        /* b */ 'link' =>  './profile.php',
+    ],
+    [
+        /* a */
         'title' => 'Policy',
         /* b */ 'link' => './policy.php',
     ],
@@ -127,14 +132,20 @@ $_navbar_2_admin = [
     ],
     [
         /* a */
-        'title' => 'Applicant List',
-        /* b */ 'link' => './applicants.php',
+        'title' => 'Application',
+        /* b */ 'link' =>  './application.php',
     ],
     [
         /* a */
         'title' => 'Student List',
         /* b */ 'link' => './studentlist.php',
     ],
+    [
+        /* a */
+        'title' => 'Profile',
+        /* b */ 'link' => './admin_profile.php',
+    ],
+
     [
         /* a */
         'title' => 'Policy',
@@ -150,6 +161,7 @@ $_navbar_2_admin = [
         'title' => 'Logout',
         /* b */ 'link' => '../../process/logout.php',
     ]
+
 ];
 
 /*

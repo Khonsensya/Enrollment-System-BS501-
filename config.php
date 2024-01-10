@@ -58,7 +58,6 @@ $_C1_mysql_connection_php = '../data/mysql-connection.php';
 $_C1_signup_process_php = '../process/signup-process.php';
 
 $_C2_data_php = '../../data/data.php';
-$_C2_dashboard_data_php = '../../data/dashboard-data.php';
 $_C2_index_navbar_php = '../components/index-navbar.php';
 $_C2_dashboard_navbar_php = '../components/dashboard-navbar.php';
 $_C2_footer_php = '../components/footer.php';
@@ -66,6 +65,9 @@ $_C2_session_php = '../../process/session.php';
 $_C2_action_php = '../../process/action.php';
 $_C2_get_date_php = '../../process/get_date.php';
 $_C2_mysql_connection_php = '../../data/mysql-connection.php';
+$_C2_dashboard_data_php = '../../data/dashboard-data.php';
+$_C2_update_php = "../../process/update.php";
+
 
 
 // PATH LINKS ARE HERE
