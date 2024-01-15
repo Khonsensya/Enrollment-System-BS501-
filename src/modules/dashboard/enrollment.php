@@ -3,6 +3,7 @@
 <?php include $_C2_data_php; ?>
 <?php include $_C2_session_php; ?>
 <?php include $_C2_action_php; ?>
+<?php include $_C2_mysql_connection_php; ?>
 
 
 <!DOCTYPE html>
@@ -29,39 +30,41 @@
         <section class="enrollment1 container">
             <h2 class="page_title">Enrollment</h2>
             <hr class="title_line">
-            <form method="POST">
-                <table>
-                    <tr>
-                        <td>
-                            <label for="studentid">Student ID</label>
-                            <input type="text" id="studentid" name="studentid">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="paymenttype">Payment Type</label>
-                            <select name="paymenttype" id="paymenttype">
-                                <?php foreach ($_payment_type as $paymenttype_item) : ?>
-                                    <option value="<?php echo $paymenttype_item['code']; ?>">
-                                        <?php echo $paymenttype_item['paymenttype']; ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td td>
-                            <label for="amount">Amount</label>
-                            <input type="text" id="amount" name="amount">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <button onclick="javascript: return confirm('Please confirm enrollment');" type="submit" name="enroll" id="submit" class="btn1">Submit</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            <section class="sheet">
+                <form method="POST">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="studentid">Student ID</label>
+                                <input type="text" id="studentid" name="studentid">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="paymenttype">Payment Type</label>
+                                <select name="paymenttype" id="paymenttype">
+                                    <?php foreach ($_payment_type as $paymenttype_item) : ?>
+                                        <option value="<?php echo $paymenttype_item['code']; ?>">
+                                            <?php echo $paymenttype_item['paymenttype']; ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td td>
+                                <label for="amount">Amount</label>
+                                <input type="text" id="amount" name="amount">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <button onclick="javascript: return confirm('Please confirm enrollment');" type="submit" name="enroll" id="submit" class="btn1">Submit</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </section>
         </section>
     <?php else : ?>
         <div class="container">
