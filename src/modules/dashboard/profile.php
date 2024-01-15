@@ -3,7 +3,7 @@
 <?php include $_C2_data_php; ?>
 <?php include $_C2_session_php; ?>
 <?php include $_C2_mysql_connection_php; ?>
-<?php require_once $_C2_action_php; ?>
+<?php include $_C2_action_php; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,58 +28,70 @@
 
         <?php if ($user['User_Type'] == 'Student') : ?>
             <section class="studentlist1 container">
-                <h2 class="page_title">Student Profile</h2>
+                <h2 class="page_title ">My Profile</h2>
                 <hr class="title_line">
-                <table>
-                    <tbody>
-                        <?php
-                        echo "<table>";
-                        echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Student ID</th><th>Section ID</th><th>Enrolled</th><th>Gender</th><th>Birthdate</th><th>Place of Birth</th><th>Date created</th></tr>";
 
-                        echo "<tr>";
-                        echo "<td>" . $studentuser["Student_ID"] . "</td>";
-                        echo "<td>" . $studentuser['Last_Name'], ', ', $studentuser['First_Name'], ' ', $studentuser['Middle_Initial'] . "</td>";
-                        echo "<td>" . $studentuser["Email"] . "</td>";
-                        echo "<td>" . "Sample Number" . "</td>";
-                        echo "<td>" . "Sample Section" . "</td>";
-                        echo "<td>" . $studentuser["Enrolled"] . "</td>";
-                        echo "<td>" . $studentuser["Gender"] . "</td>";
-                        echo "<td>" . $studentuser["Birthdate"] . "</td>";
-                        echo "<td>" . $studentuser["Place_of_Birth"] . "</td>";
-                        echo "<td>" . $studentuser["Date_Created"] . "</td>";
-                        echo "</tr>";
-                        ?>
-                    </tbody>
-                </table>
+                <section class="profile_details">
+                    <ul class="profile_list">
+                        <li>
+                            <span class="tag safe"><?php echo $user['User_Type'] ?></span> | <span class="tag warning"><?php echo $user['Date_Created'] ?></span>
+                        </li>
+                        <li>
+                            <h1><?php echo $user['First_Name'], " ", $user['Last_Name']; ?></h1>
+                        </li>
+                        <li>
+                            <p><?php echo "Email: ", $user['Email']; ?></p>
+                        </li>
+                    </ul>
+                </section>
             </section>
         <?php elseif ($user['User_Type'] == 'Administrator') : ?>
             <section class="adminlist1 container">
-                <h2 class="page_title">Student Profile</h2>
+                <h2 class="page_title">Profile</h2>
                 <hr class="title_line">
-                <table>
-                    <tbody>
-                        <?php
-
-                        echo "<table>";
-                        echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Section ID</th><th>Enrolled</th><th>Gender</th><th>Birthdate</th><th>Place of Birth</th></tr>";
-
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row['User_ID'] . "</td>";
-                            echo "<td>" . $row['Last_Name'], ', ', $row['First_Name'], ' ', $row['Middle_Initial'] . "</td>";
-                            echo "<td>" . $row['Email'] . "</td>";
-                            echo "</tr>";
-                        }
-                        echo "</table>";
-                        ?>
-                    <?php endif; ?>
-                    </tbody>
-                </table>
+                <section class="profile_details sheet">
+                    <ul class="profile_list">
+                        <li>
+                            <span class="tag safe"><?php echo $student_details['Student_ID']; ?></span> | <span class="tag warning"><?php echo $student_details['User_ID']; ?></span>
+                        </li>
+                        <li>
+                            <h1><?php echo $student_details['First_Name'], " ", $student_details['Middle_Initial'], " ", $student_details['Last_Name']; ?></h1>
+                        </li>
+                        <li>
+                            <p><?php echo "Email: ", $student_details['Email']; ?></p>
+                        </li>
+                        <li>
+                            <p><?php echo "Mobile Number: ", $student_details['Mobile_Number']; ?></p>
+                        </li>
+                        <hr>
+                        <li>
+                            <p><?php echo "Gender: ", $student_details['Gender']; ?></p>
+                        </li>
+                        <li>
+                            <p><?php echo "Birth Date: ", $student_details['Birthdate']; ?></p>
+                        </li>
+                        <li>
+                            <p><?php echo "Place of Birth: ", $student_details['Place_of_Birth']; ?></p>
+                        </li>
+                        <li>
+                            <p><?php echo "Citizenship: ", $student_details['Citizenship']; ?></p>
+                        </li>
+                        <li>
+                            <p><?php echo "Civil Status: ", $student_details['Civil_Status']; ?></p>
+                        </li>
+                        <li>
+                            <p><?php echo "Address: ", $student_details['Address']; ?></p>
+                        </li>
+                    </ul>
+                </section>
             </section>
-            <?php $mysqli->close(); ?>
-            </section>
-        <?php else : ?>
         <?php endif; ?>
+    <?php else : ?>
+        <div class="container">
+            <h2>Please Login</h2>
+            <a href="<?php echo $_C2_login ?>">Login</a>
+        </div>
+    <?php endif; ?>
 </body>
 
 </html>

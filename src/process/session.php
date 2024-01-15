@@ -8,13 +8,15 @@ if (isset($_SESSION['user_id'])) {
     $user = $result->fetch_assoc();
 }
 if (isset($_SESSION['Firstname'])) {
-    require '../../data/mysql-connection.php';
+    require $_C2_mysql_connection_php;
 
     $sql = "SELECT First_Name FROM users 
         WHERE User_ID = {$_SESSION['Firstname']}";
     $result = $mysqli->query($sql);
     $user = $result->fetch_assoc();
 }
+
+
 if (isset($_SESSION['user_id'])) {
 
     $sql = "SELECT Student_info.*, users.* FROM student_info 
@@ -44,4 +46,3 @@ if (isset($_GET['student_edit'])) {
     $result = $mysqli->query($sql);
     $row = $result->fetch_assoc();
 }
-print_r($_SESSION);
