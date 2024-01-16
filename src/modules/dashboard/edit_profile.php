@@ -29,10 +29,8 @@
         <main class="editprofile1 container">
 
             <h2>Edit Student Information</h2>
-            <label for="firstName">First Name</label>
-
-            <?php echo $profile_details['First_Name'] ?><br><br>
-            <?php echo $profile_details['Email'] ?><br><br>
+            <label for="">First Name: <?php echo $profile_details['First_Name'] ?></label>
+            <label for="">Email: <?php echo $profile_details['Email'] ?></label>
 
             <form method="POST">
                 <table>
@@ -40,8 +38,8 @@
                         <td>
                             <label for="enrollmentStatus">Enrollment Status</label>
                             <select name="enrollmentStatus" id="enrollmentStatus">
-                                <option value=""><?php echo ($profile_details['Enrolled'] == 0) ? 'Enrolled' : 'Pending'; ?></option>
-                                <option value="<?php echo ($profile_details['Enrolled'] == 0) ? '1' : '0'; ?>"><?php echo ($profile_details['Enrolled'] == 0) ? 'Pending' : 'Enrolled'; ?></option>
+                                <option value=""><?php echo ($profile_details['Enrolled'] == 1) ? 'Enrolled' : 'Pending'; ?></option>
+                                <option value="<?php echo ($profile_details['Enrolled'] == 1) ? '1' : '0'; ?>"><?php echo ($profile_details['Enrolled'] == 1) ? 'Pending' : 'Enrolled'; ?></option>
                             </select>
                         </td>
                     </tr>

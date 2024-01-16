@@ -36,9 +36,9 @@
                         <tr>
                             <td colspan="3">
                                 <label for="program">Program</label>
-                                <select name="program" id="program">
+                                <select name="program" id="program" required>
                                     <?php foreach ($_program as $program_item) : ?>
-                                        <option value="<?php echo $program_item['program']; ?>">
+                                        <option value="<?php echo $program_item['code']; ?>">
                                             <?php echo $program_item['program']; ?>
                                         </option>
                                     <?php endforeach; ?>
@@ -48,11 +48,11 @@
                         <tr>
                             <td colspan="2">
                                 <label for="firstName">First Name</label>
-                                <input type="text" id="firstName" name="firstName" value=<?= $user['First_Name']; ?>>
+                                <input type="text" id="firstName" name="firstName" value=<?= $user['First_Name']; ?> required>
                             </td>
                             <td>
                                 <label for="dateOfBirth">Date of Birth</label>
-                                <input type="date" id="dateOfBirth" name="dateOfBirth">
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
                             </td>
                         </tr>
                         <tr>
@@ -62,11 +62,11 @@
                             </td>
                             <td>
                                 <label for="birthPlace">Birthplace</label>
-                                <input type="text" id="birthPlace" name="birthPlace">
+                                <input type="text" id="birthPlace" name="birthPlace" required>
                             </td>
                             <td>
                                 <label for="citizenship">Citizenship</label>
-                                <select name="citizenship" id="citizenship">
+                                <select name="citizenship" id="citizenship" required>
                                     <?php foreach ($_citizenship as $citizenship_item) : ?>
                                         <option value="<?php echo $citizenship_item['citizenship']; ?>">
                                             <?php echo $citizenship_item['citizenship']; ?>
@@ -78,11 +78,11 @@
                         <tr>
                             <td td>
                                 <label for="lastName">Last Name</label>
-                                <input type="text" id="lastName" name="lastName" value=<?= $user['Last_Name']; ?>>
+                                <input type="text" id="lastName" name="lastName" value=<?= $user['Last_Name']; ?> required>
                             </td>
                             <td>
                                 <label for="civilStatus">Civil Status</label>
-                                <select name="civilStatus" id="civilStatus">
+                                <select name="civilStatus" id="civilStatus" required>
                                     <option value=""></option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
@@ -91,7 +91,7 @@
                             </td>
                             <td>
                                 <label for="sex">Sex</label>
-                                <select name="sex" id="sex">
+                                <select name="sex" id="sex" required>
                                     <option value=""></option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -101,23 +101,23 @@
                         <tr>
                             <td colspan="3">
                                 <label for="myaddress">Address</label>
-                                <input type="text" id="myaddress" name="myaddress">
+                                <input type="text" id="myaddress" name="myaddress" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <label for="mobileNumber">Mobile Number:</label>
-                                <input type="number" id="mobileNumber" name="mobileNumber">
+                                <input type="number" id="mobileNumber" name="mobileNumber" required>
                             </td>
                             <td colspan="2">
 
                                 <label for="eMail">Email:</label>
-                                <input type="email" id="eMail" name="eMail" value=<?= $user['Email']; ?>>
+                                <input type="email" id="eMail" name="eMail" value=<?= $user['Email']; ?> required>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3">
-                                <button onclick="javascript: return confirm('Please confirm deletion');" type="submit" name="save" id="submit" class="btn1">Submit</button>
+                                <button onclick="javascript: return confirm('Proceed to Application?');" type="submit" name="save" id="submit" class="btn1">Submit</button>
                             </td>
                         </tr>
                     </table>

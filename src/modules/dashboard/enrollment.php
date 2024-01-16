@@ -32,11 +32,45 @@
             <hr class="title_line">
             <section class="sheet">
                 <form method="POST">
+                    <?php
+                    $result = $mysqli->query("SELECT * FROM student_info WHERE User_ID='$id'") or die("Invalid query: " . $mysqli->error);
+                    $row = $result->fetch_assoc();
+                    ?>
+
                     <table>
                         <tr>
                             <td>
+
                                 <label for="studentid">Student ID</label>
-                                <input type="text" id="studentid" name="studentid">
+                                <input type="text" id="studentid" name="studentid" value=<?php echo $row['Student_ID']; ?>>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="academicYear">Academic Year</label>
+                                <input type="text" id="academicYear" name="academicYear">
+                            </td>
+                            <td>
+                                <label for="semester">Semester</label>
+                                <select name="semester" id="semester" required>
+                                    <option value=""></option>
+                                    <option value="1st">First Sem</option>
+                                    <option value="2nd">Second Sem</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label for="yearLevel">Year Level</label>
+                                <select name="yearLevel" id="yearLevel" required>
+                                    <option value=""></option>
+                                    <option value="1">First Year</option>
+                                    <option value="2">Second Year</option>
+                                    <option value="3">Third Year</option>
+                                    <option value="4">Fourth Year</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label for="section">Section</label>
+                                <input type="text" id="section" name="section">
                             </td>
                         </tr>
                         <tr>
@@ -50,9 +84,7 @@
                                     <?php endforeach; ?>
                                 </select>
                             </td>
-                        </tr>
-                        <tr>
-                            <td td>
+                            <td>
                                 <label for="amount">Amount</label>
                                 <input type="text" id="amount" name="amount">
                             </td>

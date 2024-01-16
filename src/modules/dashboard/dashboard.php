@@ -53,8 +53,6 @@ while ($row = $barGraphResults->fetch_assoc()) {
     $barChartData[] = $row;
 }
 
-// Close the database mysqlconnection
-$mysqli->close();
 
 ?>
 
