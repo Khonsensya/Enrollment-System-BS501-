@@ -25,6 +25,7 @@
 <body>
     <?php if (isset($user)) : ?>
         <?php include $_C2_dashboard_navbar_php; ?>
+<<<<<<< HEAD
 
         <section class="adminprofile1 container">
             <h1 class="page_title">Admin Profile</h1>
@@ -37,6 +38,31 @@
         <?php $mysqli->close(); ?>
         </section>
     <?php else : ?>
+=======
+        <section class="adminprofile1 container">
+            <h2 class="page_title ">My Profile</h2>
+            <hr class="title_line">
+
+            <section class="profile_details">
+                <ul class="profile_list">
+                    <li>
+                        <span class="tag safe"><?php echo $user['User_Type'] ?></span> | <span class="tag warning"><?php echo $user['Date_Created'] ?></span>
+                    </li>
+                    <li>
+                        <h1><?php echo $user['First_Name'], " ", $user['Last_Name']; ?></h1>
+                    </li>
+                    <li>
+                        <p><?php echo "Email: ", $user['Email']; ?></p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    <?php else : ?>
+        <div class="container">
+            <h2>Please Login</h2>
+            <a href="<?php echo $_C2_login ?>">Login</a>
+        </div>
+>>>>>>> d52d87031f06eb1aca22290c3ca5b735a6405c3a
     <?php endif; ?>
 </body>
 

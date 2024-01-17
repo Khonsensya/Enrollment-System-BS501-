@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2024 at 05:42 PM
+-- Generation Time: Jan 17, 2024 at 12:24 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `enrollment_system`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enrollment_transaction`
+--
+
+CREATE TABLE `enrollment_transaction` (
+  `Transaction_ID` int(11) NOT NULL,
+  `Student_ID` int(11) NOT NULL,
+  `Course_ID` varchar(30) NOT NULL,
+  `Payment_Type` enum('monthly','semestral','fullpayment') NOT NULL,
+  `Amount_Due` int(11) NOT NULL,
+  `Payment` int(11) NOT NULL,
+  `Status` varchar(20) NOT NULL DEFAULT 'enrolled'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `enrollment_transaction`
+--
+
+INSERT INTO `enrollment_transaction` (`Transaction_ID`, `Student_ID`, `Course_ID`, `Payment_Type`, `Amount_Due`, `Payment`, `Status`) VALUES
+(2147483647, 10014, 'INF-CS-002', 'fullpayment', 30000, 30000, 'enrolled'),
+(2147483647, 10015, 'INF-IS-003', 'monthly', 5000, 5000, 'enrolled');
 
 -- --------------------------------------------------------
 
@@ -219,6 +243,31 @@ INSERT INTO `school_sections` (`Section_ID`, `Course_ID`, `Term`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `student_apply`
+--
+
+CREATE TABLE `student_apply` (
+  `Apply_ID` varchar(20) NOT NULL,
+  `Program` varchar(20) NOT NULL,
+  `Status` enum('pending','accepted','rejected') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student_apply`
+--
+
+INSERT INTO `student_apply` (`Apply_ID`, `Program`, `Status`) VALUES
+('10011', 'INF-CS-002', 'accepted'),
+('10012', 'INF-CS-002', 'accepted'),
+('10013', 'INF-CS-002', 'accepted'),
+('10014', 'INF-CS-002', 'accepted'),
+('10015', 'INF-IS-003', 'accepted'),
+('10016', 'INF-IT-001', 'accepted'),
+('10017', 'TOU-TM-001', 'accepted');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `student_batches`
 --
 
@@ -240,7 +289,7 @@ CREATE TABLE `student_info` (
   `First_Name` varchar(50) NOT NULL,
   `Last_Name` varchar(50) NOT NULL,
   `Middle_Initial` char(1) NOT NULL,
-  `Gender` varchar(20) NOT NULL,
+  `Gender` enum('Male','Female','NoSex','') NOT NULL DEFAULT 'NoSex',
   `Birthdate` date NOT NULL,
   `Place_of_Birth` varchar(100) NOT NULL,
   `Citizenship` varchar(50) NOT NULL,
@@ -258,32 +307,18 @@ CREATE TABLE `student_info` (
 --
 
 INSERT INTO `student_info` (`Student_ID`, `First_Name`, `Last_Name`, `Middle_Initial`, `Gender`, `Birthdate`, `Place_of_Birth`, `Citizenship`, `Civil_Status`, `Mobile_Number`, `Email`, `Address`, `Enrolled`, `User_ID`, `Status`) VALUES
-(1, 'Christian Kobe', 'Malonzo', '', 'Male', '2002-08-07', '', '', 'Single', '0', 'kobemalonzo@gmail.com', '', 0, 10001, 1),
-(2, 'Mark Limuel', 'Lape', 'Z', 'Male', '2000-01-01', 'Philippines', 'Filipino', 'Single', '09234567890', 'lapemark@gmail.com', 'Bulacan', 1, 10002, 1),
-(3, 'Yranimez', 'Repil', 'R', 'Male', '0000-00-00', 'Philippines', 'Filipino', 'Single', '09123456789', 'yranimezrepil@gmail.com', 'Quezon City', 1, 10003, 1),
-(7, 'Walkman', 'Powd', '', '', '0000-00-00', '', '', 'Single', '', 'WalkmanPowd@gmail.com', '', 0, 10005, 2),
-(8, '@', 'admin', '', '', '0000-00-00', '', '', 'Single', '', 'admin@dceru.edu', '', 0, 10006, 1),
-(9, 'Mark Limueldasda', 'dasdas', 'd', 'male', '0000-00-00', '', 'ph', '', '', 'student@dceru.edu', '', 1, 10007, 1);
+(1, 'dceru', 'admin', '', 'NoSex', '0000-00-00', '', '', 'Single', '', 'dceruadmin@dceru.edu.ph', '', 0, 10010, 0),
+(2, 'Mark Limuel', 'Lape', 'L', 'Male', '0000-00-00', 'Manila, Philippines', 'Filipino', 'Single', '09562038413', 'marklape@dceru.edu.ph', 'Bocaue, Bulacan', 1, 10011, 1),
+(3, 'Kobe', 'Malonzo', '', 'Male', '2024-01-03', 'Manila, Philippines', 'Filipino', 'Single', '0', 'kobemalonzo@dceru.edu.ph', 'Quezon City, NCR', 0, 10012, 1),
+(4, 'Yranimez', 'Repil', 'R', 'Male', '2024-01-02', 'Manila, Philippines', 'Filipino', 'Single', '0', 'yranimezrepil@dceru.edu.ph', 'Quezon City, NCR', 0, 10013, 1),
+(5, 'Luis', 'Abungin', '', 'Male', '2024-01-05', 'Manila, Philippines', 'Filipino', 'Single', '0', 'luisabungin@dceru.edu.ph', 'Quezon City, NCR', 1, 10014, 1),
+(6, 'James', 'Gerena', 'O', 'Male', '2024-01-16', 'Manila, Philippines', 'Japanese', 'Single', '0', 'jamesgerena@dceru.edu.ph', 'Quezon City, NCR', 1, 10015, 1),
+(7, 'Kian', 'Dela', 'C', 'Male', '2024-01-06', 'Manila, Philippines', 'Filipino', 'Single', '0', 'kiandelacruz@dceru.edu.ph', 'Quezon City, NCR', 1, 10016, 1),
+(8, 'John', 'Austria', '', 'Male', '2024-01-07', 'Manila, Philippines', 'Chinese', 'Single', '0', 'johnaustria@dceru.edu.ph', 'Quezon City, NCR', 0, 10017, 1);
 
 --
 -- Triggers `student_info`
 --
-DELIMITER $$
-CREATE TRIGGER `Enrolled_to_Student_Profile` AFTER UPDATE ON `student_info` FOR EACH ROW BEGIN
-    -- Check if the Enrolled column is updated to true
-    IF NEW.Enrolled = 1 THEN
-	-- Check if student_profile already exists
- 		IF NOT EXISTS (SELECT 1 FROM student_profile WHERE Student_ID = NEW.Student_ID) THEN
-        -- Insert the Student_ID into the student_profile table
-        	INSERT INTO student_profile (Student_ID) VALUES (NEW.Student_ID);
-		END IF;
-	ELSE
-        -- Delete the corresponding row from the student_profile table
-        DELETE FROM student_profile WHERE Student_ID = NEW.Student_ID;
-    END IF;
-END
-$$
-DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `Insert_Birthday_Check` BEFORE INSERT ON `student_info` FOR EACH ROW BEGIN
     IF NEW.Birthdate > CURDATE() THEN
@@ -302,22 +337,6 @@ CREATE TRIGGER `Update_Birthday_Check` BEFORE UPDATE ON `student_info` FOR EACH 
 END
 $$
 DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `after_student_info_update` AFTER UPDATE ON `student_info` FOR EACH ROW BEGIN
-  IF (
-    NEW.First_Name <> (SELECT First_Name FROM users WHERE User_ID = NEW.User_ID) OR
-    NEW.Last_Name <> (SELECT Last_Name FROM users WHERE User_ID = NEW.User_ID) OR
-    NEW.Email <> (SELECT Email FROM users WHERE User_ID = NEW.User_ID)
-  ) THEN
-    UPDATE users
-    SET First_Name = NEW.First_Name,
-        Last_Name = NEW.Last_Name,
-        Email = NEW.Email
-    WHERE User_ID = NEW.User_ID;
-  END IF;
-END
-$$
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -326,29 +345,25 @@ DELIMITER ;
 --
 
 CREATE TABLE `student_profile` (
-  `Student_Number` varchar(8) NOT NULL,
+  `Student_Number` varchar(20) NOT NULL,
   `Student_ID` int(20) NOT NULL,
-  `Section_ID` varchar(20) DEFAULT NULL
+  `Section_ID` varchar(20) DEFAULT NULL,
+  `Course_ID` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `student_profile`
 --
 
-INSERT INTO `student_profile` (`Student_Number`, `Student_ID`, `Section_ID`) VALUES
-('STDNT002', 2, NULL),
-('STDNT003', 3, NULL),
-('STDNT009', 9, NULL);
-
---
--- Triggers `student_profile`
---
-DELIMITER $$
-CREATE TRIGGER `Generate_Student_Number` BEFORE INSERT ON `student_profile` FOR EACH ROW BEGIN
-    SET NEW.Student_Number = CONCAT('STDNT', LPAD(NEW.Student_ID, 3, '0'));
-END
-$$
-DELIMITER ;
+INSERT INTO `student_profile` (`Student_Number`, `Student_ID`, `Section_ID`, `Course_ID`) VALUES
+('', 7, NULL, ''),
+('0500010002', 10002, NULL, 'INF-CS-002'),
+('0500010012', 10012, NULL, 'INF-CS-002'),
+('0500010013', 10013, NULL, 'INF-CS-002'),
+('0500010014', 10014, NULL, 'INF-CS-002'),
+('0500010015', 10015, NULL, 'INF-IS-003'),
+('0500010016', 10016, NULL, 'INF-IT-001'),
+('0500010017', 10017, NULL, 'TOU-TM-001');
 
 -- --------------------------------------------------------
 
@@ -363,20 +378,23 @@ CREATE TABLE `users` (
   `Email` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `User_Type` enum('Student','Administrator','','') NOT NULL DEFAULT 'Student',
-  `Date_Created` timestamp NOT NULL DEFAULT current_timestamp()
+  `Date_Created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Applied` enum('notapplied','applied') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`User_ID`, `First_Name`, `Last_Name`, `Email`, `Password`, `User_Type`, `Date_Created`) VALUES
-(10001, 'Christian Kobe', 'Malonzo', 'kobemalonzo@gmail.com', '1234567890', 'Student', '2023-12-26 13:19:22'),
-(10002, 'Mark Limuel', 'Lape', 'lapemark@gmail.com', '0912345', 'Student', '2023-12-26 14:03:47'),
-(10003, 'Yranimez', 'Repil', 'yranimezrepil@gmail.com', '093218423', 'Student', '2023-12-26 14:06:41'),
-(10005, 'Walkman', 'Powd', 'WalkmanPowd@gmail.com', '$2y$10$iNBNs4CZ6bixKCIN.eTpHOKOam0JSQynqL4NJcZ8.HojWiQ1W29Ta', 'Administrator', '2024-01-10 15:26:51'),
-(10006, '@', 'admin', 'admin@dceru.edu', '$2y$10$AL5a8zOaUzaeH/qMRmrnAuzzrEjuH0aCRZZk.2J1g3n5yTsOopefi', 'Administrator', '2024-01-10 15:32:43'),
-(10007, 'Mark Limueldasda', 'dasdas', 'student@dceru.edu', '$2y$10$zf02zjGWXoeMs5eS9eBAFOo4v/c1jKPPfCdsPwszTBRasQYt0Z/du', 'Student', '2024-01-10 15:33:40');
+INSERT INTO `users` (`User_ID`, `First_Name`, `Last_Name`, `Email`, `Password`, `User_Type`, `Date_Created`, `Applied`) VALUES
+(10010, 'dceru', 'admin', 'dceruadmin@dceru.edu.ph', '$2y$10$1KPu4i1wJBGUK1UX8lrvauQ3PfE9vaamtpvm/bYbDoMrQ5R/cfUee', 'Administrator', '2024-01-16 20:34:58', 'notapplied'),
+(10011, 'Mark Limuel', 'Lape', 'marklape@dceru.edu.ph', '$2y$10$PsNeM2Flle2D/SIm7gG4n.mDPDAny/l9GLkUvKRpcaXvbgsns/Z5e', 'Student', '2024-01-16 20:38:17', 'applied'),
+(10012, 'Kobe', 'Malonzo', 'kobemalonzo@dceru.edu.ph', '$2y$10$Cdd7LSC0fg/uFGaEUv7DEOr3ErL9nAA0DkMUBz8e9K4FeVTLQPKnq', 'Student', '2024-01-16 20:38:34', 'applied'),
+(10013, 'Yranimez', 'Repil', 'yranimezrepil@dceru.edu.ph', '$2y$10$.hYlkemkFWgM5Xo89LLsvueizeb/7URbZ4kVl7lb8sOXBkKW6VlLe', 'Student', '2024-01-16 20:38:58', 'applied'),
+(10014, 'Luis', 'Abungin', 'luisabungin@dceru.edu.ph', '$2y$10$n2wl.Y.VBXb96CuqFDtHPuOF4abevcnCcmli.Ylu7lyER0oosYgtm', 'Student', '2024-01-16 20:39:18', 'applied'),
+(10015, 'James', 'Gerena', 'jamesgerena@dceru.edu.ph', '$2y$10$kN.uk8bUOZ9ph0Y7YnqbRO6V76co1EiiIkUY/MqkCgaZOlC4zo3du', 'Student', '2024-01-16 20:39:31', 'applied'),
+(10016, 'Kian', 'Dela', 'kiandelacruz@dceru.edu.ph', '$2y$10$NEeXoCH.95IdNnzqID/n2OPLn5u2cJjb.XdpaYsqCx5K5meysUuSe', 'Student', '2024-01-16 20:39:53', 'applied'),
+(10017, 'John', 'Austria', 'johnaustria@dceru.edu.ph', '$2y$10$49dGGLdhHXJ9nIkeLI05ouwCYLH5c7yKk/RHZZ.ZdZVBQxcp9XeVi', 'Student', '2024-01-16 20:57:34', 'applied');
 
 --
 -- Triggers `users`
@@ -418,23 +436,28 @@ DELIMITER ;
 --
 
 --
+-- Indexes for table `enrollment_transaction`
+--
+ALTER TABLE `enrollment_transaction`
+  ADD KEY `Transaction_ID` (`Transaction_ID`) USING BTREE;
+
+--
 -- Indexes for table `school_courses`
 --
 ALTER TABLE `school_courses`
   ADD PRIMARY KEY (`Course_ID`);
 
 --
--- Indexes for table `school_sections`
+-- Indexes for table `student_apply`
 --
-ALTER TABLE `school_sections`
-  ADD PRIMARY KEY (`Section_ID`),
-  ADD KEY `Foreign_Section_2_Courses` (`Course_ID`);
+ALTER TABLE `student_apply`
+  ADD PRIMARY KEY (`Apply_ID`) USING BTREE;
 
 --
 -- Indexes for table `student_batches`
 --
 ALTER TABLE `student_batches`
-  ADD PRIMARY KEY (`Semester_ID`);
+  ADD PRIMARY KEY (`Semester_ID`) USING BTREE;
 
 --
 -- Indexes for table `student_info`
@@ -447,10 +470,7 @@ ALTER TABLE `student_info`
 -- Indexes for table `student_profile`
 --
 ALTER TABLE `student_profile`
-  ADD PRIMARY KEY (`Student_Number`),
-  ADD UNIQUE KEY `Student_Number` (`Student_Number`),
-  ADD KEY `Foreign_Profile_2_Student` (`Student_ID`),
-  ADD KEY `Foreign_Profile_2_Section` (`Section_ID`);
+  ADD PRIMARY KEY (`Student_Number`) USING BTREE;
 
 --
 -- Indexes for table `users`
@@ -467,13 +487,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `student_info`
 --
 ALTER TABLE `student_info`
-  MODIFY `Student_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Student_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10008;
+  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10018;
 
 --
 -- Constraints for dumped tables
@@ -490,13 +510,6 @@ ALTER TABLE `school_sections`
 --
 ALTER TABLE `student_info`
   ADD CONSTRAINT `Foreign_Student_2_User` FOREIGN KEY (`User_ID`) REFERENCES `users` (`User_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `student_profile`
---
-ALTER TABLE `student_profile`
-  ADD CONSTRAINT `Foreign_Profile_2_Section` FOREIGN KEY (`Section_ID`) REFERENCES `school_sections` (`Section_ID`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `Foreign_Profile_2_Student` FOREIGN KEY (`Student_ID`) REFERENCES `student_info` (`Student_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -75,6 +75,12 @@ ul {
 .content {
   padding: 1rem 5rem;
 }
+.sheet {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0px var(--light_gray);
+}
 .page_title {
   background-color: var(--light_gray);
   padding: 1rem;
