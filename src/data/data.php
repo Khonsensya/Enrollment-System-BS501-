@@ -548,99 +548,63 @@ $_program = [
         'program' => ''
     ],
     [
-        'code' => 'bscs',
+        'code' => 'INF-CS-002',
         'program' => 'Bachelor of Science in Computer Science'
     ],
     [
-        'code' => 'psych',
-        'program' => 'Bachelor of Science in Psychology'
-    ],
-    [
-        'code' => 'bsit',
+        'code' => 'INF-IT-001',
         'program' => 'BS in Information Technology'
     ],
     [
-        'code' => 'bsis',
+        'code' => 'INF-IS-003',
         'program' => 'BS in Information Systems'
     ],
     [
-        'code' => 'it',
-        'program' => '2-yr Infortmation Technology'
-    ],
-    [
-        'code' => 'act',
-        'program' => '2-yr Associate in Computer Technology'
-    ],
-    [
-        'code' => 'bsba',
+        'code' => 'BUS-BA-001',
         'program' => 'BS in Business Administration'
     ],
     [
-        'code' => 'bsa',
+        'code' => 'BUS-AA-002',
         'program' => 'BS in Accountancy'
     ],
     [
-        'code' => 'bsais',
+        'code' => 'BUS-AS-003',
         'program' => 'BS in Accounting Information System'
     ],
     [
-        'code' => 'bsma',
+        'code' => 'BUS-MA-004',
         'program' => 'BS in Management Accounting'
     ],
     [
-        'code' => 'bsrtcs',
-        'program' => 'BS in Retail Technology and Consumer Science'
-    ],
-    [
-        'code' => 'art',
-        'program' => '2-yr Associate in Retail Technology'
-    ],
-    [
-        'code' => 'bshm',
+        'code' => 'HOS-HM-001',
         'program' => 'BS in Hospitality Management'
     ],
     [
-        'code' => 'bscm',
+        'code' => 'HOS-CM-002',
         'program' => 'BS in Culinary Management'
     ],
     [
-        'code' => 'hra',
-        'program' => '3-yr Hotel and Restaurant Administration'
-    ],
-    [
-        'code' => 'hrs',
-        'program' => '2-yr Hospitality and Restaurant Services'
-    ],
-    [
-        'code' => 'bstm',
+        'code' => 'TOU-TM-001',
         'program' => 'BS in Tourism Management'
     ],
     [
-        'code' => 'tem',
-        'program' => '2-yr Tourism and Events Management'
-    ],
-    [
-        'code' => 'bscpe',
-        'program' => 'BS in Computer Engineering'
-    ],
-    [
-        'code' => 'bmma',
+        'code' => 'ART-MA-001',
         'program' => 'Bachelor of Multimedia Arts'
     ],
     [
-        'code' => 'bacomm',
+        'code' => 'ART-CC-002',
         'program' => 'BA in Communication'
     ],
     [
-        'code' => 'bsmt',
+        'code' => 'MAR-MT-001',
         'program' => 'Bachelor of Science in Marine Transportation'
     ],
     [
-        'code' => 'bsmare',
+        'code' => 'MAR-ME-002',
         'program' => 'Bachelor of Science in Marine Engineering'
     ],
     [
-        'code' => 'bsname',
+        'code' => 'MAR-NE-003',
         'program' => 'Bachelor of Science in Naval Architecture and Marine Engineering'
     ],
     //  atleast ung mga available sa sti page  
@@ -659,7 +623,12 @@ $_payment_type = [
     ],
     [
         /* a */
-        'code' => 'full',
+        'code' => 'semestral',
+        /* b */ 'paymenttype' => 'Semestral'
+    ],
+    [
+        /* a */
+        'code' => 'fullpayment',
         /* b */ 'paymenttype' => 'Full Payment'
     ],
 ];

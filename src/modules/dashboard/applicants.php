@@ -48,11 +48,8 @@
                             <td>
                                 <p>ID</p>
                             </td>
-                            <td>
-                                <p>User_ID</p>
-                            </td>
                             <td class="table_name">
-                                <p>Name</p>
+                                <p>Course</p>
                             </td>
                             <td>
                                 <p>Actions</p>
@@ -60,35 +57,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $_Status = '0';
+                        <?php $_Status = 'pending';
                         $_Btn1 = 'Approve';
                         $_Btn2 = 'Reject';
                         $_BtnOption = 'reject'; ?>
                         <?php if (isset($_POST['submit-option'])) : ?>
                             <?php
                             if ($_POST['applicant_type_1'] == 'rejected') {
-                                $_Status = '2';
+                                $_Status = 'rejected';
                                 $_Btn1 = 'Reconsider';
                                 $_Btn2 = 'Delete';
-                                $_BtnOption = 'delete';
                             } else {
-                                $_Status = '0';
+                                $_Status = 'pending';
                                 $_Btn1 = 'Approve';
                                 $_Btn2 = 'Reject';
-                                $_BtnOption = 'reject';
                             }
                             ?>
                         <?php endif; ?>
-                        <?php $result = $mysqli->query("SELECT * FROM student_info WHERE Status='$_Status'") or die("Invalid query: " . $mysqli->error); ?>
+                        <?php $result = $mysqli->query("SELECT * FROM student_apply WHERE Status='$_Status'") or die("Invalid query: " . $mysqli->error); ?>
                         <?php while ($row = $result->fetch_assoc()) : ?>
                             <tr>
-                                <td><?php echo $row['Student_ID'] ?></td>
-                                <td><?php echo $row['User_ID'] ?></td>
-                                <td class="table_name"><?php echo $row['Last_Name'], ', ', $row['First_Name'], ' ', $row['Middle_Initial'] ?></td>
+                                <td><?php echo $row['Apply_ID'] ?></td>
+                                <td class="table_name"><?php echo $row['Program'] ?></td>
                                 <td class="list-actions">
                                     <div>
-                                        <a onclick="javascript: return confirm('Please confirm deletion');" href="?approve=<?php echo $row['Student_ID']; ?>" class="btn1 safe"><?php echo $_Btn1 ?></a>
-                                        <a onclick="javascript: return confirm('Please confirm deletion');" href="?<?php echo $_BtnOption ?>=<?php echo $row['Student_ID']; ?>" class="btn1 danger"><?php echo $_Btn2 ?></a>
+                                        <a onclick="javascript: return confirm('Please confirm deletion');" href="?approve=<?php echo $row['Apply_ID']; ?>" class="btn1 safe"><?php echo $_Btn1 ?></a>
+                                        <?php if ($_Status == 'rejected') : ?>
+                                        <?php else : ?>
+                                            <a onclick="javascript: return confirm('Please confirm deletion');" href="?reject=<?php echo $row['Apply_ID']; ?>" class="btn1 danger">Reject</a>
+                                        <?php endif; ?>
                                     </div>
                                 </td>
                             </tr>

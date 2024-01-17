@@ -2,6 +2,7 @@
 
 $session_id = $_SESSION['user_id'];
 
+
 // application.php
 if (isset($_POST['save'])) {
 
@@ -21,7 +22,9 @@ if (isset($_POST['save'])) {
     $_SESSION['message'] = "?";
     $_SESSION['msg_type'] = "createdstudent";
 
-    $mysqli->query("UPDATE student_info SET First_Name = '$FirstName', Middle_Initial = '$MiddleName', Last_Name = '$LastName', Gender = '$Sex', Citizenship = '$Citizenship', Civil_Status = '$CivilStatus' WHERE User_ID = '$session_id'") or die("Connection failed:");
+    $mysqli->query("UPDATE student_info SET First_Name = '$FirstName', Last_Name = '$LastName', Middle_Initial = '$MiddleName', Gender = '$Sex', Birthdate = '$DateofBirth', Place_of_Birth = '$BirthPlace', Citizenship = '$Citizenship', Civil_Status = '$CivilStatus', Mobile_Number = '$MobileNumber', Email = '$Email', Address = '$MyAddress' WHERE User_ID='$session_id'") or die("Connection failed:");
+    $mysqli->query("UPDATE users SET Applied='applied' WHERE User_ID = '$session_id'") or die("Connection failed:");
+    $mysqli->query("INSERT INTO student_apply VALUES ('$session_id', '$Program', 'pending')") or die("Connection failed:");
     $mysqli->close();
     header("Refresh:0; url=./dashboard.php");
 }
@@ -29,10 +32,25 @@ if (isset($_POST['save'])) {
 if (isset($_POST['enroll'])) {
 
     $Student_ID = $_POST['studentid'];
-    $Payment_Type = $_POST['paymenttype'];
-    $Amount = $_POST['amount'];
+    $program = $mysqli->query("SELECT * FROM student_apply WHERE Apply_ID='$session_id'") or die("Connection failed:");
+    $program_details = $program->fetch_assoc();
+    $_program = $program_details['Program'];
+    $transaction_number = '250' . $session_id . '505';
+    $PaymentType = filter_input(INPUT_POST, 'paymenttype');
+    if ($PaymentType == 'monthly') {
+        $AmountDue = '5000';
+    } elseif ($PaymentType == 'semestral') {
+        $AmountDue = '25000';
+    } else {
+        $AmountDue = '30000';
+    }
+    $Payment = $_POST['amount'];
 
-    $mysqli->query("UPDATE student_info SET Enrolled='1' WHERE User_ID = '$session_id'") or die("Connection failed:");
+
+    if ($AmountDue == $Payment) {
+        $mysqli->query("UPDATE student_info SET Enrolled = '1' WHERE User_ID = '$session_id'") or die("Connection failed:");
+        $mysqli->query("INSERT INTO enrollment_transaction (Transaction_ID, Student_ID, Course_ID, Payment_Type, Amount_Due, Payment) VALUES ('$transaction_number', '$session_id','$_program', '$PaymentType', '$AmountDue', '$Payment')") or die("Connection failed:");
+    }
     $mysqli->close();
     header("Refresh:0; url=./dashboard.php");
 }
@@ -48,28 +66,28 @@ if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
     $mysqli->query("DELETE FROM student_info WHERE Student_ID='$id'") or die("Connection failed:");
+    $mysqli->query("DELETE FROM student_profile WHERE Student_ID='$id'") or die("Connection failed:");
 }
 // applicants.php
 if (isset($_GET['approve'])) {
     $id = $_GET['approve'];
 
-    $mysqli->query("UPDATE student_info SET Status = '1' WHERE Student_ID='$id'") or die("Connection failed:");
+    $program = $mysqli->query("SELECT * FROM student_apply WHERE Apply_ID='$id'") or die("Connection failed:");
+    $program_details = $program->fetch_assoc();
+    $_program = $program_details['Program'];
+    $student_number = '05000' . $id;
+    $mysqli->query("UPDATE student_info SET Status = '1' WHERE User_ID='$id'") or die("Connection failed:");
+    $mysqli->query("UPDATE student_apply SET Status = 'accepted' WHERE Apply_ID='$id'") or die("Connection failed:");
+    $mysqli->query("INSERT INTO student_profile (Student_Number, Student_ID, Course_ID) VALUES ('$student_number', '$id','$_program')") or die("Connection failed:");
     header("Refresh:0; url=../dashboard/applicants.php");
 }
 // applicants.php
 if (isset($_GET['reject'])) {
     $id = $_GET['reject'];
 
-    $mysqli->query("UPDATE student_info SET Status = '2' WHERE Student_ID='$id'") or die("Connection failed:");
+    $mysqli->query("UPDATE student_info SET Status = '2' WHERE User_ID='$id'") or die("Connection failed:");
+    $mysqli->query("UPDATE student_apply SET Status = 'rejected' WHERE Apply_ID='$id'") or die("Connection failed:");
     header("Refresh:0; url=../dashboard/applicants.php");
-}
-if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
-
-    $mysqli->query("DELETE FROM student_info WHERE Student_ID='$id'") or die("Connection failed:");
-    $mysqli->close();
-
-    header("Refresh:0; url=../dashboard/studentlist.php");
 }
 
 //edit profile.php for getting row id
